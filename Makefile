@@ -1,42 +1,31 @@
 DIR := $(shell dirname $(lastword $(MAKEFILE_LIST)))
 
 NODE_MODS  := $(DIR)/node_modules
-JADE       := $(NODE_MODS)/jade/bin/jade.js
+PUG        := $(NODE_MODS)/.bin/pug
 STYLUS     := $(NODE_MODS)/stylus/bin/stylus
-BROWSERIFY := $(NODE_MODS)/browserify/bin/cmd.js
 
-HTML   := $(wildcard src/jade/templates/*.jade)
-CSS    := $(wildcard src/stylus/*.styl)
-JS     := $(wildcard src/js/*.js)
-IMAGES := $(wildcard src/images/*)
+HTML   := $(wildcard src/pug/pages/*.pug)
+IMAGES := $(shell find src/images -type f)
 VIDEO  := $(wildcard src/video/*)
 
-HTML   := $(patsubst src/jade/templates/%.jade,build/%.html,$(HTML))
-CSS    := $(patsubst src/stylus/%.styl,build/css/%.css,$(CSS))
-JS     := $(patsubst src/js/%.js,build/js/%.js,$(JS))
+HTML   := $(patsubst src/pug/pages/%.pug,build/%.html,$(HTML))
 IMAGES := $(patsubst src/images/%,build/images/%,$(IMAGES))
 VIDEO  := $(patsubst src/video/%,build/video/%,$(VIDEO))
 
-WATCH  := src/jade src/js src/stylus src/images src/video Makefile
+WATCH  := src/pug src/stylus src/images src/video Makefile
 
-all: node_modules $(HTML) $(CSS) $(JS) $(IMAGES) $(VIDEO)
+all: node_modules $(HTML) $(IMAGES) $(VIDEO)
 
 node_modules:
 	npm install
 
-build/%.html: src/jade/templates/%.jade src/jade/*.jade node_modules
+build/%.html: src/pug/pages/%.pug src/pug/*.pug src/stylus/*.styl
 	@mkdir -p $(shell dirname $@)
-	sed "s/%PAGE%/$(shell basename $< .jade)/g" < src/jade/main.jade | \
-	$(JADE) -p src/jade/main.jade > $@ || (rm -f $@; exit 1)
-
-build/css/%.css: src/stylus/%.styl node_modules
-	@mkdir -p $(shell dirname $@)
-	$(STYLUS) -I styles --use $(NODE_MODS)/autoprefixer-stylus < $< >$@ || \
-	  (rm -f $@; exit 1)
+	sed "s/%PAGE%/$(shell basename $< .pug)/g" < src/pug/main.pug | \
+	$(PUG) -p src/pug/main.pug > $@ || (rm -f $@; exit 1)
 
 build/%: src/%
 	install -D $< $@
-
 
 watch:
 	@clear

@@ -3,9 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "autoprefixer-stylus": ">=0.13.0",
-    "jade": ">=1.3.0",
-    "stylus": ">=0.42.3",
-    "browserify": ">=8.1.1"
+    "pug-cli": "",
+    "jstransformer-stylus": ""
   }
 }

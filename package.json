@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "pug-cli": "",
-    "jstransformer-stylus": ""
+    "jstransformer-stylus": "",
+    "jshint": "",
+    "stylus": ""
   }
 }

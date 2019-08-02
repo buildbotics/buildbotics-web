@@ -2,7 +2,7 @@ DIR := $(shell dirname $(lastword $(MAKEFILE_LIST)))
 
 NODE_MODS  := $(DIR)/node_modules
 PUG        := $(NODE_MODS)/.bin/pug
-STYLUS     := $(NODE_MODS)/stylus/bin/stylus
+PUG_DEPS   := $(DIR)/pug-deps
 
 HTML   := $(wildcard src/pug/*.pug)
 IMAGES := $(shell find src/images -type f)
@@ -21,9 +21,10 @@ all: node_modules $(HTML) $(IMAGES) $(VIDEO)
 node_modules:
 	npm install
 
-build/%.html: src/pug/%.pug src/pug/partials/*.pug src/stylus/*.styl
+build/%.html: src/pug/%.pug
 	@mkdir -p $(shell dirname $@)
 	$(PUG) $< -o build || (rm -f $@; exit 1)
+	(echo -n "$@: "; $(PUG_DEPS) $<) > build/dep/$(shell basename $@)
 
 build/%: src/%
 	install -D $< $@
@@ -51,3 +52,6 @@ dist-clean: clean
 	rm -rf node_modules
 
 .PHONY: all watch tidy clean dist-clean
+
+# Dependencies
+-include $(shell mkdir -p build/dep) $(wildcard build/dep/*)

@@ -63,12 +63,15 @@ function pug_deps(filename) {
     if (['Include', 'RawInclude', 'Extends'].indexOf(node.type) == -1) return;
     var dep = path.join(dirname, node.file.path);
 
-    if (!emit_dep(dep) || typeof node.filters == 'undefined') return;
+    if (!emit_dep(dep)) return
 
-    node.filters.map(function (filter) {
-      if (filter.name == 'browserify') browserify_deps(dep);
-      else if (filter.name == 'stylus') stylus_deps(dep);
-    })
+    if (typeof node.filters != 'undefined')
+      node.filters.map(function (filter) {
+        if (filter.name == 'browserify') browserify_deps(dep);
+        else if (filter.name == 'stylus') stylus_deps(dep);
+      })
+
+    else pug_deps(dep);
   });
 
   return deps;

@@ -1,0 +1,57 @@
+doctype html
+html
+  head
+    include ./partials/head.pug
+
+    title How to Contact Buildbotics
+
+    style: :stylus
+      h2
+        margin-top 2em
+
+      pre
+        margin-left 2em
+
+      .mailinglist
+        text-align left
+        margin initial
+
+  body
+    include ./partials/header.pug
+
+    #content
+      h1 Contact Buildbotics
+      p We would be happy to answer any questions you may have.
+
+      h2 Email
+      p.
+        Email us at
+        #[a(href="mailto:info@buildbotics.com") info@buildbotics.com].
+
+      h2 Phone
+      p Call us at #[a(href="tel:+1707-559-8539") 707-559-8539].
+
+      h2 Address
+      p Buildbotics LLC is located at:
+
+      pre.
+        523 6th Street
+        Petaluma, CA 94952
+        USA
+
+      h2 Join our Mailing List
+      form(action="//buildbotics.us16.list-manage.com/subscribe/post",
+        method="post")
+
+        table
+          tr
+            td
+              input(type="email", name="EMAIL", placeholder="your email here")
+              input(type="hidden", name="u", value="aa50c8cda80a6ed2405c3e499")
+              input(type="hidden", name="id", value="d319ecab7c")
+            td: button(type="submit") Subscribe
+
+      p Sign up to our mailing list and we'll keep you updated.
+
+
+    include ./partials/footer.pug

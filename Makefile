@@ -4,28 +4,32 @@ NODE_MODS  := $(DIR)/node_modules
 PUG        := $(NODE_MODS)/.bin/pug
 STYLUS     := $(NODE_MODS)/stylus/bin/stylus
 
-HTML   := $(wildcard src/pug/pages/*.pug)
+HTML   := $(wildcard src/pug/*.pug)
 IMAGES := $(shell find src/images -type f)
 VIDEO  := $(wildcard src/video/*)
 
-HTML   := $(patsubst src/pug/pages/%.pug,build/%.html,$(HTML))
+HTML   := $(patsubst src/pug/%.pug,build/%.html,$(HTML))
 IMAGES := $(patsubst src/images/%,build/images/%,$(IMAGES))
 VIDEO  := $(patsubst src/video/%,build/video/%,$(VIDEO))
 
 WATCH  := src/pug src/stylus src/images src/video Makefile
+
+DEST   := root@buildbotics.com:/var/www/buildbotics.com/
 
 all: node_modules $(HTML) $(IMAGES) $(VIDEO)
 
 node_modules:
 	npm install
 
-build/%.html: src/pug/pages/%.pug src/pug/*.pug src/stylus/*.styl
+build/%.html: src/pug/%.pug src/pug/partials/*.pug src/stylus/*.styl
 	@mkdir -p $(shell dirname $@)
-	sed "s/%PAGE%/$(shell basename $< .pug)/g" < src/pug/main.pug | \
-	$(PUG) -p src/pug/main.pug > $@ || (rm -f $@; exit 1)
+	$(PUG) $< -o build || (rm -f $@; exit 1)
 
 build/%: src/%
 	install -D $< $@
+
+publish:
+	rsync -r --progress build/ $(DEST)
 
 watch:
 	@clear

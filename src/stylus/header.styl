@@ -1,0 +1,88 @@
+#header
+  border-bottom 1px solid header_border_color
+  background-color header_color
+
+  #header-wrapper
+    padding 0 1em
+
+  #header-content
+    max-width page_width
+    min-height header_height
+    margin 0 auto
+    overflow hidden
+
+  a
+    text-decoration none
+    color medium_text_color
+
+  .logo
+    float left
+    margin-right 1em
+    padding 4px 0 0 0
+    font-size 24pt
+
+    img
+      height header_height - 10px
+      vertical-align bottom
+      margin-right 0.25em
+
+  #main-header-nav, #context-header-nav
+    display inline-block
+    white-space nowrap
+
+    > *
+      display inline-block
+
+    a.header-nav > .fa-caret-down
+      font-size 10pt
+      line-height 10px
+      margin-left 0.25em
+      margin-right 0
+
+  #main-header-nav
+    float left
+
+    a.header-nav
+      text-transform uppercase
+      font-size 16pt
+      line-height header_height - 10px
+
+  #context-header-nav
+    float right
+
+  a.header-nav
+    line-height header_height - 20px
+    height header_height - 20px
+    padding 10px
+    display inline-block
+
+    &:hover
+      color #f0ac48
+      background-color #f7f9f7
+
+  a.user
+    line-height header_height - 4px
+    height header_height - 4px
+    padding 2px 5px
+
+
+@media (max-width: 750px)
+  #header-content
+    > *
+      float none
+      display block
+
+    #main-header-nav
+      margin-left -10px
+
+      a.header-nav
+        line-height normal
+
+@media (max-width: 500px)
+  #header-content
+    #main-header-nav
+      margin-left -5px
+
+    a.header-nav
+      padding 5px
+      font-size 14pt

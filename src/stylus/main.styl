@@ -1,0 +1,117 @@
+@require config
+
+#content
+  max-width page_width
+
+#content .owl-carousel
+  text-align center
+  font-size 11pt
+  margin 1em 0
+
+  &.loading
+    display none
+
+  img
+    margin 0
+    height 240px
+
+  .owl-prev, .owl-next
+    width 40px
+    height 250px
+    position absolute
+    top 50%
+    transform translateY(-50%)
+    display block !important
+    border 0px solid black
+    transition-duration 0.5s
+
+  &:hover
+    .owl-prev, .owl-next
+      i
+        color link_color
+
+  .owl-prev
+    left 0px
+
+  .owl-next
+    right 0px
+
+  .owl-prev, .owl-next
+    i
+      transform scale(3)
+      color #888
+
+  .owl-item > a
+    display block
+    border 2px solid #ddd
+    padding-bottom 0.125em
+
+    &:hover
+      border 2px solid #666
+
+
+.banner
+  text-align center
+  padding 1em 0 0 0
+  margin-bottom 3em
+
+  .logo
+    font-size 60pt
+
+  .byline
+    color #444
+    font-size 18pt
+
+
+.front-content
+  margin auto
+  max-width content_width
+
+  img, video
+    text-align center
+    max-width 100%
+    display block
+    margin 2em 0
+
+  .clear
+    clear both
+
+  .img-left
+    float left
+    margin-right 4em
+
+  .img-right
+    float right
+    margin-left 4em
+
+  .img-left, .img-right
+    img
+      margin-top 0
+
+  section
+    clear both
+
+
+.cam-logos
+  float left
+  margin-right 10px
+  max-width 320px
+
+  img
+    display inline-block
+    margin 0 15px 15px 0
+
+
+@media (max-width: 500px)
+  #content
+    .owl-carousel img
+      height 200px
+
+    .front-content
+      .img-left
+        float none
+        margin-right inherit
+
+      .img-right
+        float none
+        margin-left inherit

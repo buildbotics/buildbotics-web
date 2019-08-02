@@ -1,0 +1,33 @@
+.table
+  border-collapse collapse
+
+  th
+    .fa-caret-up, .fa-caret-down
+      display none
+
+    .fa
+      width 1em
+
+  th.st-sort-ascent, th.st-sort-descent
+    .fa-caret-right
+      display none
+
+  th.st-sort-ascent .fa-caret-up
+    display inline-block
+
+  th.st-sort-descent .fa-caret-down
+    display inline-block
+
+.table-striped > thead
+  > tr:first-child > th
+    background-color table_header_color
+
+.table-striped > tbody
+  > tr:nth-child(odd) > td
+    background-color table_odd_color
+
+  > tr:nth-child(even) > td
+    background-color table_even_color
+
+  > tr:hover > td
+    background-color table_hover_color

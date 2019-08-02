@@ -1,0 +1,39 @@
+button
+  border 1px solid border_color
+  border-radius 3px
+  background-color #fcfcfc
+  background-image linear-gradient(#fcfcfc, #eee)
+  padding 4px
+  color link_color
+  cursor pointer
+  line-height 1.5em
+
+  &::-moz-focus-inner
+    border none
+
+  &:hover
+    color link_hover_color
+    background-color #ddd
+    background-image linear-gradient(#ececec, #ddd)
+
+  &.success
+    background #5cb85c
+    border-color #4cae4c
+    color #fff
+    transition 0.25s
+
+    &:hover
+      background #449d44
+      border-color #398439
+
+  &:disabled, &:hover:disabled, &.disabled, &.disabled:hover
+    background header_color
+    color light_text_color !important
+    border-color border_color
+    cursor default
+
+  > .fa
+    margin 0 0.25em
+
+p > button
+  margin 0 0.5em

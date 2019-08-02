@@ -1,0 +1,24 @@
+#footer
+  #footer-content
+    span.copyright
+      | &copy; 2014-
+      script document.write(new Date().getFullYear() + ' ')
+      | BuildBotics LLC.
+
+    = ' '
+    a.footer-nav(href="about.html") About
+    = ' '
+    a.footer-nav(href="contact.html") Contact
+    = ' '
+    a.footer-nav(href="https://forum.buildbotics.com/", target="_blank") Help
+    = ' '
+    a.footer-nav(href="projects.html") Projects
+
+  script(async,
+    src="https://www.googletagmanager.com/gtag/js?id=UA-57023811-3")
+
+  script.
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-57023811-3');

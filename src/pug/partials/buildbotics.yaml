@@ -1,0 +1,21 @@
+---
+"@context": http://schema.org
+"@id": "#buildbotics"
+"@type": Organization
+name: Buildbotics
+legalName: Buildbotics LLC
+identifier: buildbotics.com
+brand: Buildbotics
+logo: https://buildbotics.com/images/logo/buildbotics_logo-1024x1024.png
+url: https://buildbotics.com/
+email: info@buildbotics.com
+telephone: +1707-559-8539
+address:
+  "@type": PostalAddress
+  streetAddress: 523 6th Street
+  addressLocality: Petaluma
+  addressRegion: California
+  addressCountry: USA
+  postalCode: 94952
+  email: info@buildbotics.com
+  telephone: +1707-559-8539

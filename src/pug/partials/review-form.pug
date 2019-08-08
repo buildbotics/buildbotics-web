@@ -1,0 +1,36 @@
+form(action="/postreview.php" method="post")
+  fieldset
+    // Stars
+    div
+      label Rating #[small Required]
+      select(name="revrating")
+        option(value="") Select Rating
+        option(value="1") 1 star (worst)
+        option(value="2") 2 stars
+        option(value="3") 3 stars (average)
+        option(value="4") 4 stars
+        option(value="5") 5 stars (best)
+
+    // Name
+    div
+      label Name
+      input(name="revfromname" aria-required="true" type="text")
+
+    // Email
+    div
+      label Email #[small Required]
+      input(name="email" aria-required="false" type="text")
+
+    // Subject
+    div
+      label Review Subject #[small Required]
+      input(name="revtitle" aria-required="true" type="text")
+
+    // Comments
+    div
+      label Comments #[small Required]
+      textarea(name="revtext" rows="" aria-required="true")
+      input(value="Submit Review" type="submit")
+
+    input(name="product_id" value="113" type="hidden")
+    input(name="action" value="post_review" type="hidden")

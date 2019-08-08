@@ -7,16 +7,18 @@ PUG_DEPS   := $(DIR)/pug-deps
 HTML   := $(wildcard src/pug/*.pug)
 IMAGES := $(shell find src/images -type f)
 VIDEO  := $(wildcard src/video/*)
+STATIC := src/robots.txt
 
 HTML   := $(patsubst src/pug/%.pug,build/%.html,$(HTML))
 IMAGES := $(patsubst src/images/%,build/images/%,$(IMAGES))
 VIDEO  := $(patsubst src/video/%,build/video/%,$(VIDEO))
+STATIC := $(patsubst src/%,build/%,$(STATIC))
 
 WATCH  := src/pug src/stylus src/images src/video Makefile
 
 DEST   := root@buildbotics.com:/var/www/buildbotics.com/
 
-all: node_modules $(HTML) $(IMAGES) $(VIDEO)
+all: node_modules $(HTML) $(IMAGES) $(VIDEO) $(STATIC)
 
 node_modules:
 	npm install
@@ -24,7 +26,10 @@ node_modules:
 build/%.html: src/pug/%.pug
 	@mkdir -p $(shell dirname $@)
 	$(PUG) $< -o build || (rm -f $@; exit 1)
-	(echo -n "$@: "; $(PUG_DEPS) $<) > build/dep/$(shell basename $@)
+	(echo -n "$@: "; $(PUG_DEPS) $<) > dep/$(shell basename $@)
+
+build/sitemap.xml: $(HTML)
+	./makesitemap $(patsubst build/%,%,$(HTML)) >$@
 
 build/%: src/%
 	install -D $< $@
@@ -54,4 +59,4 @@ dist-clean: clean
 .PHONY: all watch tidy clean dist-clean
 
 # Dependencies
--include $(shell mkdir -p build/dep) $(wildcard build/dep/*)
+-include $(shell mkdir -p dep) $(wildcard dep/*)

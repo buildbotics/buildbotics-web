@@ -1,0 +1,441 @@
+---
+"@context": http://schema.org
+"@id": "#buildbotics-cnc-controller"
+"@type": IndividualProduct
+name: Buildbotics CNC Controller
+url: https://buildbotics.com/store
+mainEntityOfPage: https://buildbotics.com/
+logo: https://buildbotics.com/images/logo/buildbotics_logo-1024x1024.png
+brand:
+  "@type": Brand
+  name: Buildbotics
+  logo: https://buildbotics.com/images/logo/buildbotics_logo-1024x1024.png
+slogan: Take Control of your CNC Build or Conversion
+category: Business & Industrial > Automation Control Components
+weight: 6 lbs
+width: 12.25 in
+depth: 6 in
+height: 12.25 in
+sku: 1
+mpn: bbctrl-11
+model: 11
+itemCondition: https://schema.org/NewCondition
+description: |-
+  <div>
+    <h1>About the Buildbotic CNC Controller</h1>
+    <p>The Buildbotics CNC controller is a robust Open-Source controller for
+       stepper motor driven CNCs.</p>
+
+    <ul>
+      <li>Description No external computer needed</li>
+      <li>All control software included</li>
+      <li>Motor drivers are built-in</li>
+      <li>No need for Mach 3 or LinuxCNC</li>
+      <li>60 Day Money Back Guarantee</li>
+      <li>100% Open-Source</li>
+      <li>Your Purchase Supports CAMotics.</li>
+      <li>Features 4 stepper motor outputs (up to 6A each)</li>
+      <li>Control and configure from your web browser</li>
+      <li>Gamepad manual control</li>
+      <li>Remote video monitoring (optional)</li>
+      <li>Wired or wireless, WiFi network</li>
+      <li>4 USB ports</li>
+      <li>2 Switched load outputs</li>
+      <li>8 Limit switch inputs</li>
+      <li>PWM & RS485 (VFD) spindle control</li>
+      <li>Z-axis probe interface</li>
+      <li>250k steps/second on each motor output</li>
+      <li>12 to 36 volt input</li>
+      <li>Up to 1/256th microstepping</li>
+      <li>S-Curve path planning</li>
+      <li>Understands all common GCodes</li>
+      <li>3D Visualization of GCode paths</li>
+      <li>Accurate ETA and time estimates</li>
+      <li>Free CAMotics GCode verification software 100%</li>
+      <li>Open-Source And much more...</li>
+    </li>
+
+    <h2>60 Day Money-back Guarantee.</h2>
+    <p>
+      If you are not 100% satisfied, return the product to us within 60 days and
+      we will refund the purchase price.  Note, shipping costs will not be
+      refunded. Visible signs of abuse will void this guarantee.
+    </p>
+
+    <h2>Included The Buildbotics CNC Controller</h2>
+
+    <ul>
+      <li>A Logitech F310 gamepad for manual control</li>
+      <li>A DB25 breakout box for easy access to all I/O</li>
+      <li>4 x 10-foot motor cables</li>
+      <li>1 x DC power supply cable</li>
+      <li>2 x load switch cable stubs</li>
+    </ul>
+
+    <h2>Options</h2>
+    <ul>
+      <li>Mean Well GST280A24-C6P power supply (Fully enclosed 24 volt 280
+        Watt power supply)</li>
+      <li>Mean Well LRS-350-36 36V, 350 Watt power supply)</li>
+      <li>Logitech C270 USB web camera</li>
+    </ul>
+  </div>
+
+image:
+  -
+    "@type": ImageObject
+    caption: Buildbotics CNC Machine Controller with 60 Day Money Back Guarantee
+    contentUrl: https://cdn11.bigcommerce.com/s-hcslcwuadr/products/113/images/458/buildbotics_controller_with_guarantee__57068.1551430526.1280.1280.png
+  -
+    "@type": ImageObject
+    caption: Buildbotics CNC Machine Controller
+    contentUrl: https://buildbotics.com/images/buildbotics_controller_front_right_lit-600.png
+  -
+    "@type": ImageObject
+    caption: Buildbotics CNC Machine Controller with reflection
+    contentUrl: https://buildbotics.com/images/buildbotics_controller_with_reflection.png
+  -
+    "@type": ImageObject
+    caption: Buildbotics CNC Controller on Table
+    contentUrl: https://cdn11.bigcommerce.com/s-hcslcwuadr/products/113/images/434/buildbotics_controller_front_on_table__01746.1546167672.1280.1280.jpg
+  -
+    "@type": ImageObject
+    caption: Items Included with Buildbotics CNC Machine Controller
+    contentUrl: https://cdn11.bigcommerce.com/s-hcslcwuadr/products/113/images/432/buildbotics_included_items__00978.1546166775.1280.1280.png
+  -
+    "@type": ImageObject
+    caption: >-
+      Buildbotics CNC Machine Controller Optional MeanWell GST280A-C6P Power
+      Supply
+    contentUrl: https://cdn11.bigcommerce.com/s-hcslcwuadr/products/113/images/433/buildbotics_optional_meanwell__68799.1546166775.1280.1280.png
+  -
+    "@type": ImageObject
+    caption: >-
+      Buildbotics CNC Machine Controller Optional MeanWell LRS-350-36 Power
+      Supply
+    contentUrl: https://cdn11.bigcommerce.com/s-hcslcwuadr/products/113/images/465/LRS-350-36_Option__61005.1553445448.1280.1280.png
+  -
+    "@type": ImageObject
+    caption: >-
+      Buildbotics CNC Machine Controller Optional 36V Enclosed Power Supply
+    contentUrl: https://cdn11.bigcommerce.com/s-hcslcwuadr/products/113/images/466/36V_Enclosed_Power_Supply__60191.1553446119.1280.1280.png
+  -
+    "@type": ImageObject
+    caption: Buildbotics CNC Machine Controller Optional Items
+    contentUrl: https://cdn11.bigcommerce.com/s-hcslcwuadr/products/113/images/455/optional_pic__78172.1551380403.1280.1280.png
+  -
+    "@type": ImageObject
+    caption: Buildbotics CNC Machine Controller Web Interface
+    contentUrl: https://cdn11.bigcommerce.com/s-hcslcwuadr/products/113/images/435/buildbotics_web_interface__70203.1546169014.1280.1280.png
+  -
+    "@type": ImageObject
+    caption: Buildbotics CNC Machine Controller Motor Configuration
+    contentUrl: https://cdn11.bigcommerce.com/s-hcslcwuadr/products/113/images/437/buildbotics_motor_config__91157.1546169292.1280.1280.png
+  -
+    "@type": ImageObject
+    caption: Buildbotics CNC Machine Controller Tool Configuration
+    contentUrl: https://cdn11.bigcommerce.com/s-hcslcwuadr/products/113/images/438/buildbotics_tool_config__50435.1546169293.1280.1280.png
+  -
+    "@type": ImageObject
+    caption: Buildbotics CNC Machine Controller Indicators Page
+    contentUrl: https://cdn11.bigcommerce.com/s-hcslcwuadr/products/113/images/439/buildbotics_web_indicators__88917.1546169294.1280.1280.png
+  -
+    "@type": ImageObject
+    caption: Buildbotics CNC Machine Controller View of Connectors
+    contentUrl: https://cdn11.bigcommerce.com/s-hcslcwuadr/products/113/images/467/Controller_back__78773.1553446342.1280.1280.jpg
+  -
+    "@type": ImageObject
+    caption: Buildbotics CNC Machine Controller Enclosure Views
+    contentUrl: https://cdn11.bigcommerce.com/s-hcslcwuadr/products/113/images/427/buildbotics_enclosure__46680.1546166594.1280.1280.png
+  -
+    "@type": ImageObject
+    caption: Buildbotics CNC Machine Controller Enclosure Footprint
+    contentUrl: https://cdn11.bigcommerce.com/s-hcslcwuadr/products/113/images/428/buildbotics_footprint__93838.1546166596.1280.1280.png
+  -
+    "@type": ImageObject
+    caption: Buildbotics CNC Machine Controller I/O Breakout Box
+    contentUrl: https://cdn11.bigcommerce.com/s-hcslcwuadr/products/113/images/441/DB25_breakout_box__22486.1546169640.1280.1280.png
+  -
+    "@type": ImageObject
+    caption: Buildbotics CNC Machine Controller Logitech F310 Gamepad
+    contentUrl: https://cdn11.bigcommerce.com/s-hcslcwuadr/products/113/images/442/f310-gamepad__41019.1546169763.1280.1280.png
+  -
+    "@type": ImageObject
+    caption: Buildbotics CNC Machine Controller 60 Day Moneyback Guarantee
+    contentUrl: https://cdn11.bigcommerce.com/s-hcslcwuadr/products/113/images/457/guarantee__10682.1551430226.1280.1280.png
+
+hasProductReturnPolicy:
+  "@type": ProductReturnPolicy
+  productReturnDays: 60
+  productReturnLink: https://buildbotics.com/contact.html
+  refundType: [ReturnShippingFees, OriginalShippingFees]
+  returnPolicyCategory: ProductReturnFiniteReturnWindow
+
+manufacturer:
+  "@type": Organization
+  name: Buildbotics
+  legalName: Buildbotics LLC
+  identifier: buildbotics.com
+  brand: Buildbotics
+  logo: https://buildbotics.com/images/logo/buildbotics_logo-1024x1024.png
+  url: https://buildbotics.com/
+  email: info@buildbotics.com
+  telephone: +1707-559-8539
+  address:
+    "@type": PostalAddress
+    streetAddress: 523 6th Street
+    addressLocality: Petaluma
+    addressRegion: California
+    addressCountry: USA
+    postalCode: 94952
+    email: info@buildbotics.com
+    telephone: +1707-559-8539
+
+offers:
+  -
+    "@type": Offer
+    availability: http://schema.org/InStock
+    itemCondition: http://schema.org/NewCondition
+    url: https://buildbotics.com/store
+    price: 450.00
+    priceCurrency: USD
+    priceValidUntil: 2020-12-31
+    priceSpecification:
+      "@type": PriceSpecification
+      price: 450.00
+      priceCurrency: USD
+      validThrough: 2020-12-31
+      valueAddedTaxIncluded: http://schema.org/False
+    offeredBy:
+      "@type": Organization
+      name: Buildbotics
+      legalName: Buildbotics LLC
+      identifier: buildbotics.com
+      brand: Buildbotics
+      logo: https://buildbotics.com/images/logo/buildbotics_logo-1024x1024.png
+      url: https://buildbotics.com/
+      email: info@buildbotics.com
+      telephone: +1707-559-8539
+      address:
+        "@type": PostalAddress
+        streetAddress: 523 6th Street
+        addressLocality: Petaluma
+        addressRegion: California
+        addressCountry: USA
+        postalCode: 94952
+        email: info@buildbotics.com
+        telephone: +1707-559-8539
+
+aggregateRating:
+  "@type": AggregateRating
+  ratingValue: 5
+  ratingCount: 6
+  reviewCount: 6
+  bestRating: 5
+  worstRating: 5
+  ratingExplanation: >-
+    Ratings were provided Buildbotics customers via the online store
+  url: https://store.buildbotics.com/buildbotics-cnc-controller/#product-reviews
+
+review:
+  -
+    "@type": Review
+    reviewRating:
+      "@type": Rating
+      ratingValue: 5
+    author:
+      "@type": Person
+      name: Antoine Brabants
+      givenName: Antoine
+      familyName: Brabants
+    url: https://store.buildbotics.com/buildbotics-cnc-controller/#product-reviews
+    name: Excellent
+    reviewBody: |-
+      When I started to build my first DIY machine 3 months ago what I feared
+      the most was the controller part. This plug and play controller can
+      support large stepper motors, can control a VFD and have an user-friendly
+      interface.
+
+      I can only highly recommend this product and its customer service.
+
+      Greetings from Belgium,
+
+      Antoine
+
+  -
+    "@type": Review
+    reviewRating:
+      "@type": Rating
+      ratingValue: 5
+    author:
+      "@type": Person
+      name: Michael Rabin
+      givenName: Michael
+      familyName: Rabin
+    url: https://store.buildbotics.com/buildbotics-cnc-controller/#product-reviews
+    name: CNC Controller
+    reviewBody: |-
+      The Buildbotics CNC Controller is Amazing.  I have a CNC with a controller
+      built by another company and it is like comparing a cadillac to a chevy,
+      both will get you there but there is a world of difference in the ride.
+      I have thrown y old controller away.  The buildbotics comes with local
+      network wifi compatibility so you can control the controller from
+      anywhere in the house.  This is a huge advantage since no one wants to
+      sit in a room with all the sawdust, noise and laser smoke.  Most
+      controllers lack PWM (Pulse Width Modulation) but the buildbotics comes
+      with it standard.  PWM allows you to modify your CNC to use a LED laser
+      at its fullest capability to burn pictures that are accurate and true- on
+      request I can send some pictures I have burned.  The setup and controls
+      are intuitive and well designed.  You can tell a lot of thought went into
+      its design, for instance, the control screen gives you both the time the
+      machine will finish the cut/laser as well as a countdown until it is
+      done- and it is totally accurate.  It also has an onscreen mockup that
+      will show the machine cutting/lasering the proposed project.  It will
+      tell you the percentage of completion and it comes with a game controller
+      which makes moving the spindle/laser to the right spot a breeze.   It
+      also seems to control the motors in a much smoother fashion then my old
+      controller.  It comes with the optional add-on camera (which I recommend
+      purchasing)so you can see precisely what is happening.  If you use this
+      for a laser it is comforting to know that the house isn\'t burning down.
+      Technical support is also phenomenal.  Doug will spend any length of time,
+      at virtually anytime of the day to help solve any issues you might be
+      experiencing.  I recommend this unit without reservation.  It is well
+      worth the money and hard to appreciate until you actual use it.
+
+  -
+    "@type": Review
+    reviewRating:
+      "@type": Rating
+      ratingValue: 5
+    author:
+      "@type": Person
+      name: Randy
+      givenName: Randy
+    url: https://store.buildbotics.com/buildbotics-cnc-controller/#product-reviews
+    name: Better with Buildbotics
+    reviewBody: |-
+      I am totally impressed with your Buildbotics controller.   I have been
+      looking for a solution to replace the controller for my 6040T CNC machine
+      for several months and feel I have found the perfect solution.  My CNC
+      machine itself works well, but the stock controller is poorly constructed
+      and leaves a lot to be desired in functionality.  I looked at a number of
+      different solutions, but I was not finding anything that would both
+      replace what I had, without having to connect a jumble of \'things\'
+      together, and also simplify the work flow.
+
+      When I found the Buildbotics controller, I was skeptical at first and had
+      a few questions which were quickly answered by Doug.  Based upon that
+      discussion, I decided to make the purchase.  I received the controller in
+      a couple of days and was able to get it setup within a few hours (most of
+      the time was spent adapting the cables to my machine.)
+
+      After running it through its paces, I am very happy with the controller
+      and pleasantly surprised at how much better my 3 year old CNC machine is
+      running.  The Buildbotics controller resolved a couple of issues with the
+      stock controller and the various software packages that I have been
+      dealing with for years.  With one of the software packages, it would slow
+      down to the point of burning or leaving an indent when transitioning
+      between a line and an arc requiring extra time to sand out.  An
+      additional issue I dealt with was when the steppers were cold (< 50
+      degrees) they would miss steps or not even move (sort of vibrate back and
+      forth) when the feed rate was less than 200 mm/minute, which created an
+      even bigger mess.
+
+      The Buildbotics controller runs at an almost constant feed rate which
+      leaves a much smoother finish and more importantly requires less sanding.
+      I also tested when the steppers were below 40 degrees at a feed rate of
+      25 mm/minute and it did not miss a step.  The stepper motors run quieter
+      and seem to run cooler, and my system now has a better and more confident
+      feel.
+
+      I have also found that having the software, hardware, and stepper drivers
+      in a single package eliminates the complexity and compatibility issues I
+      previously experienced.  Being able to control it from a web page on the
+      same system where I do my design work eliminates a lot of steps (both
+      back and forth to the garage and in the workflow.)  I am sure I will find
+      a lot more to love about this controller as I continue to use it.  From
+      my experience, I would highly recommend this controller, and the guys at
+      Buildbotics have been great to work with. They are extremely responsive
+      and knowledgeable - a pleasantly unique experience in this industry.
+  -
+    "@type": Review
+    reviewRating:
+      "@type": Rating
+      ratingValue: 5
+    author:
+      "@type": Person
+      name: Joe - Gainesville, GA
+      givenName: Joe
+      homeLocation: Gainesville, GA
+    url: https://store.buildbotics.com/buildbotics-cnc-controller/#product-reviews
+    name: Excellent Quality and Service
+    reviewBody: |-
+      After a lot of internet searches and chat room conversations I felt that
+      your product should be the easiest to use. Being new at retrofits, I
+      didn\'t want something complicated. I have to say I was more than
+      impressed at the ease of assembly and a lower price than the diy kits!
+      It took longer to haul the old monitor out of the closet than to set up
+      the steppers. Not only did everything work as promised, but the service
+      was excellent! I ordered my unit and it was shipped that morning!
+
+      I expect to see great things from such a service and quality oriented
+      business!
+
+  -
+    "@type": Review
+    reviewRating:
+      "@type": Rating
+      ratingValue: 5
+    author:
+      "@type": Person
+      name: Xin Yu
+      givenName: Xin
+      familyName: Yu
+      homeLocation: Michigan
+    name: Best CNC controller
+    reviewBody: |-
+      I bought a used Dyna Myte 2400 mini CNC milling machine couple weeks ago
+      but found out later that the controller doesn\'t have its computer
+      software and the company is out of business. I decided to update the
+      controller and after some internet search found that buildbotics
+      controller is very capable. I asked customer service some questions
+      before I bought and Doug was extremely helpful and told me what the
+      controller can and cannot do. Also some useful tips. So I ordered it and
+      two days later I got it in my mailbox. The machine also come with pre
+      made cables that are very easy to connect. I had experience with other
+      DIY CNC controller and it usually have a separate break out board and
+      driver board which is a nightmare to mount everything together. The
+      buildbotics controller is super clean after all the wiring because of a
+      single unit controller. Also I found that the game pad is very handy to
+      jog around the axes. The biggest surprise to me is how the remote web
+      browser works, it is extremely easy to setup and control. So definitely
+      recommend buildbotics controller for CNC control!
+
+      Also I want mention that Doug was extremely helpful and patient, I am not
+      a very experienced CNC machine guy but with Doug\'s instruction and
+      wiring diagram, I felt the whole conversion process requires much less
+      effort and time. I spent 4 hours to wire everything on my Dyna and half
+      hour to setup the buildbotics controller. I couldn\'t done that without
+      Doug\'s help. Thank you Doug!
+
+      After all my Dyna was alive again and I tested it using the sample G code
+      from buildbotics. And everything is good as what it should be. I felt
+      great to see the old machine becoming very capable with buildbotics
+      controller.  Thank you buildbotics for the great CNC controller!
+
+      Xin from Michigan.
+
+  -
+    "@type": Review
+    reviewRating:
+      "@type": Rating
+      ratingValue: 5
+    author:
+      "@type": Person
+      name: Jack
+      givenName: Jack
+    url: https://store.buildbotics.com/buildbotics-cnc-controller/#product-reviews
+    name: Awesome Controller and Even Better Support
+    reviewBody: |-
+      This thing is great! Any issues or questions I\'ve had have been resolved
+      very quickly and the the controller software just keeps getting better!

@@ -1,0 +1,22 @@
+{
+  "@context": "http://schema.org",
+  "@id": "#buildbotics-cnc-controller",
+  "@type": "IndividualProduct",
+  "name": "Buildbotics CNC Controller",
+  "brand": "Buildbotics",
+  "description":
+    "A robust Open-Source controller for stepper motor driven CNCs.",
+  "image": [
+    "https://buildbotics.com/images/buildbotics_controller_front_right_lit-600.png",
+    "https://buildbotics.com/images/buildbotics_controller_with_reflection.png"
+  ],
+  "sku": "1",
+  "offers": {
+    "@type": "Offer",
+    "availability": "http://schema.org/InStock",
+    "url": "https://buildbotics.com/store",
+    "price": "450.00",
+    "priceCurrency": "USD",
+    "priceValidUntil": "2020-12-31"
+  }
+}

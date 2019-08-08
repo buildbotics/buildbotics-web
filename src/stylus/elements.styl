@@ -48,3 +48,16 @@ body
 
 .help
   color medium_text_color
+
+.mobile-only
+  display none !important
+
+.desktop-only
+  cursor default
+
+@media (max-width: 500px)
+  .desktop-only
+    display none !important
+
+  .mobile-only
+    display initial !important

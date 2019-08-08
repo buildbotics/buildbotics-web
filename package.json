@@ -5,6 +5,7 @@
   "dependencies": {
     "pug-cli": "",
     "jstransformer-stylus": "",
+    "jstransformer-yaml": "",
     "jshint": "",
     "stylus": ""
   }

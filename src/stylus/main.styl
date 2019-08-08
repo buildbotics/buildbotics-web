@@ -70,6 +70,9 @@
   margin auto
   max-width content_width
 
+  h1
+    margin-top 0.5em
+
   img, video
     text-align center
     max-width 100%
@@ -82,10 +85,12 @@
   .img-left
     float left
     margin-right 4em
+    clear left
 
   .img-right
     float right
     margin-left 4em
+    clear right
 
   .img-left, .img-right
     img
@@ -93,6 +98,14 @@
 
   section
     clear both
+    margin 6em 0
+    padding 4em
+
+    &:nth-of-type(even)
+      background #eaeaea
+
+    &:nth-of-type(odd)
+      background #f7f7f7
 
 
 .cam-logos
@@ -105,19 +118,20 @@
     margin 0 15px 15px 0
 
 
+@media (max-width: 650px)
+  .front-content
+    .img-left, .img-right
+      float none
+      margin-left inherit
+      margin-right inherit
+
+    section
+      margin 3em 0
+
 @media (max-width: 500px)
   #content
     .owl-carousel img
       height 200px
-
-    .front-content
-      .img-left
-        float none
-        margin-right inherit
-
-      .img-right
-        float none
-        margin-left inherit
 
     .banner
       img:first-of-type

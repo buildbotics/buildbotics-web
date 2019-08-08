@@ -3,7 +3,7 @@
 echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
 
 for PAGE in $@; do
-    TS=$(date -u -Iseconds -d "$(stat -c %y build/$PAGE)")Z
+    TS=$(date -u -Iseconds -d "$(stat -c %y build/$PAGE)")
     echo '  <url>'
     echo '    <loc>https://buildbotics.com/'$PAGE'</loc>'
     echo '    <lastmod>'$TS'</lastmod>'

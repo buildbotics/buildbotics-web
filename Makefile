@@ -18,7 +18,7 @@ WATCH  := src/pug src/stylus src/images src/video Makefile
 
 DEST   := root@buildbotics.com:/var/www/buildbotics.com/
 
-all: node_modules $(HTML) $(IMAGES) $(VIDEO) $(STATIC)
+all: node_modules $(HTML) $(IMAGES) $(VIDEO) $(STATIC) build/sitemap.xml
 
 node_modules:
 	npm install
@@ -28,7 +28,7 @@ build/%.html: src/pug/%.pug
 	$(PUG) $< -o build || (rm -f $@; exit 1)
 	(echo -n "$@: "; $(PUG_DEPS) $<) > dep/$(shell basename $@)
 
-build/sitemap.xml: $(HTML)
+build/sitemap.xml: $(HTML) makesitemap
 	./makesitemap $(patsubst build/%,%,$(HTML)) >$@
 
 build/%: src/%

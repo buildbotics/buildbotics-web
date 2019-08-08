@@ -6,7 +6,7 @@
     .right botics
 
   .byline Take Control of your CNC Build or Retrofit
-  img(src="images/buildbotics_anatomy-20190306.png")
+  img(src="images/buildbotics_anatomy-20190306.png", width="550")
 
 .owl-carousel
   a(href="matt_d-jet.html")
@@ -46,13 +46,93 @@
     div Dyna Myte 2400 Retrofit
 
 .front-content
+  section
+    .img-right
+      img(src="images/buildbotics_controller_front_right_lit-small.png",
+        width="300")
+    h1 What is the Buildbotics Controller?
+    p.
+      The Buildbotics controller is a fully enclosed smart CNC machine
+      controller with built-in Web interface and advanced GCode processor.
+      It can control up to 4 stepper motors and a PWM or VFD controlled tool
+      such as a router spindle, LASER or plasma torch.
+    .clear
+
+  section
+    .img-right
+      img(src="images/gcode.png", width="200")
+    h1 What is GCode?
+    p.
+      GCode is the language accepted by most CNCs.  It tells your CNC how to
+      move, at what speed and when to turn the tool on and off.
+    .clear
+
+  section
+    .img-right
+      img(src="images/stepper-motor.png", height="150")
+    h1 What is a Stepper Motor?
+    p.
+      A stepper motor is a special type of motor that moves in steps.  This
+      makes it possible to precisely position your CNC machine and accurately
+      return to the same postion later on.
+    .clear
+
+  section
+    .img-right
+      img(src="images/spindle.png", height="150")
+    h1 What is a Spindle?
+    p.
+      A spindle uses its built-in motor to rotate a cutting tool at high
+      speeds.  Spindles are normally controlled with either PWM signals or
+      a VFD.
+    .clear
+
+  section
+    .img-right
+      img(src="images/pwm_spindle.png", height="150")
+    h1 What is PWM?
+    p.
+      PWM stats for Pulse Width Modulation.  It is used by both spindles and
+      LASERs drivers to control speed or intensity.  The Buildbotics CNC
+      controller can produce a PWM signal to control these types of tool.
+    .clear
+
+  section
+    .img-right
+      img(src="images/vfd_and_spindle.png", height="150")
+    h1 What is a VFD?
+    p.
+      VFD stands for Variable Frequency Drive.  It is used to control high
+      speed "three phase" CNC spindles.  The Buildbotics controller can
+      control most VFDs either using an RS485 control line or with PWM.
+    .clear
+
+  section
+    h1 What is S-Curve Acceleration?
+    p.
+      S-Curve acceleration is an advanced motion planning algorthm which
+      smooths out CNC movement.  Most CNC controllers use trapizodial
+      acceleration which is much simpler but results in jerky movement that
+      produces cuts which are less clean and increases wear and tear on both
+      tools and the CNC machine itself.
+    img(src="images/scurve.png", width="600")
+    .clear
+
+  section
+    h1 Have other questions?
+    p.
+      Email
+      (#[a(href="mailto:info@buildbotics.com") info@buildbotics.com]) or call
+      us (707-559-8539).  We'd be happy to help.
+    .clear
+
   include ./buy.pug
 
   section
-    h1 Try the Software Online
     .img-right
       a(href="https://demo.buildbotics.com/", target="_blank")
         img(src="images/buildbotics_web_interface.jpg")
+    h1 Try our Software Online
     p.
       Make your CNC incredibly easy to use with the Buildbotics controller's
       intuitive software.
@@ -66,6 +146,7 @@
       real Buildbotics CNC controller.
 
     p See what it's like to configure motor, tool and limit switch settings.
+    .clear
 
   include ./mailinglist.pug
 
@@ -82,6 +163,7 @@
       Fusion 360, Mastercam, VCarve, BobCAD, MeshCAM, CamBam, and many others.
       Test your GCode for Buildbotics compatibility for free with
       #[a(href="https://camotics.org/") CAMotics].
+    .clear
 
   section
     h1 Built-in Stepper Drivers
@@ -95,14 +177,13 @@
       li Smooth S-curve acceleration
       li Step rates up to 250k/sec per channel.
 
-    .clear
-
     p.
       Drive most NEMA 17, NEMA 23 and NEMA 34 motors. Preliminary support for
       4th axis as a rotary axis. The fourth driver can be synchronized to drive
       a single axis with two motors.
       #[a(href="recommended-motors.html") Click here] for a list of some motors
       we recommend.
+    .clear
 
   section
     h1 Reliable Electronics
@@ -119,9 +200,10 @@
       li Reverse voltage
       li Short-circuit
       li Voltage spikes caused by motor stalls
+    .clear
 
   section
-    h1 Stay Cool even without a Fan
+    h1 Stays Cool even without a Fan
     .img-left: img(src="images/cool_without_fan.png")
 
     p.
@@ -130,6 +212,7 @@
       Buildbotics controller stays cool, without a fan, even while driving 6A
       motor loads. Going fan-less not only eliminates noise but also avoids
       sucking in dust and debris.
+    .clear
 
   section
     h1 Dedicated Computer #[b not] Required
@@ -141,15 +224,17 @@
       will run smoothly and uninterrupted.
 
     p Even very large GCode programs run without support from a remote computer.
+    .clear
 
   section
     h1 Fast, Smooth & Accurate Stepping
-    .img-left: img(src="images/stepdir.gif")
+    .img-left: img(src="images/stepdir.png")
 
     p.
       Get maximum performance and accuracy from your CNC. The Buildbotics
       controller achieves smooth step rates up to #[i 250,000 per second]
       allowing you to use up to 256 microstepping at high speeds.
+    .clear
 
   section
     h1 Wired or WiFi Networking
@@ -158,6 +243,7 @@
       a browser over your local network or WiFi.  A whole network of
       Buildbotics controllers can be managed from a single computer.
     img(src="images/buildbotics_network.png")
+    .clear
 
   section
     h1 Free Simulation Software
@@ -175,6 +261,7 @@
     video(autoplay="", loop="", width="600")
       source(src="video/camotics.mp4", type="video/mp4")
     .caption CAMotics Open-Source CNC simulator
+    .clear
 
   section
     h1 RaspberryPi 3 Inside
@@ -182,6 +269,7 @@
       The built-in Raspberry Pi 3 running Linux on a 16GiB microSD card
       provides massive potential for building your next big idea.  Install
       additional software or use Python to implement your own features.
+    .clear
 
   section
     a(name="docs")
@@ -198,6 +286,7 @@
       li: a(target="_blank", href=quick_start) Quick Start Guide
       li: a(target="_blank", href=datasheet) Datasheet
       li: a(target="_blank", href="https://docs.buildbotics.com/") User Manual
+    .clear
 
   include ./buy.pug
 
@@ -207,46 +296,52 @@
       Get a hold of #[b a real person] when you need to. We provide technical
       support by #[a(href="mailto:info@buildbotics.com") email], phone or via
       #[a(href="//forum.buildbotics.com/") the Buildbotics forum].
+    .clear
 
   section
     h1 Tool Control
-    .img-right: img(src="images/spindles.png")
+    img(src="images/spindles.png")
     p.
       The PWM, enable and direction outputs can be used to control a wide
       array of tool heads. The RS485 connection drives high-speed VFD
       controlled air or water cooled spindles over two wires.
+    .clear
 
   section
     a(name="breakout")
-    h1 I/O Breakout Box Included
     .img-right: img(src="images/DB25_breakout_box.png", width="200")
+    h1 I/O Breakout Box Included
     p.
       Limit switches, Z-axis probing, PWM spindle control, RS-485 spindle
       control, and e-stop switches can be easily connected via the included
       25-pin I/O breakout board using simple screw terminals.
+    .clear
 
   section
     h1 Power Supply Options
-    .img-right: img(src="images/power_supplies.png")
+    img(src="images/power_supplies.png")
     p.
       Connect any power supply which outputs 12-36v DC with at least 6A using
       the included power cable or buy the Mean Well GST280A-C6P power adapter
       on our store for a totally enclosed fan-less option.
+    .clear
 
   section
     h1 Cables Included
-    .img-right: img(src="images/cables.png")
+    img(src="images/cables.png")
     p.
       The Buildbotics controller comes with time saving pre-made cables for
       connecting stepper motors, power supplies and load switches.
+    .clear
 
   section
     h1 USB Devices
-    .img-right: img(src="images/usb_devs.png")
+    img(src="images/usb_devs.png")
     p.
       The included #[b gamepad] is used to jog the machine's axes and
       navigate menus on the LCD screen.  With an optional #[b USB camera] you
       can keep an eye on your CNC from a Web browser or smart phone.
+    .clear
 
   section
     h1 Networking Options
@@ -257,10 +352,11 @@
       Wired Ethernet provides reliable network communication even in noisy
       environments. The built-in WiFi can also be used to put your CNC on the
       network.
+    .clear
 
   section
     h1 Switch External Loads
-    .img-right: img(src="images/load_switch.png")
+    .img-right: img(src="images/load_switch.png", width="400")
     p
       | Two load switches, each capable of supplying up to 15A can power
       | heated beds for 3D printers, extruders, vacuum tables or whatever else
@@ -268,20 +364,21 @@
       a(href="https://www.amazon.com/s/?field-keywords=solid+state+relay") SSR
       |  switch can be used.  External relays can be used for higher amp
       | DC loads.
+    .clear
 
   section
     h1 Aluminum Enclosure
-    .img-right: img(src="images/enclosure.png")
+    img(src="images/enclosure.png")
+    .img-right: img(src="images/buildbotics_enclosure_base.png")
     p.
       By carefully considering heat throughout the design process the
       Buildbotics controller dissipates heat through its fan-less aluminum
       enclosure without sucking in metal or wood shavings.
 
-    .clear
-    .img-right: img(src="images/buildbotics_enclosure_base.png")
     p.
       Four screw holes allow the enclosure to be easily mounted on or near
       the machine.
+    .clear
 
   section
     h1 Tested
@@ -306,6 +403,7 @@
       li: a(href="dynamyte_2400.html") The Dyna Myte 2400 CNC Mill
       li: a(href="k40.html") The K40-3020 LASER Cutter
       li: a(href="dougs-cnc.html") Doug's custom CNC router
+    .clear
 
   section
     h1 100% Open-Source
@@ -331,6 +429,7 @@
         a(href="https://github.com/buildbotics/bbctrl-enclosure")
           | Enclosure designs
         | .
+    .clear
 
   include ./buy.pug
   include ./mailinglist.pug

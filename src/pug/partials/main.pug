@@ -5,7 +5,7 @@
     .left Build
     .right botics
 
-  .byline Take Control of your CNC Build or Retrofit
+  .byline Take Control of your CNC
   img(src="images/buildbotics_anatomy-20190306.png", width="550")
 
 .owl-carousel
@@ -63,7 +63,7 @@
       img(src="images/gcode.png", width="200")
     h1 What is GCode?
     p.
-      GCode is the language accepted by most CNCs.  It tells your CNC how to
+      GCode is the language understood by most CNCs.  It tells your CNC how to
       move, at what speed and when to turn the tool on and off.
     .clear
 
@@ -73,18 +73,17 @@
     h1 What is a Stepper Motor?
     p.
       A stepper motor is a special type of motor that moves in steps.  This
-      makes it possible to precisely position your CNC machine and accurately
-      return to the same postion later on.
+      makes it possible to precisely position your CNC machine.
     .clear
 
   section
     .img-right
       img(src="images/spindle.png", height="150")
-    h1 What is a Spindle?
+    h1 What is a CNC Spindle?
     p.
-      A spindle uses its built-in motor to rotate a cutting tool at high
-      speeds.  Spindles are normally controlled with either PWM signals or
-      a VFD.
+      A CNC spindle is a high speed motor with a tool holder or chuck.
+      CNC spindles are normally controlled with either a PWM enabled driver or
+      VFD.
     .clear
 
   section
@@ -92,9 +91,10 @@
       img(src="images/pwm_spindle.png", height="150")
     h1 What is PWM?
     p.
-      PWM stats for Pulse Width Modulation.  It is used by both spindles and
-      LASERs drivers to control speed or intensity.  The Buildbotics CNC
-      controller can produce a PWM signal to control these types of tool.
+      PWM stats for Pulse Width Modulation.  Pulses of different widths are
+      sent over a wire to control the speed or intensity of CNC spindles or
+      LASERs driver.  The Buildbotics controller can output tightly controlled
+      PWM signals.
     .clear
 
   section
@@ -110,11 +110,11 @@
   section
     h1 What is S-Curve Acceleration?
     p.
-      S-Curve acceleration is an advanced motion planning algorthm which
-      smooths out CNC movement.  Most CNC controllers use trapizodial
+      S-Curve acceleration is an advanced motion planning algorithm which
+      smooths out CNC movement.  Most CNC controllers use trapezoidal
       acceleration which is much simpler but results in jerky movement that
-      produces cuts which are less clean and increases wear and tear on both
-      tools and the CNC machine itself.
+      produces rough cuts and increases wear and tear on both tools and the CNC
+      machine itself.
     img(src="images/scurve.png", width="600")
     .clear
 
@@ -129,10 +129,22 @@
   include ./buy.pug
 
   section
+    h1 Check out our Reviews
+    .img-right
+      a.reviews(href="store/#product-reviews", target="_blank")
+        img(src="images/reviews.png")
+    p.
+      Many of our customers have built new CNCs, converted old ones or
+      revamped their existing machines using the Buildbotics CNC controller.
+      Check out their
+      #[a(href="store/#product-reviews", target="_blank") reviews] to see
+      what some of them have to say.
+
+  section
+    h1 Test your GCode Online
     .img-right
       a(href="https://demo.buildbotics.com/", target="_blank")
         img(src="images/buildbotics_web_interface.jpg")
-    h1 Try our Software Online
     p.
       Make your CNC incredibly easy to use with the Buildbotics controller's
       intuitive software.
@@ -180,9 +192,8 @@
     p.
       Drive most NEMA 17, NEMA 23 and NEMA 34 motors. Preliminary support for
       4th axis as a rotary axis. The fourth driver can be synchronized to drive
-      a single axis with two motors.
-      #[a(href="recommended-motors.html") Click here] for a list of some motors
-      we recommend.
+      a single axis with two motors.  Here's a list of some
+      #[a(href="recommended-motors.html") motors we recommend].
     .clear
 
   section
@@ -203,7 +214,19 @@
     .clear
 
   section
-    h1 Stays Cool even without a Fan
+    h1 Awesome Technical Support
+    p.
+      Get a hold of #[b a real person] when you need to. We provide technical
+      support by #[a(href="mailto:info@buildbotics.com") email], phone or via
+      #[a(href="//forum.buildbotics.com/") the Buildbotics forum].
+
+    p.
+      Check out #[a(href="store/#product-reviews", target="_blank") our reviews]
+      to see just how much our customers love our technical support.
+    .clear
+
+  section
+    h1 Stay Cool without a Fan
     .img-left: img(src="images/cool_without_fan.png")
 
     p.
@@ -219,11 +242,13 @@
     .img-left: img(src="images/no_mach3_or_linuxcnc.png")
 
     p.
-      A finely tuned PC running Mach or LinuxCNC is #[b not] needed.  All of
-      the control software is built in so you can be sure that your CNC
-      will run smoothly and uninterrupted.
+      A finely tuned PC running Mach or LinuxCNC is #[b not] needed.  You can
+      access the Buildbotics controller's built-in software from any of your
+      devices and be sure that your CNC will run smoothly and uninterrupted.
 
-    p Even very large GCode programs run without support from a remote computer.
+    p.
+      You can even try out your GCodes online with our
+      #[a(href="//demo.buildbotics.com/", target="_blank") free demo software].
     .clear
 
   section
@@ -234,6 +259,22 @@
       Get maximum performance and accuracy from your CNC. The Buildbotics
       controller achieves smooth step rates up to #[i 250,000 per second]
       allowing you to use up to 256 microstepping at high speeds.
+    .clear
+
+  section
+    h1 USB Gamepad Control
+    img(src="images/buildbotics_gamepad_controls.png")
+    p.
+      Setup up cuts with ease and agility using the included gamepad.
+    .clear
+
+  section
+    h1 Remote Monitoring with USB Camera
+    .img-right
+      img(src="images/logitech_C615-2.png")
+    p.
+      With the optional USB camera you can keep an eye on your CNC from
+      anywhere using a Web browser or smartphone.
     .clear
 
   section
@@ -253,50 +294,26 @@
       simulation software to test your GCode before you run it.
 
     p.
-      The #[a(href="https://camotics.org/", target="_blank") CAMotics] CNC
+      The #[a(href="//camotics.org/", target="_blank") CAMotics] CNC
       simulator computes 3D cut previews from GCode.  CAMotics can also send
       GCode directly to the Buildbotics controller over the network and track
       the machine position while it runs.
 
-    video(autoplay="", loop="", width="600")
-      source(src="video/camotics.mp4", type="video/mp4")
-    .caption CAMotics Open-Source CNC simulator
+    a(href="//camotics.org", target="_blank")
+      video(autoplay="", loop="", width="600")
+        source(src="video/camotics.mp4", type="video/mp4")
     .clear
 
   section
     h1 RaspberryPi 3 Inside
+    .img-right: img(src="images/raspberrypi3.png")
     p.
       The built-in Raspberry Pi 3 running Linux on a 16GiB microSD card
       provides massive potential for building your next big idea.  Install
       additional software or use Python to implement your own features.
     .clear
 
-  section
-    a(name="docs")
-    h1 Documented
-    p.
-      Good documentation is essential.  We are still working on perfecting our
-      documentation and will continue to do so.  Stay tuned for tutorials
-      on CNC building with the Buildbotics controller.
-
-    - var doc_url = "//buildbotics.com/upload/buildbotics_cnc_controller-"
-    - var quick_start = doc_url + "quick_start_guide-20190410.pdf"
-    - var datasheet = doc_url + "datasheet-draft-20171226.pdf"
-    ul
-      li: a(target="_blank", href=quick_start) Quick Start Guide
-      li: a(target="_blank", href=datasheet) Datasheet
-      li: a(target="_blank", href="https://docs.buildbotics.com/") User Manual
-    .clear
-
   include ./buy.pug
-
-  section
-    h1 Supported
-    p.
-      Get a hold of #[b a real person] when you need to. We provide technical
-      support by #[a(href="mailto:info@buildbotics.com") email], phone or via
-      #[a(href="//forum.buildbotics.com/") the Buildbotics forum].
-    .clear
 
   section
     h1 Tool Control
@@ -335,35 +352,18 @@
     .clear
 
   section
-    h1 USB Devices
-    img(src="images/usb_devs.png")
-    p.
-      The included #[b gamepad] is used to jog the machine's axes and
-      navigate menus on the LCD screen.  With an optional #[b USB camera] you
-      can keep an eye on your CNC from a Web browser or smart phone.
-    .clear
-
-  section
-    h1 Networking Options
-    .img-right
-      video(autoplay="", loop="", width="400")
-        source(src="video/network_blink.mp4", type="video/mp4")
-    p.
-      Wired Ethernet provides reliable network communication even in noisy
-      environments. The built-in WiFi can also be used to put your CNC on the
-      network.
-    .clear
-
-  section
-    h1 Switch External Loads
+    h1 Built-in Load Switches
     .img-right: img(src="images/load_switch.png", width="400")
-    p
-      | Two load switches, each capable of supplying up to 15A can power
-      | heated beds for 3D printers, extruders, vacuum tables or whatever else
-      | you can think of.  For AC loads an inexpensive
-      a(href="https://www.amazon.com/s/?field-keywords=solid+state+relay") SSR
-      |  switch can be used.  External relays can be used for higher amp
-      | DC loads.
+    p.
+      Two load switches, each capable of supplying up to 15A can power
+      heated beds for 3D printers, extruders, vacuum tables or whatever else
+      you can think of.
+
+    p.
+      For AC loads, an inexpensive
+      #[a(href="//amazon.com/s/?field-keywords=solid+state+relay") SSR]
+      switch can be used.  External relays can be used for higher amp
+      DC loads.
     .clear
 
   section
@@ -381,17 +381,34 @@
     .clear
 
   section
+    a(name="docs")
+    h1 Documentation
+    p.
+      Good documentation is essential.  We are still working on perfecting our
+      documentation and will continue to do so.  Stay tuned for tutorials
+      on CNC building with the Buildbotics controller.
+
+    - var doc_url = "//buildbotics.com/upload/buildbotics_cnc_controller-"
+    - var quick_start = doc_url + "quick_start_guide-20190410.pdf"
+    - var datasheet = doc_url + "datasheet-draft-20171226.pdf"
+    ul
+      li: a(target="_blank", href=quick_start) Quick Start Guide
+      li: a(target="_blank", href=datasheet) Datasheet
+      li: a(target="_blank", href="https://docs.buildbotics.com/") User Manual
+    .clear
+
+  section
     h1 Tested
     p.
       The Buildbotics controller has been successfully tested in many CNC builds
       both by us and our customers.
 
     img(src="images/cncs_we_built.png")
-    var youtube_ch = "//youtube.com/channel/UC_onc2im9IrG1RxJ3CZnArw"
+    - var youtube_ch = "//youtube.com/channel/UC_onc2im9IrG1RxJ3CZnArw"
     p.
       We filmed the construction of a Taig CNC mill, an OX CNC router, a K40
       LASER upgrade and a Dyna Myte 2400 retrofit. Check out the videos on our
-      #[a(href=youtube_ch) Youtube channel].
+      #[a(href=youtube_ch, target="_blank") Youtube channel].
     p.
       Check out some of machines we've build with the Buildbotics CNC
       controller.
@@ -406,13 +423,13 @@
     .clear
 
   section
-    h1 100% Open-Source
+    h1 Source Code, Schematics & PCB layout
     img(src="images/dev.png")
     p.
       Welcome, software and hardware developers.  We’ve already
       implemented a lot of cool features but we have not even scratched the
       surface of what this controller could do. That is why we’ve made
-      #[b everything]
+      #[b everything 100%]
       #[a(href="https://opensource.org/osd-annotated") Open-Source].
 
     p Here’s what you can find on GitHub:

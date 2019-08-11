@@ -1,0 +1,151 @@
+article
+  section
+    .img-right
+      img(src="images/steppers2.png")
+    h1 All about Stepper Motors
+    p.
+      A stepper motor is a motor that moves in steps.  There are multiple coils
+      or "phases" inside the motor that must be energized in sequence to rotate
+      the motor.  This makes them particularly good the accurate and repeatable
+      positioning required for CNC, LASER and 3D printing applications.
+
+  // Mechanical
+  section
+    .img-right
+      img(src="images/stepper_size_diagram.png")
+    h1 NEMA Frame Sizes
+    p.
+      Stepper motor frame sizes are standardized by the NEMA system.  Here
+      are the dimensions of the square mounting face of several commone NEMA
+      stepper motor sizes:
+
+    table.nema
+      tr
+        th NEMA
+        th Imperial
+        th Metric
+      tr
+        td 17
+        td 1.7"
+        td 43.18mm
+      tr
+        td 23
+        td 2.3"
+        td 58.42mm
+      tr
+        td 34
+        td 3.4"
+        td 86.36mm
+      tr
+        td 42
+        td 4.2"
+        td 106.68mm
+
+    p.
+      Check out the full
+      #[a(href="docs/stepper_motor_nema_spec-ics16.pdf") NEMA ICS16]
+      specification for more details.
+
+  section
+    h1 Shaft Diameter
+
+  section
+    h1 Couplers
+
+  section
+    .img-right
+      img(src="images/dual_shaft_stepper_motor.png")
+    h1 Single vs. Dual Shaft
+
+
+  // Types
+  section
+    h1 Stepper Motor Types
+    p There are three main types of stepper motor:
+
+    ul
+      li Permanent magnet
+      li Variable reluctance
+      li Hybrid
+
+    p.
+      Nearly all stepper motors used today are of the hybrid type.
+
+  section
+    .img-right
+      img(src="images/stepper_motor_inside.png")
+    h1 Stepper Motor Phases
+    p.
+      Stepper motors contain coils of copper wire which are grouped together
+      into phases.  Most stepper motors have two phases.  These phases are
+      powered in sequence to create magnetic forces which turn the motor.  An
+      electronic circuit, called a driver, is need to coordinate the powering
+      of the stepper motor phases.
+
+  section
+    h1 Bipolar vs. Unipolar Motors
+    .img-right
+      img(src="images/stepper-motor-unipolar-vs-bipolar.png")
+
+    p Two phase stepper motors can be further divided into unipolar and bipolar.
+
+    p.
+      Unipolar motors have a center tap in the middle of each phase.  The center
+      taps are connected internally in 5-wire motors but are separate
+      in 6-wire motors.  Unipolar motors are less efficient but require
+      simpiler electronics.  Unipolar stepper motors are rarely used today.
+
+    p.
+      Most stepper motors used today in CNC systems are bipolar two-phase
+      hybrid stepper motors.  They may have 4, 6 or 8 wires.
+
+
+  // Wiring
+  section
+    h1 Wiring the Leads
+
+  section
+    h2 4-wire
+    .img-right
+      img(src="images/stepper-motor-connection-diagram-4-wire-bipolar.png")
+
+  section
+    h2 6-wire
+    .img-right
+      img(src="images/stepper-motor-connection-diagram-6-wire-bipolar.png")
+
+  section
+    h2 8-wire Parallel & Series
+    .img-right
+      img(src="images/stepper-motor-connection-diagram-8-wire-bipolar.png")
+
+
+  // Drive considerations
+  section
+    h1 Step Angle & Steps per Revolution
+
+  section
+    h1 Microstepping
+
+  section
+    h1 Voltage & Current
+
+  section
+    h1 Inductance & Resistance
+
+  section
+    h1 Back EMF
+
+  section
+    h1 Torque
+
+  section
+    h1 Vibration & Resonance
+
+  section
+    h1 Step Jitter
+
+  section
+    h1 Electrical Kickback
+
+  // Power supplies

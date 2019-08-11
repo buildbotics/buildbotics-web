@@ -1,0 +1,20 @@
+.img-left
+  float left
+  margin-right 4em
+  clear left
+
+.img-right
+  float right
+  margin-left 4em
+  clear right
+
+.img-left, .img-right
+  img
+    margin-top 0
+
+
+@media (max-width: 650px)
+  .img-left, .img-right
+    float none
+    margin-left inherit
+    margin-right inherit

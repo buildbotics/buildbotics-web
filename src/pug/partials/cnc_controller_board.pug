@@ -1,0 +1,112 @@
+.front-content
+  section
+    h1 CNC Controller Boards
+    img(src="images/cnc_control_board_vs_buildbotics.png")
+    .clear
+    p.
+      The Buildbotics CNC Controller offers all the hackability of a CNC
+      controller board with out all the hassle of building your own enclosure
+      or spending hours making cables.
+    .clear
+
+  section
+    h1 Aluminum Enclosure
+    img(src="images/enclosure.png")
+    .img-right: img(src="images/buildbotics_enclosure_base.png")
+    p.
+      The Buildbotics enclosure protects sensitive electronics from wood
+      and metal shavings.
+
+    p.
+      The aluminum case also acts as a heat sink that
+      keeps the high powered stepper motor drivers and built-in RaspberryPi
+      cool even with out a fan.
+
+    p.
+      Four screw holes allow the enclosure to be easily mounted on or near
+      the machine.
+    .clear
+
+  section
+    h1 Included Cabling
+    img(src="images/cables.png")
+    p.
+      Why spend hours of your time and extra money you hadn't planned for
+      wiring up a CNC controller board?  The Buildbotics controller comes with
+      time saving pre-made cables for connecting stepper motors, power supplies
+      and load switches.
+    .clear
+
+  section
+    h1 More Power
+    img(src="images/steppers.png")
+    p.
+      The Buildbotics CNC controller has much more motor drive power than your
+      average CNC controller board.  Check out these specs:
+
+    ul
+      li 4 #[b built-in] motor drivers
+      li Up to 6A per driver
+      li 12v to 36v DC power
+      li Up to 256 microstepping
+      li Smooth S-curve acceleration
+      li Step rates up to 250k/sec per channel.
+
+  section
+    h1 Solid Electronics
+    .img-right: img(src="images/electrical_warning.png")
+    p.
+      The biggest downside to most CNC controller boards is that they are so
+      easy to burn up.
+
+    p.
+      The Buildbotics CNC controller is packed with electrical
+      safety features that help protect the electronics so you don't have to
+      go out and buy them again.
+
+    ul
+      li Over-current
+      li Thermal overload
+      li Under voltage
+      li Reverse voltage
+      li Short-circuit
+      li Voltage spikes caused by motor stalls
+    .clear
+
+  section
+    h1 100% Open-Source on GitHub
+    .img-right: img(src="images/github.png")
+
+    p.
+      And if you want to hack it you can.  The source code, schematics, PCB
+      and enclosure design are all on GitHub:
+
+    ul
+      li
+        a(href="//github.com/buildbotics/bbctrl-firmware")
+          | Firmware source code
+        | .
+      li
+        a(href="//github.com/buildbotics/bbctrl-pcb")
+          | Hardware schematics and PCB layout
+        | .
+      li
+        a(href="//github.com/buildbotics/bbctrl-enclosure")
+          | Enclosure designs
+        | .
+    .clear
+
+  include ./buy.pug
+
+  section
+    h1 More Info
+    p.
+      Check out our #[a(href="/") main page] for more information.
+
+    p.
+      Contact us by email
+      (#[a(href="mailto:info@buildbotics.com") info@buildbotics.com]) or call
+      us (707-559-8539).
+    .clear
+
+  include ./mailinglist.pug

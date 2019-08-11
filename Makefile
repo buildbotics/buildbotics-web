@@ -7,7 +7,7 @@ PUG_DEPS   := $(DIR)/pug-deps
 HTML   := $(wildcard src/pug/*.pug)
 IMAGES := $(shell find src/images -type f)
 VIDEO  := $(wildcard src/video/*)
-STATIC := src/robots.txt
+STATIC := src/robots.txt $(wildcard src/docs/*) $(wildcard src/js/*)
 
 HTML   := $(patsubst src/pug/%.pug,build/%.html,$(HTML))
 IMAGES := $(patsubst src/images/%,build/images/%,$(IMAGES))
@@ -51,7 +51,7 @@ tidy:
 	rm -f $(shell find "$(DIR)" -name \*~)
 
 clean: tidy
-	rm -rf http build
+	rm -rf http build dep
 
 dist-clean: clean
 	rm -rf node_modules

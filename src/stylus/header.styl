@@ -1,13 +1,17 @@
-#header
+.site-header
   border-bottom 1px solid header_border_color
   background-color header_color
 
-  #header-wrapper
+  .site-header-wrapper
     padding 0 5px
 
-  #header-content
+  .site-nav
     max-width page_width
     min-height header_height
+    display flex
+    align-items center
+    justify-content space-between
+    flex-wrap wrap
     margin 0 auto
     overflow hidden
 
@@ -15,69 +19,52 @@
     text-decoration none
     color medium_text_color
 
+  ul, li
+    margin 0
+    padding 0
+
+  ul
+    list-style none
+    display flex
+
+  li
+    display block
+
   .logo
-    float left
     margin-right 1em
-    padding 4px 0 0 0
     font-size 24pt
     white-space nowrap
+    display flex
+    align-items center
 
     img
       height header_height - 10px
       vertical-align bottom
       margin-right 0.25em
 
-  #main-header-nav, #context-header-nav
-    display inline-block
+  .site-nav-left, .site-nav-right
+    display flex
+    align-items center
+    flex-wrap wrap
+    min-height header_height
 
     > *
       display inline-block
 
-    .header-nav > .fa-caret-down
-      font-size 10pt
-      line-height 10px
-      margin-left 0.25em
-      margin-right 0
-
-  #main-header-nav
+  .site-nav-left
     float left
-    padding 5px 0
-    margin-left -10px
 
-    .header-nav
-      text-transform uppercase
-      font-size 16pt
-      line-height header_height - 10px
-
-  #context-header-nav
+  .site-nav-right
     float right
 
-  .header-sep
-    height 1px
-    width 20px
-
-  .header-nav
+  li
+    text-transform uppercase
+    font-size 16pt
     white-space nowrap
-    line-height header_height - 20px
-    height header_height - 20px
-    padding 0px 10px 0px 10px
+    margin-right 20px
     display inline-block
     color medium_text_color
+    line-height 2.6em
 
-  a.header-nav:hover
-    color #f0ac48
-
-  a.user
-    line-height header_height - 4px
-    height header_height - 4px
-    padding 2px 5px
-
-
-@media (max-width: 750px)
-  #header-content
-    > *
-      float none
-      display block
-
-    #main-header-nav .header-sep
-      display none
+    &:hover a
+      color #f0ac48

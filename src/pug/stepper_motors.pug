@@ -1,0 +1,27 @@
+doctype html
+html
+  head
+    include ./partials/head.pug
+
+    title All About Stepper Motors
+
+    meta(name="description", content="All about NEMA sizes, bipolar vs. unipolar, wiring, current, voltage, microstepping and more.  Call us 707-559-8539.")
+
+    style: include:stylus ../stylus/common.styl
+
+    style: :stylus
+      table.nema
+        border-collapse collapse
+
+        th, td
+          border 1px solid #ddd
+          padding 0.25em
+
+        td
+          text-align right
+
+
+  body
+    include ./partials/header.pug
+    #content: include ./partials/stepper_motors.pug
+    include ./partials/footer.pug

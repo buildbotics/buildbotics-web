@@ -1,28 +1,24 @@
-#header
-  #header-wrapper
-    #header-content
-      a.logo(href="/")
-        img(src="images/squid_dude-40x40.png" alt="Buildbotics logo")
-        .left Build
-        .right botics
+header.site-header
+  .site-header-wrapper
+    nav.site-nav
+      .site-nav-left
+        a.logo(href="/")
+          img(src="images/buildbotics_logo-40x40.png" alt="Buildbotics logo")
+          .left Build
+          .right botics
 
-      #main-header-nav
-        a.header-nav(target="_blank"
-          href="https://store.buildbotics.com/buildbotics-cnc-controller/")
-          | Store
-        a.header-nav(href="docs.html") Docs
-        a.header-nav(href="https://forum.buildbotics.com/", target="_blank")
-          | Help
-        a.header-nav(href="https://github.com/buildbotics/", target="_blank")
-          | GitHub
+        ul
+          li: a(target="_blank" href="//buildbotics.com/store") Store
+          li: a(href="docs.html") Docs
+          li: a(href="//forum.buildbotics.com/", target="_blank") Help
+          li: a(href="//github.com/buildbotics/", target="_blank") GitHub
 
-        .header-sep
-        .header-nav.desktop-only(href="#") Call 707-559-8539
-        a.header-nav.mobile-only(href="tel:707-559-8539", target="_blank")
-          | Call 707-559-8539
+      .site-nav-right
+        ul
+          li.desktop-only Call 707-559-8539
+          li.mobile-only: a(href="tel:707-559-8539", target="_blank")
+            | Call 707-559-8539
 
-      .cart
-        .quantity 0
-        .fa.fa-shopping-cart
-
-      .clear
+        .cart
+          .quantity 0
+          .fa.fa-shopping-cart

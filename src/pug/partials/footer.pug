@@ -1,15 +1,10 @@
-#footer
-  #footer-content
-    span.copyright
-      | &copy; 2014-
-      script document.write(new Date().getFullYear() + ' ')
-      | BuildBotics LLC.
+footer.site-footer
+  .site-footer-content
+    section.copyright.
+      &copy; 2014-#[script document.write(new Date().getFullYear() + ' ')]
+      BuildBotics LLC.
 
-    = ' '
-    a.footer-nav(href="about.html") About
-    = ' '
-    a.footer-nav(href="contact.html") Contact
-    = ' '
-    a.footer-nav(href="https://forum.buildbotics.com/", target="_blank") Help
-    = ' '
-    a.footer-nav(href="projects.html") Projects
+    nav: a(href="about.html") About
+    nav: a(href="contact.html") Contact
+    nav: a(href="//forum.buildbotics.com/", target="_blank") Help
+    nav: a(href="projects.html") Projects

@@ -2,6 +2,11 @@
 
 echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
 
+echo '  <sitemap>'
+echo '    <loc>sitemap-posts.xml</loc>'
+echo '    <loc>sitemap-pages.xml</loc>'
+echo '  </sitemap>'
+
 for PAGE in $@; do
     TS=$(date -u -Iseconds -d "$(stat -c %y build/$PAGE)")
     echo '  <url>'

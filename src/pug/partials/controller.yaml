@@ -167,7 +167,7 @@ image:
 hasProductReturnPolicy:
   "@type": ProductReturnPolicy
   productReturnDays: 60
-  productReturnLink: https://buildbotics.com/contact.html
+  productReturnLink: https://buildbotics.com/contact/
   refundType: [ReturnShippingFees, OriginalShippingFees]
   returnPolicyCategory: ProductReturnFiniteReturnWindow
 

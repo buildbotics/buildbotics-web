@@ -1,0 +1,176 @@
+@import "config";
+
+column_space = 20px
+column_width = (content_width - column_space) / 2
+review_width = (content_width - 2 * column_space) / 3
+
+.product
+  display flex
+  flex-direction row
+  flex-wrap wrap
+  justify-content space-between
+  color text_color
+
+  .product-images, .product-offer
+    max-width column_width
+    margin 2em 0
+
+  .gold-star
+    color highlight_color
+
+.product-images figure
+  margin 0
+  padding 0
+
+.product-price > :first-child
+  font-size 24pt
+  margin-right 0.25em
+
+.product-title
+  font-size 26pt
+  color medium_text_color
+  margin 0
+
+.product-rating
+  display flex
+  flex-wrap wrap
+  justify-content space-between
+  margin-bottom 1em
+
+  > *
+    white-space nowrap
+    margin 0 1em 1em 0
+
+.product-modifier
+  margin 1em 0
+
+.product-options
+  margin 1em
+  padding 0
+  list-style none
+
+.product-option
+  display flex
+  align-items center
+  border 2px solid border_color
+  padding 0 0.5em
+  cursor pointer
+
+  &:hover
+    background header_color
+
+  &.selected
+    border-color highlight_color
+    background header_color
+
+  .product-option-thumbnail
+    flex-shrink 0
+    width 64px
+    height 64px
+    margin 5px
+    text-align center
+
+    img
+      max-width 64px
+      max-height 64px
+
+  .option-name
+    flex 1
+
+  .option-price
+    margin-left 0.5em
+
+  input
+    margin 0.5em 0.5em 0.5em 0
+
+
+.product-thumbnails
+  display flex
+  flex-wrap wrap
+
+  a
+    display flex
+    margin 2px
+    border 2px solid transparent
+
+    &:hover
+      border-color border_color
+
+    img
+      height 64px
+
+.product-add
+  display flex
+  align-items flex-end
+  flex-direction column
+  padding 1em
+  text-align right
+
+  > *
+    margin 0.5em 0
+
+  button.add-to-cart
+    padding 0.5em 2em
+    background highlight_color
+    color text_color
+
+    &:hover
+      opacity 0.8
+
+.product-description
+  width 100%
+
+.product-reviews
+  display flex
+  flex-wrap wrap
+  flex-direction row
+  justify-content space-between
+
+  .product-review-wrapper
+    position relative
+    height 300px
+    overflow hidden
+    padding 1em 0
+    max-width review_width
+
+    .review-text
+      white-space pre-wrap
+
+    &:after
+      content ""
+      position absolute
+      left 0
+      bottom 0
+      height 40px
+      width 100%
+      background linear-gradient(rgba(0, 0, 0, 0), #fdfdfd)
+
+    &.show-full
+      height auto
+
+      &:after
+        display none
+
+  .product-review-more
+    cursor pointer
+    text-align center
+    font-size 110%
+    color link_color
+
+
+.product-thumbnails img::after
+  content " "
+  display block
+  width 46px
+  height 46px
+  margin 1px
+  border-radius 50%
+  border 5px solid #aaa
+  border-color #aaa transparent #aaa transparent
+  animation lds-dual-ring 1.2s linear infinite
+
+@keyframes lds-dual-ring
+  0%
+    transform rotate(0deg)
+  100%
+    transform rotate(360deg)

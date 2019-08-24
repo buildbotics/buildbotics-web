@@ -4,7 +4,15 @@ footer.site-footer
       &copy; 2014-#[script document.write(new Date().getFullYear() + ' ')]
       BuildBotics LLC.
 
-    nav: a(href="about.html") About
-    nav: a(href="contact.html") Contact
+    nav: a(href="/about/") About
+    nav: a(href="/contact/") Contact
     nav: a(href="//forum.buildbotics.com/", target="_blank") Help
-    nav: a(href="projects.html") Projects
+    nav: a(href="/projects/") Projects
+
+// Olark, load after 30s
+script(type="text/javascript").
+  setTimeout(function () {
+    var script = document.createElement('script');
+    script.src = "/js/olark.js";
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }, 30000)

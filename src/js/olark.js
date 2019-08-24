@@ -20,6 +20,8 @@
   k= y._ = {s: [], t: [+new Date], c: {}, l: a};
 })(window, document, "static.olark.com/jsclient/loader.js");
 
+olark.configure('system.hb_disable_mobile', true);
+olark.configure('features.greeter', false);
 olark.configure('system.hb_chatbox_size', 'sm'); // Small
 olark.configure('system.hb_dark_theme', true);
 olark.configure('system.hb_primary_color', '#e5aa3d');

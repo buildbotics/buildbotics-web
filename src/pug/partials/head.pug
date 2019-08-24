@@ -4,11 +4,17 @@ link(rel="icon", href="images/favicon.ico")
 
 style: include:stylus ../../stylus/common.styl
 
-link(href='//fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans|Lato|' +
-  'Audiowide' rel='stylesheet' type='text/css')
+// link(href='//fonts.googleapis.com/css?family=Roboto+Slab|Audiowide'
+//   rel='stylesheet' type='text/css')
+// Embedded with https://amio.github.io/embedded-google-fonts/
+style: include ../../css/google-fonts.css
 
 - var cdn = '//cdnjs.cloudflare.com/ajax/libs'
-link(rel='stylesheet' href=cdn + '/font-awesome/4.7.0/css/font-awesome.min.css')
+// link(rel='stylesheet'
+//   href=cdn + '/font-awesome/4.7.0/css/font-awesome.min.css')
+// Icons set built with https://icomoon.io/app/
+// Manually base64 and inserted woff
+style: include ../../css/icons.css
 
 // Google
 script(async, src="//www.googletagmanager.com/gtag/js?id=UA-57023811-3")
@@ -17,6 +23,3 @@ script.
   function gtag() {dataLayer.push(arguments)}
   gtag('js', new Date());
   gtag('config', 'UA-57023811-3', {'optimize_id': 'GTM-TBDWVGX'});
-
-// Olark
-script(type="text/javascript", async, src="/js/olark.js")

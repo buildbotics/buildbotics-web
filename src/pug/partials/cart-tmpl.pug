@@ -1,0 +1,7 @@
+script#cart-template(type="text/x-template")
+  a.cart(:href="quantity ? '/cart' : '/store'",
+    :class="{'cart-active': quantity}",
+    :title="'Go to ' + (quantity ? 'cart' : 'store')", @message="dispatch")
+    .cart-wrapper
+      .fa.fa-shopping-cart
+      .cart-count {{quantity}}

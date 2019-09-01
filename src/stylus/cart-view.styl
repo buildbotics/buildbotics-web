@@ -1,0 +1,126 @@
+@import "config"
+
+.cart-view .cart-view-wrapper
+  padding 1em
+  text-align right
+
+  .cart-items
+    display flex
+    flex-direction column
+    text-align left
+
+    .cart-item
+      display flex
+      flex-direction column
+      margin-bottom 1em
+      border-top 1px solid border_color
+      padding 1em 0
+
+      .cart-item-content
+        text-align left
+        display flex
+        flex-direction row
+        flex-wrap wrap
+
+      .cart-item-details
+        display flex
+        flex-direction column
+        flex 1
+
+        .cart-item-name
+          font-size 140%
+          margin-bottom 1em
+
+        .cart-item-quantity
+          display flex
+          align-items center
+          flex-direction row
+          font-size 80%
+
+          > *
+            margin-right 0.5em
+
+          > label
+            white-space nowrap
+
+          .cart-item-inc-dec .fa, .cart-item-remove
+            color link_color
+            cursor pointer
+
+            &:hover
+              color link_hover_color
+
+          .cart-item-inc-dec
+            display flex
+            flex-direction column
+
+          .cart-item-remove:hover
+            text-decoration underline
+
+      .cart-item-image
+        max-width 128px
+        max-height 128px
+        margin-right 10px
+
+      .cart-item-options
+        margin-top 1em
+
+        .cart-item-option
+          display flex
+          flex-direction row
+          align-items center
+          margin-left 2em
+          padding 1em 0
+          font-size 80%
+
+          &:not(:first-of-type)
+            border-top 1px solid border_color
+
+          .cart-item-image
+            width 64px
+            height 64px
+
+  .cart-price, .cart-item-price
+    font-weight bold
+
+  .cart-subtotal
+    border-top 1px solid border_color
+    padding 1em 0
+
+  .cart-checkout
+    display inline-block
+    align-items center
+    padding 1em 2em
+    margin 1em 0
+    background highlight_color
+    color text_color
+
+    .fa
+      font-size 20pt
+      display inline-block
+
+    &:hover
+      background lighten(highlight_color, 20%)
+      text-decoration none
+
+  .cart-shipping-note
+    font-size 90%
+
+@media (max-width: 500px)
+  .cart-view .cart-view-wrapper .cart-items .cart-item
+    .cart-item-details .cart-item-name
+      font-size 120%
+
+@media (max-width: 400px)
+  .cart-view .cart-view-wrapper .cart-items .cart-item
+    .cart-item-image
+      width 64px
+      height 64px
+
+    .cart-item-details .cart-item-name
+      font-size 100%
+
+    .cart-item-options .cart-item-option
+      .cart-item-image
+        width 48px
+        height 48px

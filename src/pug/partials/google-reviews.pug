@@ -1,0 +1,16 @@
+script(src="//apis.google.com/js/platform.js", async, defer)
+script.
+  function render_google_survey_optin(order, email, country, delivery) {
+    window.gapi.load('surveyoptin', function() {
+      window.gapi.surveyoptin.render({
+        merchant_id: '138839824',
+        order_id: order,
+        email: email,
+        delivery_country: country,
+        estimated_delivery_date: delivery,
+        opt_in_style: 'CENTER_DIALOG'
+      })
+    })
+  }
+
+  window.___gcfg = {lang: 'en_US'}

@@ -1,0 +1,149 @@
+script#product-template(type="text/x-template")
+  .product(v-if="typeof product != 'undefined'")
+    .product-top
+      .product-offer
+        h1.product-title {{product.name}}
+        product-rating(v-if="product.reviews", :reviews="product.reviews")
+
+        .product-price
+          span ${{price}}
+          span USD + shipping
+
+        .product-modifiers(v-if="product.modifiers")
+          product-modifier(v-for="modifier in product.modifiers",
+            :modifier="modifier")
+
+        .product-add
+          button.add-to-cart(@click="add_to_cart()",
+            :disabled="!product.inventory").
+            #[.fa.fa-shopping-cart] Add to Cart
+
+          .product-stock(v-if="product.inventory")
+            | {{product.inventory}} in Stock
+          .product-stock.error(v-else) Out of Stock
+
+      product-images(v-if="product.images", :images="product.images")
+
+    .product-description
+      h2.product-title {{product.name}}
+      div(v-html="product.description")
+
+    #reviews(v-if="product.reviews")
+      h2 Customer Reviews
+      .product-reviews
+        product-review(v-for="(review, index) in product.reviews",
+          :id="'review-' + index", :review="review")
+
+    a(name="write-review")
+    product-review-form(:id="product.id")
+
+
+script#product-images-template(type="text/x-template")
+  .product-images
+    .product-thumbnails
+      a(v-for="(image, index) in ordered", :href="'#image-' + index",
+        @mouseenter="mouse_enter(index)", @mouseleave="mouse_leave(index)")
+        img(:src="image.medium", :alt="image.description",
+          :title="image.description")
+
+    .owl-carousel
+      figure(v-for="(image, index) in ordered")
+        img.owl-lazy(:data-src="image.medium", :alt="image.description",
+          :title="image.description", :data-hash="'image-' + index")
+
+
+script#product-rating-template(type="text/x-template")
+  .product-rating
+    a.review-stars(href="#reviews")
+      .review-star(v-for="n in 5")
+        .fa.fa-star
+        .fa.fa-star.gold-star(v-if="n <= rating")
+        .fa.fa-star-half.gold-star(
+          v-if="rating < n && n - 0.5 <= rating")
+
+    div.
+      Rating: {{rating.toFixed(1)}} -
+      #[a(href="#reviews") {{reviews.length}} reviews]
+
+    a(href="#write-review") Write a review
+
+
+script#product-modifier-template(type="text/x-template")
+  .product-modifier
+    div {{modifier.name}} Option:
+
+    ul.product-options
+      li.product-option(v-for="(option, index) in modifier.options",
+        :class="option_class(index)", @click="option_select(index)")
+
+        input(type="radio", v-model="modifier.option", :value="index",
+          :disabled="!option.inventory")
+
+        .product-option-thumbnail
+          img(v-if="option.thumbnails.length", :src="option.thumbnails[0]")
+
+        .option-description
+          label.option-name {{option.label}}
+          label.option-stock(v-if="index")
+            span(v-if="option.inventory") {{option.inventory}} in Stock
+            span.error(v-else) Out of Stock
+        label.option-price + ${{option.price}}
+
+
+script#product-review-template(type="text/x-template")
+  section.product-review(@dblclick="full = !full")
+    .product-review-wrapper(:class="{'show-full': full}")
+      div
+        .review-avatar.fa.fa-user
+        .reviewer {{review.name}}
+
+      div
+        .review-stars
+          .fa.fa-star(v-for="n in 5",
+            :class="{'gold-star': n <= review.rating}")
+
+        .review-title {{review.title}}
+
+      .review-date {{review.created.substr(0, 10)}}
+      .review-text {{review.text}}
+
+    .product-review-more(v-if="has_more", @click="full = !full")
+      | Read {{full ? 'less' : 'more'}}
+
+
+script#product-review-form-template(type="text/x-template")
+  section.product-review-form
+    h2 Write a Review
+
+    fieldset
+      label Rating #[small Required]
+      select(v-model="rating", name="rating")
+        option(value="") Select Rating
+        option(value="5") 5 stars (best)
+        option(value="4") 4 stars
+        option(value="3") 3 stars (average)
+        option(value="2") 2 stars
+        option(value="1") 1 star (worst)
+
+      label Name
+      input(v-model="name", name="name", aria-required="true", type="text")
+
+      label Email #[small Required]
+      input(v-model="email", name="email", aria-required="false", type="text")
+
+      label Review Title #[small Required]
+      input(v-model="title", name="title", aria-required="true", type="text")
+
+      label Review Body #[small Required]
+      textarea(v-model="text", rows="20", name="text", aria-required="true")
+      .text-chars(:class="{success: text_valid}")
+        | Characters: {{text.length}} (min: 100, max: 10,000)
+
+      .review-errors(v-if="errors.length")
+        h3 Please fix the following errors:
+        ul: li(v-for="error in errors") {{error}}
+
+      h2.review-message(v-if="message") {{message}}
+
+      button(@click="submit", v-if="!message") Submit Review
+      button(@click="message = ''", v-if="message") Ok

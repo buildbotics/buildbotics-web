@@ -1,0 +1,17 @@
+{{#primary_author}}
+
+<section class="author-card">
+  {{#if profile_image}}
+    <img class="author-profile-image" src="{{img_url profile_image size="xs"}}"
+      alt="{{name}}"/>
+  {{else}}
+    <span class="avatar-wrapper">
+      <div class="fa fa-user"></div>
+    </span>
+  {{/if}}
+  <section class="author-card-content">
+    <h4 class="author-card-name">{{name}}</h4>
+  </section>
+</section>
+
+{{/primary_author}}

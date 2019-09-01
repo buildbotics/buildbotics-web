@@ -3,20 +3,15 @@ header.site-header
     nav.site-nav
       .site-nav-left
         a.logo(href="/")
-          img(src="images/buildbotics_logo-40x40.png" alt="Buildbotics logo")
+          img(src="/images/buildbotics_logo-40x40.png" alt="Buildbotics logo")
           .left Build
           .right botics
 
         ul
-          li: a(target="_blank" href="//buildbotics.com/store") Store
+          li: a(href="/store/") Store
           li: a(href="/docs/") Docs
-          li: a(href="/help/", target="_blank") Help
-          li: a(href="//github.com/buildbotics/", target="_blank") GitHub
+          li: a(href="/contact/") Contact
 
-      .site-nav-right
-        ul
-          li Call 707-559-8539
-
-        .cart
-          .quantity 0
-          .fa.fa-shopping-cart
+      ul.site-nav-right
+        li Call 707-559-8539
+        li#cart

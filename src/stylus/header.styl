@@ -27,9 +27,6 @@
     list-style none
     display flex
 
-  li
-    display block
-
   .logo
     margin-right 1em
     font-size 24pt
@@ -46,7 +43,6 @@
     display flex
     align-items center
     flex-wrap wrap
-    min-height header_height
 
     > *
       display inline-block
@@ -66,5 +62,6 @@
     color medium_text_color
     line-height 2.6em
 
-    &:hover a
-      color #f0ac48
+@media (max-width: 600px)
+  .site-header li
+    line-height 1.6em

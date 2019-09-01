@@ -1,0 +1,98 @@
+{{!< default}}
+
+<header class="site-header outer">
+  <div class="inner">{{> "site-nav"}}</div>
+</header>
+
+{{#post}}
+
+<main id="site-main" class="site-main outer">
+  <div class="inner">
+    <article class="post-full {{post_class}}">
+      <header class="post-full-header">
+        <h1 class="post-full-title">{{title}}</h1>
+      </header>
+
+      <section class="post-full-content">
+        <div class="post-content">{{content}}</div>
+      </section>
+
+      <footer class="post-full-footer">
+        {{#has author="count:>1"}}
+          {{> "byline-multiple"}}
+        {{else}}
+          {{> "byline-single"}}
+        {{/has}}
+
+        <section class="post-full-meta">
+          <time class="post-full-meta-date"
+                datetime="{{date format="YYYY-MM-DD"}}"
+                >{{date format="D MMMM YYYY"}}</time>
+        </section>
+      </footer>
+    </article>
+  </div>
+</main>
+
+{{> floating-header}}
+
+{{/post}}
+
+{{#contentFor "scripts"}}
+<script>
+  // NOTE: Scroll performance is poor in Safari
+  // - this appears to be due to the events firing much more slowly in Safari.
+  //   Dropping the scroll event and using only a raf loop results in smoother
+  //   scrolling but continuous processing even when not scrolling
+  $(document).ready(function () {
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+
+    var progressBar = document.querySelector('#reading-progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+      lastScrollY = window.scrollY;
+      requestTick();
+    }
+
+    function onResize() {
+      lastWindowHeight = window.innerHeight;
+      lastDocumentHeight = $(document).height();
+      requestTick();
+    }
+
+    function requestTick() {
+      if (!ticking) requestAnimationFrame(update);
+      ticking = true;
+    }
+
+    function update() {
+      var trigger = title.getBoundingClientRect().top + window.scrollY;
+      var triggerOffset = title.offsetHeight + 35;
+      var progressMax = lastDocumentHeight - lastWindowHeight;
+
+      // show/hide floating header
+      if (lastScrollY >= trigger + triggerOffset)
+        header.classList.add('floating-active');
+      else header.classList.remove('floating-active');
+
+      progressBar.setAttribute('max', progressMax);
+      progressBar.setAttribute('value', lastScrollY);
+
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+  });
+</script>
+{{/contentFor}}

@@ -1,0 +1,16 @@
+{{!< default}}
+
+<header class="site-header outer">
+  <div class="inner">{{> "site-nav"}}</div>
+</header>
+
+<main id="site-main" class="site-main outer">
+  <div class="inner">
+    <h1 class="post-full-header">Blog Articles</h1>
+    <div class="post-feed">
+      {{#foreach posts}}
+        {{> "post-card"}}
+      {{/foreach}}
+    </div>
+  </div>
+</main>

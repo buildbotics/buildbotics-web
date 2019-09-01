@@ -1,0 +1,10 @@
+routes:
+
+collections:
+  /blog/:
+    permalink: /blog/{slug}/
+    filter: tag:blog
+
+  /:
+    permalink: /{slug}/
+    filter: tag:-blog

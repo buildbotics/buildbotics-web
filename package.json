@@ -1,12 +1,65 @@
 {
-  "name": "bulidbotics-web",
+  "name": "buildbotics",
+  "description": "Buildbotics Website",
+  "demo": "https://buildbotics.com/",
   "version": "0.0.1",
+  "license": "GPL",
   "private": true,
-  "dependencies": {
+  "engines": {
+    "ghost": ">=2.0.0",
+    "ghost-api": "v2"
+  },
+  "scripts": {
+    "dev": "gulp",
+    "zip": "gulp zip",
+    "test": "gscan .",
+    "pretest": "gulp build"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/buildbotics/buildbotics-web.git"
+  },
+  "devDependencies": {
+    "beeper": "1.1.1",
+    "gscan": "2.7.0",
+    "gulp": "4.0.2",
+    "gulp-livereload": "4.0.1",
+    "gulp-stylus": "",
+    "gulp-rename": "",
+    "gulp-autoprefixer": "",
+    "gulp-uglify": "3.0.2",
+    "gulp-zip": "4.2.0",
+    "pump": "3.0.0",
     "pug-cli": "",
     "jstransformer-stylus": "",
     "jstransformer-yaml": "",
     "jshint": "",
     "stylus": ""
+  },
+  "config": {
+    "posts_per_page": 25,
+    "image_sizes": {
+      "xxs": {
+        "width": 30
+      },
+      "xs": {
+        "width": 100
+      },
+      "s": {
+        "width": 300
+      },
+      "m": {
+        "width": 600
+      },
+      "l": {
+        "width": 1000
+      },
+      "xl": {
+        "width": 2000
+      }
+    }
   }
 }

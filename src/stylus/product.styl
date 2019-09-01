@@ -2,33 +2,93 @@
 
 column_space = 20px
 column_width = (content_width - column_space) / 2
-review_width = (content_width - 2 * column_space) / 3
+thumb_size = 48px
 
 .product
-  display flex
-  flex-direction row
-  flex-wrap wrap
-  justify-content space-between
-  color text_color
+  .product-top
+    display flex
+    flex-direction row-reverse
+    flex-wrap wrap
+    justify-content end
 
   .product-images, .product-offer
-    max-width column_width
     margin 2em 0
+
+  .product-offer
+    max-width content_width * 0.5
+
+  .product-images
+    max-width content_width * 0.45
+    margin-right content_width * 0.05
+
+  #reviews
+    margin 2em 0
+    padding 1em 0
+    border-top 1px solid border_color
+    border-bottom 1px solid border_color
+
+.review-stars
+  white-space nowrap
+
+  div
+    display inline-block
+
+  .review-star
+    width 16px
+    height 16px
+    position relative
+
+    .fa
+      position absolute
+
+  .fa
+    color #ccc
 
   .gold-star
     color highlight_color
 
-.product-images figure
-  margin 0
-  padding 0
+.product-images
+  width 100%
+  display flex
+
+  .product-thumbnails
+    width thumb_size
+    margin-right 15px
+    display flex
+    flex-direction column
+    text-align center
+
+    a
+      display flex
+      margin-bottom 4px
+      border 2px solid transparent
+
+      &:hover
+        border-color border_color
+
+      img
+        width thumb_size
+
+  .owl-carousel
+    overflow hidden
+    max-width 100vw
+
+  figure
+    max-width 100vw
+    margin 0
+    padding 0
+
+@keyframes lds-dual-ring
+  0%
+    transform rotate(0deg)
+  100%
+    transform rotate(360deg)
 
 .product-price > :first-child
   font-size 24pt
   margin-right 0.25em
 
 .product-title
-  font-size 26pt
-  color medium_text_color
   margin 0
 
 .product-rating
@@ -36,6 +96,7 @@ review_width = (content_width - 2 * column_space) / 3
   flex-wrap wrap
   justify-content space-between
   margin-bottom 1em
+  color light_text_color
 
   > *
     white-space nowrap
@@ -51,6 +112,7 @@ review_width = (content_width - 2 * column_space) / 3
 
 .product-option
   display flex
+  flex-wrap wrap
   align-items center
   border 2px solid border_color
   padding 0 0.5em
@@ -63,41 +125,35 @@ review_width = (content_width - 2 * column_space) / 3
     border-color highlight_color
     background header_color
 
+  &.disabled
+    background #ddd
+    cursor default
+
   .product-option-thumbnail
     flex-shrink 0
-    width 64px
-    height 64px
+    width thumb_size
+    height thumb_size
     margin 5px
     text-align center
 
     img
-      max-width 64px
-      max-height 64px
+      max-width thumb_size
+      max-height thumb_size
 
-  .option-name
+  .option-description
+    display flex
+    flex-direction column
     flex 1
+    font-size 90%
+
+  .option-stock
+    font-size 80%
 
   .option-price
     margin-left 0.5em
 
   input
     margin 0.5em 0.5em 0.5em 0
-
-
-.product-thumbnails
-  display flex
-  flex-wrap wrap
-
-  a
-    display flex
-    margin 2px
-    border 2px solid transparent
-
-    &:hover
-      border-color border_color
-
-    img
-      height 64px
 
 .product-add
   display flex
@@ -110,30 +166,63 @@ review_width = (content_width - 2 * column_space) / 3
     margin 0.5em 0
 
   button.add-to-cart
-    padding 0.5em 2em
+    display flex
+    align-items center
+    padding 1em 2em
     background highlight_color
     color text_color
 
+    .fa
+      font-size 20pt
+      display inline-block
+
     &:hover
-      opacity 0.8
+      background lighten(highlight_color, 20%)
 
 .product-description
   width 100%
 
 .product-reviews
-  display flex
-  flex-wrap wrap
-  flex-direction row
-  justify-content space-between
+  .product-review
+    margin-top 1em
 
   .product-review-wrapper
     position relative
-    height 300px
+    max-height 300px
     overflow hidden
-    padding 1em 0
-    max-width review_width
+    background transparent
+    padding-bottom 1em
+    font-size 80%
+
+    > div
+      clear both
+
+    .review-avatar
+      display inline-block
+      margin-right 0.35em
+      margin-bottom 0.25em
+      font-size 24pt
+      color light_text_color
+
+    .reviewer
+      display inline-block
+      line-height 24pt
+      font-size 110%
+      vertical-align text-bottom
+
+    .review-stars
+      display inline-block
+      margin-right 0.5em
+
+    .review-title
+      display inline-block
+      font-weight bold
+
+    .review-date
+      color light_text_color
 
     .review-text
+      padding 1em 0
       white-space pre-wrap
 
     &:after
@@ -146,31 +235,44 @@ review_width = (content_width - 2 * column_space) / 3
       background linear-gradient(rgba(0, 0, 0, 0), #fdfdfd)
 
     &.show-full
-      height auto
+      max-height initial
 
       &:after
         display none
 
   .product-review-more
     cursor pointer
-    text-align center
-    font-size 110%
     color link_color
 
+    &:hover
+      color link_hover_color
 
-.product-thumbnails img::after
-  content " "
-  display block
-  width 46px
-  height 46px
-  margin 1px
-  border-radius 50%
-  border 5px solid #aaa
-  border-color #aaa transparent #aaa transparent
-  animation lds-dual-ring 1.2s linear infinite
 
-@keyframes lds-dual-ring
-  0%
-    transform rotate(0deg)
-  100%
-    transform rotate(360deg)
+.product-review-form
+  fieldset
+    display flex
+    flex-direction column
+
+    > *
+      margin 0.25em 0
+
+    select, input, textarea, button
+      border 1px solid border_color
+      border-radius 4px
+      padding 0.5em
+
+      &.valid
+        border 1px solid green
+
+    button
+      background link_color
+      color text_color
+
+      &:hover
+        background link_hover_color
+
+      &:disabled
+        background #ddd
+
+    .text-chars
+      text-align right

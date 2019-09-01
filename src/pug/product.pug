@@ -1,0 +1,17 @@
+doctype html
+html(lang="en")
+  head
+    title Buildbotics CNC Controller
+    include ./partials/head.pug
+
+  body
+    include ./partials/header.pug
+    #content: product-component(v-cloak, v-if="product", :product_id="product")
+    include ./partials/footer.pug
+
+    style: include:stylus ../stylus/common.styl
+
+    include ./partials/product.pug
+    include ./partials/owl.pug
+
+    style [v-cloak] {display: none}

@@ -27,7 +27,7 @@ node_modules:
 build/%.html: src/pug/%.pug
 	@mkdir -p $(shell dirname $@)
 	$(PUG) $< -o build || (rm -f $@; exit 1)
-	(echo -n "$@: "; $(PUG_DEPS) $<) > dep/$(shell basename $@)
+	(echo -n "$@: "; $(PUG_DEPS) $<) > build/dep/$(shell basename $@)
 
 build/sitemap-top.xml: $(HTML) makesitemap
 	./makesitemap $(patsubst build/%,%,$(HTML)) >$@
@@ -52,7 +52,7 @@ tidy:
 	rm -f $(shell find "$(DIR)" -name \*~)
 
 clean: tidy
-	rm -rf http build dep
+	rm -rf http build
 
 dist-clean: clean
 	rm -rf node_modules
@@ -60,4 +60,4 @@ dist-clean: clean
 .PHONY: all watch tidy clean dist-clean
 
 # Dependencies
--include $(shell mkdir -p dep) $(wildcard dep/*)
+-include $(shell mkdir -p build/dep) $(wildcard build/dep/*)

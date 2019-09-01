@@ -1,5 +1,5 @@
 doctype html
-html
+html(lang="en")
   head
     include ./partials/head.pug
 
@@ -7,13 +7,12 @@ html
 
     meta(name="description", content="Accelerate your CNC machine's performance with Buildbotics Open-Source CNC router, mill, plasma and LASER control.  Call us 707-559-8539.")
 
-    style: include:stylus ../stylus/main.styl
-    script: include ../js/jquery.min.js
-    include ./partials/owl.pug
-
   body
     include ./partials/header.pug
     script(type="application/ld+json"): include:yaml ./partials/controller.yaml
     script(type="application/ld+json"): include:yaml ./partials/buildbotics.yaml
     #content: include ./partials/main.pug
     include ./partials/footer.pug
+
+    style: include:stylus ../stylus/main.styl
+    include ./partials/owl.pug

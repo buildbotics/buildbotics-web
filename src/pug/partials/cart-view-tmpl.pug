@@ -1,0 +1,41 @@
+script#cart-item-template(type="text/x-template")
+  .cart-item
+    .cart-item-content
+      img.cart-item-image(:src="item.image")
+
+      .cart-item-details
+        .cart-item-name {{item.name}}
+        .cart-item-quantity
+          label Quantity: {{item.quantity}}
+          .cart-item-inc-dec
+            .fa.fa-chevron-up(@click="inc", title="Increase quantity")
+            .fa.fa-chevron-down(@click="dec", title="Decrease quantity")
+          .cart-item-remove(@click="remove", title="Remove item") Remove
+
+      .cart-item-price(v-if="item.parent === null") ${{item.price.toFixed(2)}}
+
+    .cart-item-options(v-if="options.length")
+      span Added Options:
+
+      .cart-item-option(v-for="option in options")
+        img.cart-item-image(:src="option.image")
+        .cart-item-name {{option.name}}
+
+
+script#cart-view-template(type="text/x-template")
+  .cart-view(@message="dispatch")
+    .cart-empty(v-if="typeof cart != 'undefined' && !items.length")
+      | Your cart is empty
+
+    .cart-view-wrapper(v-if="items.length")
+      div Price
+      .cart-items
+        cart-item(v-for="item in items", :item="item", :cart="cart")
+
+      .cart-subtotal.
+        Subtotal ({{quantity}} items):
+        #[span.cart-price ${{cart.total.toFixed(2)}}]
+
+      a.cart-checkout(href="/checkout") Proceed to checkout
+
+      .cart-shipping-note Shipping calculated at checkout

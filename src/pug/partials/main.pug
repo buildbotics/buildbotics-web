@@ -1,55 +1,65 @@
 .banner
-  img(src="images/buildbotics_logo-150x150.png")
+  img(src="images/buildbotics_logo-150x150.png", alt="Buildbotics logo")
 
   .logo
     .left Build
     .right botics
 
   .byline Take Control of your CNC
-  img(src="images/buildbotics_anatomy-20190306.png", width="550")
+  img(src="images/buildbotics_anatomy-20190306.png", width="550",
+    alt="Buildbotics CNC Machine Controller connected to many devices")
 
 .owl-carousel
   a(href="matt_d-jet")
-    img(src="images/gallery/matt_d/image1.jpg")
-    div Matt Dralle's Jet Mill
+    img(src="images/gallery/matt_d/image1.jpg",
+      alt="Matt Dralle's Jet CNC Mill")
+    div Matt Dralle's Jet CNC Mill
 
   a(href="dynamyte_2400")
-    img(src="images/gallery/robot_garden/image1.jpg")
+    img(src="images/gallery/robot_garden/image1.jpg",
+      alt="Robot Garden's Dyna Myte 2400")
     div Robot Garden's Dyna Myte 2400
 
   a(href="dougs-cnc")
-    img(src="images/gallery/doug_c/image2.jpg")
+    img(src="images/gallery/doug_c/image2.jpg",
+      alt="Doug Coffland's CNC Router")
     div Doug Coffland's Router
 
   a(href="antones_b-router")
-    img(src="images/gallery/antoines_b/image3.jpg")
+    img(src="images/gallery/antoines_b/image3.jpg",
+      alt="Antoine Brabants' CNC Router")
     div Antoine Brabants' Router
 
   a(href="james_b-router")
-    img(src="images/gallery/james_b/image1.jpg")
+    img(src="images/gallery/james_b/image1.jpg",
+      alt="James B.'s CNC Router")
     div James B.'s Router
 
   a(href="randy_s-cnc")
-    img(src="images/gallery/randy_s/image1.jpg")
+    img(src="images/gallery/randy_s/image1.jpg",
+      alt="Randy Savall's 6040 CNC Router")
     div Randy Savall's 6040 CNC
 
   a(href="mike_r-router")
-    img(src="images/gallery/mike_r/image1.jpg")
+    img(src="images/gallery/mike_r/image1.jpg",
+      alt="Mike Rabin's CNC Router and LASER Cutter")
     div Mike Rabin's Router/LASER
 
   a(href="rocky_e")
-    img(src="images/gallery/rocky_e/image1.jpg")
+    img(src="images/gallery/rocky_e/image1.jpg",
+      alt="Rocky Evan's Dyna Myte 2400 CNC Mill")
     div Rocky Evan's Dyna Myte 2400
 
   a(href="dynamyte_2400")
-    img(src="images/gallery/tadd_l/image1.jpg")
+    img(src="images/gallery/tadd_l/image1.jpg",
+      alt="Dyna Myte 2400 CNC Mill Buildbotics Retrofit")
     div Dyna Myte 2400 Retrofit
 
 .front-content
   section
     .img-right
       img(src="images/buildbotics_controller_front_right_lit-small.png",
-        width="300")
+        width="300", alt="Buildbotics CNC Controller")
     h1 What is the Buildbotics Controller?
     p.
       The Buildbotics controller is a fully enclosed smart CNC machine
@@ -60,8 +70,8 @@
 
   section
     .img-right
-      img(src="images/gcode.png", width="200")
-    h1 What is GCode?
+      img(src="images/gcode.png", alt="A few line of GCode", width="200")
+    h2 What is GCode?
     p.
       GCode is the language understood by most CNCs.  It tells your CNC how to
       move, at what speed and when to turn the tool on and off.
@@ -69,8 +79,9 @@
 
   section
     .img-right
-      img(src="images/stepper-motor.png", height="150")
-    h1 What is a Stepper Motor?
+      img(src="images/stepper-motor.png", alt="Two stepper motors",
+        height="150")
+    h2 What is a Stepper Motor?
     p.
       A stepper motor is a special type of motor that moves in steps.  This
       makes it possible to precisely position your CNC machine.
@@ -78,8 +89,9 @@
 
   section
     .img-right
-      img(src="images/spindle.png", height="150")
-    h1 What is a CNC Spindle?
+      img(src="images/spindle.png", alt="A high-speed CNC spindle",
+        height="150")
+    h2 What is a CNC Spindle?
     p.
       A CNC spindle is a high speed motor with a tool holder or chuck.
       CNC spindles are normally controlled with either a PWM enabled driver or
@@ -88,8 +100,9 @@
 
   section
     .img-right
-      img(src="images/pwm_spindle.png", height="150")
-    h1 What is PWM?
+      img(src="images/pwm_spindle.png",
+        alt="A DC CNC spindle with a spindle driver", height="150")
+    h2 What is PWM?
     p.
       PWM stats for Pulse Width Modulation.  Pulses of different widths are
       sent over a wire to control the speed or intensity of CNC spindles or
@@ -99,8 +112,9 @@
 
   section
     .img-right
-      img(src="images/vfd_and_spindle.png", height="150")
-    h1 What is a VFD?
+      img(src="images/vfd_and_spindle.png",
+        alt="A VFD with high speed CNC spindle", height="150")
+    h2 What is a VFD?
     p.
       VFD stands for Variable Frequency Drive.  It is used to control high
       speed "three phase" CNC spindles.  The Buildbotics controller can
@@ -108,18 +122,19 @@
     .clear
 
   section
-    h1 What is S-Curve Acceleration?
+    h2 What is S-Curve Acceleration?
     p.
       S-Curve acceleration is an advanced motion planning algorithm which
       smooths out CNC movement.  Most CNC controllers use trapezoidal
       acceleration which is much simpler but results in jerky movement that
       produces rough cuts and increases wear and tear on both tools and the CNC
       machine itself.
-    img(src="images/scurve.png", width="600")
+    img(src="images/scurve.png", width="600"
+      alt="A graph of trapezodial vs S-Curve acceleration profiles")
     .clear
 
   section
-    h1 Have other questions?
+    h2 Have other questions?
     p.
       Email
       (#[a(href="mailto:info@buildbotics.com") info@buildbotics.com]) or call
@@ -129,10 +144,10 @@
   include ./buy.pug
 
   section
-    h1 Check out our Reviews
+    h2 Check out our Reviews
     .img-right
       a.reviews(href="store/#product-reviews", target="_blank")
-        img(src="images/reviews.png")
+        img(src="images/reviews.png", alt="A snapshot of a positive review")
     p.
       Many of our customers have built new CNCs, converted old ones or
       revamped their existing machines using the Buildbotics CNC controller.
@@ -141,10 +156,11 @@
       what some of them have to say.
 
   section
-    h1 Test your GCode Online
+    h2 Test your GCode Online
     .img-right
       a(href="https://demo.buildbotics.com/", target="_blank")
-        img(src="images/buildbotics_web_interface.jpg")
+        img(src="images/buildbotics_web_interface.jpg",
+          alt="A view of the Buildbotics Web interface")
     p.
       Make your CNC incredibly easy to use with the Buildbotics controller's
       intuitive software.
@@ -163,12 +179,12 @@
   include ./mailinglist.pug
 
   section
-    h1 Compatible with most CAM software
+    h2 Compatible with most CAM software
     .cam-logos
-      img(src="images/cam/fusion360.png")
-      img(src="images/cam/mastercam.png")
-      img(src="images/cam/vcarve.png")
-      img(src="images/cam/bobcad.png")
+      img(src="images/cam/fusion360.png", alt="Fusion360 logo")
+      img(src="images/cam/mastercam.png", alt="MasterCAM logo")
+      img(src="images/cam/vcarve.png", alt="VCarve logo")
+      img(src="images/cam/bobcad.png", alt="BobCAD logo")
 
     p.
       The Buildbotics CNC controller accepts GCode from CAM software like
@@ -178,9 +194,9 @@
     .clear
 
   section
-    h1 Built-in Stepper Drivers
+    h2 Built-in Stepper Drivers
     .img-left
-      img(src="images/steppers2.png")
+      img(src="images/steppers2.png", alt="Three different stepper motors")
     ul
       li 4 motor driver channels
       li Up to 6A per channel
@@ -197,8 +213,9 @@
     .clear
 
   section
-    h1 Reliable Electronics
-    .img-right: img(src="images/electrical_warning.png")
+    h2 Reliable Electronics
+    .img-right: img(src="images/electrical_warning.png",
+      alt="Electrical warning sign")
     p.
       We know you want your CNC to just work when you need it to.  Yet, many
       cheap CNC controllers were designed with little or no attention
@@ -214,7 +231,7 @@
     .clear
 
   section
-    h1 Awesome Technical Support
+    h2 Awesome Technical Support
     p.
       Get a hold of #[b a real person] when you need to. We provide technical
       support by #[a(href="mailto:info@buildbotics.com") email], phone or via
@@ -226,8 +243,9 @@
     .clear
 
   section
-    h1 Stay Cool without a Fan
-    .img-left: img(src="images/cool_without_fan.png")
+    h2 Stay Cool without a Fan
+    .img-left: img(src="images/cool_without_fan.png",
+      alt="A cool thermometer and a crossed out fan")
 
     p.
       The Buildbotics controller protects against thermal overload.
@@ -238,8 +256,9 @@
     .clear
 
   section
-    h1 Dedicated Computer #[b not] Required
-    .img-left: img(src="images/no_mach3_or_linuxcnc.png")
+    h2 Dedicated Computer #[b not] Required
+    .img-left: img(src="images/no_mach3_or_linuxcnc.png",
+      alt="Mach3 and LinuxCNC both crossed out")
 
     p.
       A finely tuned PC running Mach or LinuxCNC is #[b not] needed.  You can
@@ -252,8 +271,8 @@
     .clear
 
   section
-    h1 Fast, Smooth & Accurate Stepping
-    .img-left: img(src="images/stepdir.png")
+    h2 Fast, Smooth & Accurate Stepping
+    .img-left: img(src="images/stepdir.png", alt="Step and direction signals")
 
     p.
       Get maximum performance and accuracy from your CNC. The Buildbotics
@@ -262,32 +281,34 @@
     .clear
 
   section
-    h1 USB Gamepad Control
-    img(src="images/buildbotics_gamepad_controls.png")
+    h2 USB Gamepad Control
+    img(src="images/buildbotics_gamepad_controls.png",
+      alt="Buildbotics CNC Gamepad controller function diagram")
     p.
       Setup up cuts with ease and agility using the included gamepad.
     .clear
 
   section
-    h1 Remote Monitoring with USB Camera
+    h2 Remote Monitoring with USB Camera
     .img-right
-      img(src="images/logitech_C615-2.png")
+      img(src="images/logitech_C615-2.png", alt="USB camera")
     p.
       With the optional USB camera you can keep an eye on your CNC from
       anywhere using a Web browser or smartphone.
     .clear
 
   section
-    h1 Wired or WiFi Networking
+    h2 Wired or WiFi Networking
     p.
       The Buildbotics controller offers a modern Web interface accessible from
       a browser over your local network or WiFi.  A whole network of
       Buildbotics controllers can be managed from a single computer.
-    img(src="images/buildbotics_network.png")
+    img(src="images/buildbotics_network.png",
+      alt="Many Buildbotics CNC devices connected by a network")
     .clear
 
   section
-    h1 Free Simulation Software
+    h2 Free Simulation Software
     p.
       All the software you need to run GCode on your CNC machine is built
       in to the Buildbotics controller but you can also use our free
@@ -305,8 +326,9 @@
     .clear
 
   section
-    h1 RaspberryPi 3 Inside
-    .img-right: img(src="images/raspberrypi3.png")
+    h2 RaspberryPi 3 Inside
+    .img-right: img(src="images/raspberrypi3.png",
+      alt="RaspberryPi CNC controller")
     p.
       The built-in Raspberry Pi 3 running Linux on a 16GiB microSD card
       provides massive potential for building your next big idea.  Install
@@ -316,8 +338,9 @@
   include ./buy.pug
 
   section
-    h1 Tool Control
-    img(src="images/spindles.png")
+    h2 Tool Control
+    img(src="images/spindles.png",
+      alt="A DC CNC spindle next to a VFD CNC spindle")
     p.
       The PWM, enable and direction outputs can be used to control a wide
       array of tool heads. The RS485 connection drives high-speed VFD
@@ -326,8 +349,9 @@
 
   section
     a(name="breakout")
-    .img-right: img(src="images/DB25_breakout_box.png", width="200")
-    h1 I/O Breakout Box Included
+    .img-right: img(src="images/DB25_breakout_box.png", width="200",
+      alt="Buildbotics DB25 I/O breakout box connection diagram")
+    h2 I/O Breakout Box Included
     p.
       Limit switches, Z-axis probing, PWM spindle control, RS-485 spindle
       control, and e-stop switches can be easily connected via the included
@@ -335,8 +359,9 @@
     .clear
 
   section
-    h1 Power Supply Options
-    img(src="images/power_supplies.png")
+    h2 Power Supply Options
+    img(src="images/power_supplies.png",
+      alt="Two types of MeanWell power supply")
     p.
       Connect any power supply which outputs 12-36v DC with at least 6A using
       the included power cable or buy the Mean Well GST280A-C6P power adapter
@@ -344,16 +369,17 @@
     .clear
 
   section
-    h1 Cables Included
-    img(src="images/cables.png")
+    h2 Cables Included
+    img(src="images/cables.png", alt="Included Buildbotics cables")
     p.
       The Buildbotics controller comes with time saving pre-made cables for
       connecting stepper motors, power supplies and load switches.
     .clear
 
   section
-    h1 Built-in Load Switches
-    .img-right: img(src="images/load_switch.png", width="400")
+    h2 Built-in Load Switches
+    .img-right: img(src="images/load_switch.png", width="400",
+      alt="Buildbotics CNC controller controlling a compressor with an SSR")
     p.
       Two load switches, each capable of supplying up to 15A can power
       heated beds for 3D printers, extruders, vacuum tables or whatever else
@@ -367,9 +393,11 @@
     .clear
 
   section
-    h1 Aluminum Enclosure
-    img(src="images/enclosure.png")
-    .img-right: img(src="images/buildbotics_enclosure_base.png")
+    h2 Aluminum Enclosure
+    img(src="images/enclosure.png",
+      alt="Buildbotics CNC controller aluminum enclosure")
+    .img-right: img(src="images/buildbotics_enclosure_base.png",
+      alt="Diagram of Buildbotics CNC controller enclosure footprint")
     p.
       By carefully considering heat throughout the design process the
       Buildbotics controller dissipates heat through its fan-less aluminum
@@ -382,7 +410,7 @@
 
   section
     a(name="docs")
-    h1 Documentation
+    h2 Documentation
     p.
       Good documentation is essential.  We are still working on perfecting our
       documentation and will continue to do so.  Stay tuned for tutorials
@@ -398,12 +426,12 @@
     .clear
 
   section
-    h1 Tested
+    h2 Tested
     p.
       The Buildbotics controller has been successfully tested in many CNC builds
       both by us and our customers.
 
-    img(src="images/cncs_we_built.png")
+    img(src="images/cncs_we_built.png", alt="Six of the CNCs we've built")
     - var youtube_ch = "//youtube.com/channel/UC_onc2im9IrG1RxJ3CZnArw"
     p.
       We filmed the construction of a Taig CNC mill, an OX CNC router, a K40
@@ -423,8 +451,9 @@
     .clear
 
   section
-    h1 Source Code, Schematics & PCB layout
-    img(src="images/dev.png")
+    h2 Source Code, Schematics & PCB layout
+    img(src="images/dev.png",
+      alt="Schematics, PCB layout and the main circuit board")
     p.
       Welcome, software and hardware developers.  We’ve already
       implemented a lot of cool features but we have not even scratched the

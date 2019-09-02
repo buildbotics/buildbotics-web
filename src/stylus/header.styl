@@ -1,6 +1,9 @@
+@import "config"
+
 .site-header
   border-bottom 1px solid header_border_color
   background-color header_color
+  line-height initial
 
   .site-header-wrapper
     padding 0 5px
@@ -19,6 +22,9 @@
     text-decoration none
     color medium_text_color
 
+    &:hover
+      color link_hover_color
+
   ul, li
     margin 0
     padding 0
@@ -27,7 +33,7 @@
     list-style none
     display flex
 
-  .logo
+  .site-logo
     margin-right 1em
     font-size 24pt
     white-space nowrap
@@ -65,3 +71,11 @@
 @media (max-width: 600px)
   .site-header li
     line-height 1.6em
+
+.amp-template .site-header .site-logo
+  img
+    margin-right 0
+
+  amp-img
+    margin-right 5px
+    vertical-align bottom

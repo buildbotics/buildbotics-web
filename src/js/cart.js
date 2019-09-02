@@ -90,7 +90,7 @@ var __cart_app = {
 
     load: function (cart) {
       this.cart = cart;
-      this.cookie_set('cart', JSON.stringify(cart));
+      this.cookie_set('cart', JSON.stringify(cart), 365);
 
       if (this.do_checkout) this.checkout();
 

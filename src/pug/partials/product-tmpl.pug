@@ -32,7 +32,7 @@ script#product-template(type="text/x-template")
       h2 Customer Reviews
       .product-reviews
         product-review(v-for="(review, index) in product.reviews",
-          :id="'review-' + index", :review="review")
+          :review="review")
 
     a(name="write-review")
     product-review-form(:id="product.id")
@@ -91,7 +91,7 @@ script#product-modifier-template(type="text/x-template")
 
 
 script#product-review-template(type="text/x-template")
-  section.product-review(@dblclick="full = !full")
+  section.product-review(@dblclick="full = !full", :id="'review-' + review.id")
     .product-review-wrapper(:class="{'show-full': full}")
       div
         .review-avatar.fa.fa-user
@@ -136,7 +136,7 @@ script#product-review-form-template(type="text/x-template")
 
       label Review Body #[small Required]
       textarea(v-model="text", rows="20", name="text", aria-required="true")
-      .text-chars(:class="{success: text_valid}")
+      .text-chars(:class="{success: text_valid()}")
         | Characters: {{text.length}} (min: 100, max: 10,000)
 
       .review-errors(v-if="errors.length")

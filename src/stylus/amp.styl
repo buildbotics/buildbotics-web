@@ -41,9 +41,11 @@ audio
 a
   background-color transparent
   color #e5aa3d
+  text-decoration none
 
   &:hover
     color #428bca
+    text-decoration underline
 
 a:active, a:hover
   outline 0
@@ -407,64 +409,19 @@ select
   -moz-box-sizing border-box
 
 .site-logo
-  font-family 'Audiowide'
   font-size 24pt
-
-.main-nav
-  display flex
-  flex-wrap wrap
-
-  .site-logo
-    flex 1
-    white-space nowrap
-
-  a
-    color #666
-    display block
-    padding 5px 0
-    text-decoration none
-    line-height 40px
-
-    &:hover
-      color #428bca
-
-  amp-img
-    display inline-block
-    vertical-align text-bottom
-
-  .left
-    color #444
-    display inline-block
-
-  .right
-    color #e5aa3d
-    display inline-block
 
 .content
   background #fff
   padding-top 15px
-
-.main-nav, .content
   margin auto
   max-width 600px
-
-.main-nav ul, .main-nav li
-  font-size 15pt
-  margin 0
-  padding 0
-  margin-left 10px
-  list-style none
-  text-transform uppercase
-  display flex
-  flex-wrap wrap
-  justify-content space-between
 
 .post
   position relative
   margin-top 0
   padding-bottom 0
   max-width 100%
-  border-bottom #ebf2f6 1px solid
   word-wrap break-word
   font-size 0.95em
   line-height 1.65em
@@ -474,9 +431,6 @@ select
 
 .post-title
   margin-bottom 0
-
-  a
-    text-decoration none
 
 .post-meta
   display flex
@@ -488,10 +442,6 @@ select
 
   a
     color #888
-    text-decoration none
-
-    &:hover
-      text-decoration underline
 
   .author
     flex 1
@@ -535,32 +485,3 @@ select
 
   p
     margin 0
-
-    a
-      &:last-child
-        text-decoration none
-
-.site-footer
-  display flex
-  flex-wrap wrap
-  justify-content space-between
-  position relative
-  margin 0 auto 20px auto
-  padding 1rem 0
-  max-width 600px
-  color rgba(0, 0, 0, 0.5)
-  font-size 10pt
-  line-height 1.75em
-
-  a
-    text-decoration none
-
-  .copyright
-    margin-right 1em
-
-.copyright, .site-footer-nav
-  display inline-block
-
-.copyright
-  flex 1
-  white-space nowrap

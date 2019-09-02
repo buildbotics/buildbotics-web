@@ -3,7 +3,7 @@
 "@id": "#buildbotics-cnc-controller"
 "@type": IndividualProduct
 name: Buildbotics CNC Controller
-url: https://buildbotics.com/store
+url: https://buildbotics.com/product/113/buildbotics-cnc-controller
 mainEntityOfPage: https://buildbotics.com/
 logo: https://buildbotics.com/images/logo/buildbotics_logo-1024x1024.png
 brand:
@@ -196,7 +196,7 @@ offers:
     "@type": Offer
     availability: http://schema.org/InStock
     itemCondition: http://schema.org/NewCondition
-    url: https://buildbotics.com/store
+    url: https://buildbotics.com/product/113/buildbotics-cnc-controller
     price: 450.00
     priceCurrency: USD
     priceValidUntil: 2020-12-31
@@ -235,7 +235,7 @@ aggregateRating:
   worstRating: 5
   ratingExplanation: >-
     Ratings were provided Buildbotics customers via the online store
-  url: https://store.buildbotics.com/buildbotics-cnc-controller/#product-reviews
+  url: https://buildbotics.com/product/113/buildbotics-cnc-controller#reviews
 
 review:
   -
@@ -248,7 +248,7 @@ review:
       name: Antoine Brabants
       givenName: Antoine
       familyName: Brabants
-    url: https://store.buildbotics.com/buildbotics-cnc-controller/#product-reviews
+    url: https://buildbotics.com/product/113/buildbotics-cnc-controller#review-4
     name: Excellent
     reviewBody: |-
       When I started to build my first DIY machine 3 months ago what I feared
@@ -272,7 +272,7 @@ review:
       name: Michael Rabin
       givenName: Michael
       familyName: Rabin
-    url: https://store.buildbotics.com/buildbotics-cnc-controller/#product-reviews
+    url: https://buildbotics.com/product/113/buildbotics-cnc-controller#review-5
     name: CNC Controller
     reviewBody: |-
       The Buildbotics CNC Controller is Amazing.  I have a CNC with a controller
@@ -311,7 +311,7 @@ review:
       "@type": Person
       name: Randy
       givenName: Randy
-    url: https://store.buildbotics.com/buildbotics-cnc-controller/#product-reviews
+    url: https://buildbotics.com/product/113/buildbotics-cnc-controller#review-6
     name: Better with Buildbotics
     reviewBody: |-
       I am totally impressed with your Buildbotics controller.   I have been
@@ -367,7 +367,7 @@ review:
       name: Joe - Gainesville, GA
       givenName: Joe
       homeLocation: Gainesville, GA
-    url: https://store.buildbotics.com/buildbotics-cnc-controller/#product-reviews
+    url: https://buildbotics.com/product/113/buildbotics-cnc-controller#review-7
     name: Excellent Quality and Service
     reviewBody: |-
       After a lot of internet searches and chat room conversations I felt that
@@ -393,6 +393,7 @@ review:
       familyName: Yu
       homeLocation: Michigan
     name: Best CNC controller
+    url: https://buildbotics.com/product/113/buildbotics-cnc-controller#review-12
     reviewBody: |-
       I bought a used Dyna Myte 2400 mini CNC milling machine couple weeks ago
       but found out later that the controller doesn\'t have its computer
@@ -434,7 +435,7 @@ review:
       "@type": Person
       name: Jack
       givenName: Jack
-    url: https://store.buildbotics.com/buildbotics-cnc-controller/#product-reviews
+    url: https://buildbotics.com/product/113/buildbotics-cnc-controller#review-13
     name: Awesome Controller and Even Better Support
     reviewBody: |-
       This thing is great! Any issues or questions I\'ve had have been resolved

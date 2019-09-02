@@ -38,28 +38,28 @@
 
 {{#contentFor "scripts"}}
 <script>
-// Adds delay to author card dropups to disappear. This gives enough
-// time for the user to interact with the author card while they move
-// the mouse from the avatar to the card. Also makes space for the
-// interacted avatar.
-$(document).ready(function () {
-  var hoverTimeout;
+  // Adds delay to author card dropups to disappear. This gives enough
+  // time for the user to interact with the author card while they move
+  // the mouse from the avatar to the card. Also makes space for the
+  // interacted avatar.
+  $(document).ready(function () {
+    var hoverTimeout;
 
-  $('.author-list-item').hover(function() {
-    var $this = $(this);
+    $('.author-list-item').hover(function() {
+      var $this = $(this);
 
-    clearTimeout(hoverTimeout);
+      clearTimeout(hoverTimeout);
 
-    $('.author-card').removeClass('hovered');
-    $(this).children('.author-card').addClass('hovered');
+      $('.author-card').removeClass('hovered');
+      $(this).children('.author-card').addClass('hovered');
 
-  }, function() {
-    var $this = $(this);
+    }, function() {
+      var $this = $(this);
 
-    hoverTimeout = setTimeout(function() {
-      $this.children('.author-card').removeClass('hovered');
-    }, 800);
+      hoverTimeout = setTimeout(function() {
+        $this.children('.author-card').removeClass('hovered');
+      }, 800);
+    });
   });
-});
 </script>
 {{/contentFor}}

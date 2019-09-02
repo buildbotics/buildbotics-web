@@ -1,32 +1,21 @@
 {{!< default}}
 
-<header class="site-header outer">
-  <div class="inner">{{> "site-nav"}}</div>
-</header>
-
 {{#post}}
+  <main id="site-main" class="site-main outer">
+    <div class="inner">
+      <article class="post-full {{post_class}}">
+        <header class="post-full-header">
+          <h1 class="post-full-title">{{title}}</h1>
+        </header>
 
-<main id="site-main" class="site-main outer">
-  <div class="inner">
-    <article class="post-full {{post_class}}">
-      <header class="post-full-header">
-        <h1 class="post-full-title">{{title}}</h1>
-      </header>
-
-      <section class="post-full-content">
-        <div class="post-content">{{content}}</div>
-      </section>
-    </article>
-  </div>
-</main>
-
+        <section class="post-full-content">
+          <div class="post-content">{{content}}</div>
+        </section>
+      </article>
+    </div>
+  </main>
 {{/post}}
 
 {{#contentFor "scripts"}}
-<script>
-  $(function() {
-    var $postContent = $(".post-full-content");
-    $postContent.fitVids();
-  });
-</script>
+  <script>$(function() {$(".post-full-content").fitVids()})</script>
 {{/contentFor}}

@@ -8,9 +8,7 @@ html(lang="en")
     include ./partials/header.pug
     #content: product-component(v-cloak, v-if="product", :product_id="product")
     include ./partials/footer.pug
-
-    style: include:stylus ../stylus/common.styl
-
+    include ./partials/foot.pug
     include ./partials/product.pug
     include ./partials/owl.pug
 

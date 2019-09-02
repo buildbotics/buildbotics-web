@@ -1,0 +1,458 @@
+.post-template .site-main, .page-template .site-main
+  padding-bottom 4vw
+
+.post-full
+  font-family 'Roboto Slab', serif
+  position relative
+  z-index 50
+  max-width 700px
+  margin 0 auto
+
+.post-full-header
+  margin 0
+  padding 6vw 0 3vw
+  text-align left
+
+.post-full-meta
+  display flex
+  justify-content center
+  align-items center
+  color #666
+  font-size 1.4rem
+  font-weight 600
+  text-transform uppercase
+
+.post-full-meta-date
+  color #666
+
+.post-full-title
+  margin 0
+  color #666
+
+.date-divider
+  display inline-block
+  margin 0 6px 1px
+
+.post-full-content
+  position relative
+  margin 0 auto
+  min-height 230px
+  font-family Georgia, serif
+  font-size 2.2rem
+  line-height 1.6em
+  li
+    word-break break-word
+    p
+      margin 0
+    &:first-child
+      margin-top 0
+  a
+    word-break break-word
+
+  small
+    display inline-block
+    line-height 1.6em
+
+  img[src$="#full"]
+    max-width none
+
+    width 100vw
+  img
+    & + br
+      & + small
+        display block
+        margin-top -3em
+        margin-bottom 1.5em
+        text-align center
+
+  iframe
+    margin 0 auto !important
+
+  blockquote
+    margin 0 0 1.5em
+    padding 0 1.5em
+    border-left 3px solid #e5aa3d
+
+    p
+      margin 0 0 1em 0
+      color inherit
+      font-size inherit
+      line-height inherit
+      font-style italic
+
+      &:last-child
+        margin-bottom 0
+
+  code
+    padding 0 5px 2px
+    font-size 0.8em
+    line-height 1em
+    font-weight 400!important
+    background #eee
+    border-radius 3px
+
+  p
+    code
+      word-break break-all
+
+  pre
+    overflow-x auto
+    margin 1.5em 0 3em
+    padding 20px
+    max-width 100%
+    color #444
+    font-size 1.4rem
+    line-height 1.5em
+    background #eee
+    border-radius 5px
+
+    ::selection
+      color #888
+
+    code
+      padding 0
+      font-size inherit
+      line-height inherit
+      background transparent
+
+      :not(span)
+        color inherit
+
+  .fluid-width-video-wrapper
+    margin 1.5em 0 3em
+
+  hr
+    margin 4vw 0
+
+    &:after
+      content ""
+      position absolute
+      top -15px
+      left 50%
+      display block
+      margin-left -10px
+      width 1px
+      height 30px
+      background #eee
+      box-shadow #fff 0 0 0 5px
+      transform rotate(45deg)
+
+  h1
+    margin 0.5em 0 0.2em 0
+    font-size 4rem
+
+  h2
+    margin 0.5em 0 0.2em 0
+    font-size 3.6rem
+    font-weight 700
+
+
+  h3
+    margin 0.5em 0 0.2em 0
+    font-size 2.8rem
+    font-weight 700
+
+  h4
+    margin 0.5em 0 0.2em 0
+    font-size 2.8rem
+    font-weight 700
+
+  h5
+    display block
+    margin 0.5em 0
+    padding 1em 0 1.5em
+    border 0
+    font-family Georgia,serif
+    font-size 3.2rem
+    line-height 1.35em
+    text-align center
+
+  h6
+    margin 0.5em 0 0.2em 0
+    font-size 2.3rem
+    font-weight 700
+
+  table
+    display inline-block
+    overflow-x auto
+    margin 0.5em 0 2.5em
+    max-width 100%
+    width auto
+    border-spacing 0
+    border-collapse collapse
+    font-size 1.6rem
+    white-space nowrap
+    vertical-align top
+    -webkit-overflow-scrolling touch
+    background radial-gradient(ellipse at left, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 75%) 0 center, radial-gradient(ellipse at right, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 75%) 100% center
+    background-attachment scroll, scroll
+    background-size 10px 100%, 10px 100%
+    background-repeat no-repeat
+
+    td
+      &:first-child
+        background-image linear-gradient(to right, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%)
+        background-size 20px 100%
+        background-repeat no-repeat
+
+      &:last-child
+        background-image linear-gradient(to left, rgba(255,255,255, 1) 50%, rgba(255,255,255, 0) 100%)
+        background-position 100% 0
+        background-size 20px 100%
+        background-repeat no-repeat
+
+    th
+      color #444
+      font-size 1.2rem
+      font-weight 700
+      letter-spacing 0.2px
+      text-align left
+      text-transform uppercase
+      background-color #eee
+
+  .kg-image
+    max-width 100%
+
+  .kg-width-wide
+    .kg-image
+      max-width 1040px
+
+  .kg-width-full
+    .kg-image
+      max-width 100vw
+
+  figure
+    margin 1.5em 0 3em
+
+    img
+      margin 0
+
+  figcaption
+    margin 1.0em 0 0
+    font-size 80%
+    line-height 1.6em
+    text-align center
+
+@media (max-width: 800px)
+  .post-full-content
+    font-size 1.9rem
+
+.post-full-content h1,
+.post-full-content h2,
+.post-full-content h3,
+.post-full-content h4,
+.post-full-content h5,
+.post-full-content h6,
+.post-full-content p,
+.post-full-content ul,
+.post-full-content ol,
+.post-full-content dl,
+.post-full-content pre,
+.post-full-content blockquote,
+.post-full-comments,
+.footnotes
+  min-width 100%
+
+.post-full-content strong,
+.post-full-content em
+  color #666
+
+.post-full-content img,
+.post-full-content video
+  display block
+  margin 1.5em auto
+  max-width 1040px
+  height auto
+
+
+@media (max-width: 1040px)
+  .post-full-content img,
+  .post-full-content video
+    max-width 100%
+
+@media (max-width: 500px)
+  .post-full-content
+    h1
+      font-size 2.8rem
+
+@media (max-width: 500px)
+  .post-full-content
+    h2
+      font-size 2.6rem
+
+@media (max-width: 500px)
+  .post-full-content
+    h3
+      font-size 2.2rem
+
+@media (max-width: 500px)
+  .post-full-content
+    h4
+      font-size 2.2rem
+
+@media (min-width: 1180px)
+  .post-full-content
+    h5
+      max-width 1060px
+      width 100vw
+
+@media (max-width: 500px)
+  .post-full-content
+    h5
+      padding 0 0 0.5em
+      font-size 2.2rem
+
+@media (max-width: 500px)
+  .post-full-content
+    h6
+      font-size 2rem
+
+.footnotes-sep
+  margin-bottom 30px
+
+.footnotes
+  font-size 1.5rem
+  p
+    margin 0
+
+.footnote-backref
+  font-size 1.2rem
+  font-weight bold
+  text-decoration none !important
+  box-shadow none !important
+
+@media (max-width: 500px)
+  .post-full-meta
+    font-size 1.2rem
+    line-height 1.3em
+
+  .post-full-title
+    font-size 2.9rem
+
+  .post-full-content
+    padding 0
+
+.post-full-content table th,
+.post-full-content table td
+  padding 6px 12px
+  border #888 1px solid
+
+.post-full-footer
+  display flex
+  justify-content space-between
+  align-items center
+  margin 0 auto
+  padding 3vw 0 6vw 0
+  max-width 840px
+
+  .author-list
+    justify-content center
+    padding 10px 20px
+
+.post-full-footer-right
+  flex-shrink 0
+  margin-left 20px
+
+.post-full-authors
+  flex-grow 1
+  display flex
+  flex-direction column
+  align-items center
+  margin-top 20px
+  padding-top 40px
+  border-top #888 1px solid
+
+.post-full-authors-content
+  margin-bottom 20px
+  p
+    margin-bottom 0
+    color #666
+    font-size 1.4rem
+    letter-spacing 0.2px
+    text-align center
+    text-transform uppercase
+  a
+    display inline-block
+    color #444
+    font-size 1.4rem
+    font-weight 600
+    text-transform uppercase
+
+.post-full-comments
+  margin 0 auto
+  max-width 840px
+
+.post-content
+  display flex
+  flex-direction column
+  align-items center
+  max-width 920px
+
+.post-template
+  .post-content
+    & > p
+      &:first-child
+        font-size 1.25em
+        line-height 1.5em
+
+.kg-width-full
+  figcaption
+    padding 0 1.5em
+
+.kg-embed-card
+  display flex
+  flex-direction column
+  align-items center
+  width 100%
+  .fluid-width-video-wrapper
+    margin 0
+
+@media (max-width: 1040px)
+  .post-full-content
+    .kg-width-full
+      .kg-image
+        width 100vw
+
+.kg-gallery-container
+  display flex
+  flex-direction column
+  max-width 1040px
+  width 100vw
+
+.kg-gallery-row
+  display flex
+  flex-direction row
+  justify-content center
+  &:not(:first-of-type)
+    margin 0.75em 0 0 0
+
+.kg-gallery-image
+  img
+    display block
+    margin 0
+    width 100%
+    height 100%
+  &:not(:first-of-type)
+    margin 0 0 0 0.75em
+
+.kg-gallery-card + .kg-image-card.kg-width-wide,
+.kg-gallery-card + .kg-gallery-card,
+.kg-image-card.kg-width-wide + .kg-gallery-card,
+.kg-image-card.kg-width-wide + .kg-image-card.kg-width-wide
+  margin -2.25em 0 3em
+
+.kg-code-card
+  min-width 100%
+
+  pre
+    margin 0
+
+.reading-time
+  flex-shrink 0
+  margin-left 20px
+  color #666
+  font-size 1.2rem
+  line-height 33px
+  font-weight 500
+  letter-spacing 0.5px
+  text-transform uppercase

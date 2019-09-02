@@ -1,0 +1,19 @@
+style: include:stylus ../../stylus/common.styl
+style: include ../../css/google-fonts.css
+style: include ../../css/icons.css
+
+script: include ../../js/analytics.js
+script: include ../../js/jquery.min.js
+script: include ../../js/vue.min.js
+script: include ../../js/fitvids.min.js
+
+// Olark, load after 30s
+script(type="text/javascript").
+  setTimeout(function () {
+    var script = document.createElement('script');
+    script.src = "/js/olark.js";
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }, 30000)
+
+
+include ./cart.pug

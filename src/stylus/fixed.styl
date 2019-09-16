@@ -1,0 +1,37 @@
+@media screen and (min-width: 750px)
+  body
+    height 100vh
+    overflow-y hidden
+
+    .olark-launch-button
+      bottom 55px !important
+
+    .page
+      display flex
+      flex-direction column
+      position relative
+      height 100vh
+
+    .site-header, .site-footer
+      flex 0 0 auto
+
+    .site-wrapper
+      min-height initial
+      flex 1 1 auto
+      position relative
+      flex-direction row
+      overflow-y hidden
+
+      > *
+        overflow-y auto
+
+      .table-of-contents
+        flex 0 0 auto
+        max-width 300px
+
+      .site-main
+        flex 1 1 auto
+        height 100%
+
+      .post-full-header
+        padding 0

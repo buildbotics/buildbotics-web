@@ -5,13 +5,15 @@ html(lang="en")
     include ./partials/head.pug
 
   body
-    include ./partials/header.pug
+    .page
+      include ./partials/header.pug
 
-    #content
-      h1 Shopping Cart
-      #cart-view(v-cloak)
+      .site-wrapper: main.site-main: .inner
+        h1 Shopping Cart
+        #cart-view(v-cloak)
 
-    include ./partials/footer.pug
+      include ./partials/footer.pug
+
     include ./partials/foot.pug
     include ./partials/cart-view-tmpl.pug
     style: include:stylus ../stylus/cart-view.styl

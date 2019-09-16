@@ -231,7 +231,8 @@ var __product = {
 
   data: function ()  {
     return {
-      product: undefined
+      product: undefined,
+      error: ''
     }
   },
 
@@ -267,9 +268,14 @@ var __product = {
   methods: {
     get_product: function () {
       $.get('/jmpapi/products/' + this.product_id)
-        .done(this.load_product).fail(function () {
-          // Wait 1 sec then try again
-          setTimeout(this.get_product, 1000);
+        .done(this.load_product).fail(function (xhr) {
+          try {
+            this.error = JSON.parse(xhr.responseText).error;
+
+          } catch (e) {
+            // Wait 1 sec then try again
+            setTimeout(this.get_product, 1000);
+          }
         }.bind(this));
     },
 
@@ -297,7 +303,7 @@ var __product = {
 
     load_product: function (product) {
       var canonical = 'https://buildbotics.com/product/' + product.id + '/' +
-          product.name.replace(/[^a-zA-Z0-9]/g, '_').toLowerCase();
+          product.name.replace(/[^a-zA-Z0-9]+/g, '-').toLowerCase();
 
       $('<link>')
         .attr('rel', 'canonical')
@@ -333,7 +339,7 @@ var __product = {
 
 
 var __product_app = {
-  el: '#content',
+  el: '.site-main .inner',
 
 
   data: function () {

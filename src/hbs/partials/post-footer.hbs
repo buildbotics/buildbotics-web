@@ -1,0 +1,13 @@
+<footer class="post-full-footer">
+  {{#has author="count:>1"}}
+    {{> "byline-multiple"}}
+  {{else}}
+    {{> "byline-single"}}
+  {{/has}}
+
+  <section class="post-full-meta">
+    <time class="post-full-meta-date"
+      datetime="{{date format="YYYY-MM-DD"}}"
+      >{{date format="D MMMM YYYY"}}</time>
+  </section>
+</footer>

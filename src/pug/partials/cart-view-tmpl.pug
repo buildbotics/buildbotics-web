@@ -36,6 +36,6 @@ script#cart-view-template(type="text/x-template")
         Subtotal ({{quantity}} items):
         #[span.cart-price ${{cart.total.toFixed(2)}}]
 
-      a.cart-checkout(href="/checkout") Proceed to checkout
+      a.cart-checkout(:href="cart.checkout") Proceed to checkout
 
       .cart-shipping-note Shipping calculated at checkout

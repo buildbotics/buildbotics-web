@@ -48,18 +48,7 @@ var __cart_app = {
   },
 
 
-  mounted: function() {
-    try {
-      var cart = JSON.parse(this.cookie_get('cart'));
-
-      if (typeof cart == 'object' && cart !== null) {
-        this.cart = cart;
-        return this.reload();
-      }
-    } catch (e) {}
-
-    this.clear();
-  },
+  mounted: function() {this.reload()},
 
 
   methods: {
@@ -94,9 +83,7 @@ var __cart_app = {
 
       if (this.do_checkout) this.checkout();
 
-      Vue.nextTick(function () {
-        __cart_send('.cart-view', 'load', cart);
-      })
+      Vue.nextTick(function () {__cart_send('.cart-view', 'load', cart)})
     },
 
 
@@ -104,16 +91,20 @@ var __cart_app = {
 
 
     reload: function () {
+      // Load cart from cookie
+      if (!this.cart.id)
+        try {
+          var cart = JSON.parse(this.cookie_get('cart'));
+
+          if (typeof cart == 'object' && cart !== null)
+            this.cart = cart;
+        } catch (e) {}
+
       // Check if we have a valid cart
       if (this.cart.id)
         $.get({url: '/jmpapi/carts/' + this.cart.id, cache: false})
-          .done(function (data) {
-            if (data.id == this.cart.id) this.load(data);
-            else this.clear();
-
-          }.bind(this)).fail(this.clear);
-
-      else this.clear();
+        .done(this.load)
+        .fail(this.clear);
     },
 
 
@@ -121,10 +112,7 @@ var __cart_app = {
       this.do_checkout = true;
 
       if (typeof this.cart.checkout != 'undefined')
-        $('<iframe>')
-        .attr('src', this.cart.checkout)
-        .addClass('cart-frame')
-        .appendTo('#content');
+        location.href = this.cart.checkout;
     },
 
 

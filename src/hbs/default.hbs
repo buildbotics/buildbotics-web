@@ -2,9 +2,11 @@
 <html lang="{{@site.lang}}">
   {{> "head"}}
   <body class="{{body_class}}">
-    {{> "assets/header.html"}}
-    <div class="site-wrapper">{{{body}}}</div>
-    {{> "assets/footer.html"}}
+    <div class="page">
+      {{> "assets/header.html"}}
+      <div class="site-wrapper">{{{body}}}</div>
+      {{> "assets/footer.html"}}
+    </div>
 
     <script>
       var images = document.querySelectorAll('.kg-gallery-image img');

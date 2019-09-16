@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# To rebuild Icon Moon icon font run:
+#
+#   ./convert-icons bbicons-v1.0.zip >src/css/icons.css
+
+if [ $# -ne 1 ]; then
+  echo "Usage: $0 <icons.zip>"
+  exit 1
+fi
+
+WOFF=$(unzip -p "$1" fonts/bbicons.woff | base64 -w0 | sed 's/\//\\\//g')
+unzip -p "$1" style.css |
+  sed "/url('fonts.*/d;s/src:/src: url(data:font\/woff;base64,$WOFF);/"

@@ -5,9 +5,12 @@ html(lang="en")
     include ./partials/head.pug
 
   body
-    include ./partials/header.pug
-    #content: product-component(v-cloak, v-if="product", :product_id="product")
-    include ./partials/footer.pug
+    .page
+      include ./partials/header.pug
+      .site-wrapper: main.site-main: .inner
+        product-component(v-cloak, v-if="product", :product_id="product")
+      include ./partials/footer.pug
+
     include ./partials/foot.pug
     include ./partials/product.pug
     include ./partials/owl.pug

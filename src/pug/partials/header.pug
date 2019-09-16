@@ -1,17 +1,29 @@
 header.site-header
   .site-header-wrapper
     nav.site-nav
-      .site-nav-left
-        a.site-logo(href="/")
-          img(src="/images/buildbotics_logo-40x40.png" alt="Buildbotics logo")
-          .left Build
-          .right botics
+      a.site-logo(href="/")
+        img(src="/images/buildbotics_logo-40x40.png" alt="Buildbotics logo")
+        .left Build
+        .right botics
 
-        ul
-          li: a(href="/store/") Store
-          li: a(href="/docs/") Docs
-          li: a(href="/contact/") Contact
+      ul
+        li: a(href="/store/") Store
+        li: a(href="/docs/") Docs
+        li: a(href="/contact/") Contact
 
-      ul.site-nav-right
-        li Call 707-559-8539
-        li#cart
+      ul
+        li: a.facebook(href="//facebook.com/buildbotics",
+          title="Visit our Facebook page")
+          .fa.fa-facebook-square
+        li: a.twitter(href="//twitter.com/buildbotics",
+          title="Visit our Twitter page")
+          .fa.fa-twitter
+        li: a.instagram(href="//instagram.com/buildbotics",
+          title="Visit our Instagram page."): .fa.fa-instagram
+        li: a.youtube(href="//youtube.com/channel/UC_onc2im9IrG1RxJ3CZnArw",
+          title="Visit our Youtube channel.")
+          .fa.fa-youtube-play
+        li: a.github(href="//github.com/buildbotics",
+          title="Checkout our GitHub repositories."): .fa.fa-github
+
+      #cart

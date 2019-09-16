@@ -8,8 +8,11 @@ html(lang="en")
     meta(name="description", content="Save time and money over CNC Controller Boards with the Buildbotics CNC controller.  Call us 707-559-8539.")
 
   body
-    include ./partials/header.pug
-    #content: include ./partials/cnc_controller_board.pug
-    include ./partials/footer.pug
+    .page
+      include ./partials/header.pug
+      .site-wrapper: main.site-main: .inner
+        include ./partials/cnc_controller_board.pug
+      include ./partials/footer.pug
+
     include ./partials/foot.pug
     style: include:stylus ../stylus/main.styl

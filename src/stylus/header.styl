@@ -32,45 +32,30 @@
   ul
     list-style none
     display flex
+    align-items center
+    flex-wrap wrap
 
   .site-logo
-    margin-right 1em
+    margin 0 10px
     font-size 24pt
     white-space nowrap
-    display flex
-    align-items center
 
     img
       height header_height - 10px
       vertical-align bottom
       margin-right 5px
 
-  .site-nav-left, .site-nav-right
-    display flex
-    align-items center
-    flex-wrap wrap
-
-    > *
-      display inline-block
-
-  .site-nav-left
-    float left
-
-  .site-nav-right
-    float right
-
   li
     text-transform uppercase
     font-size 16pt
     white-space nowrap
-    margin-right 20px
+    margin 0 10px
     display inline-block
     color medium_text_color
     line-height 2.6em
 
-@media (max-width: 600px)
-  .site-header li
-    line-height 1.6em
+    .fa
+      font-size 20pt
 
 .amp-template .site-header .site-logo
   img
@@ -79,3 +64,20 @@
   amp-img
     margin-right 5px
     vertical-align bottom
+
+
+@media (max-width: 850px)
+  .site-header
+    .site-logo
+      font-size 20pt
+
+      img
+        height 34px
+
+    li
+      font-size 14pt
+      line-height 1.6em
+
+@media (max-width: 750px)
+  .site-header li
+    line-height 1.6em

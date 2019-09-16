@@ -12,27 +12,12 @@
           <div class="post-content">{{content}}</div>
         </section>
 
-        <footer class="post-full-footer">
-          {{#has author="count:>1"}}
-            {{> "byline-multiple"}}
-          {{else}}
-            {{> "byline-single"}}
-          {{/has}}
-
-          <section class="post-full-meta">
-            <time class="post-full-meta-date"
-              datetime="{{date format="YYYY-MM-DD"}}"
-              >{{date format="D MMMM YYYY"}}</time>
-          </section>
-        </footer>
+        {{#is "post"}}{{> "post-footer"}}{{/is}}
       </article>
     </div>
   </main>
-
-  {{> floating-header}}
 {{/post}}
 
 {{#contentFor "scripts"}}
-  <script>{{> "assets/scroll.js"}}</script>
   <script>$(function() {$(".post-full-content").fitVids()})</script>
 {{/contentFor}}

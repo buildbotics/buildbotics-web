@@ -1,41 +1,43 @@
 script#product-template(type="text/x-template")
-  .product(v-if="typeof product != 'undefined'")
-    .product-top
-      .product-offer
-        h1.product-title {{product.name}}
-        product-rating(v-if="product.reviews", :reviews="product.reviews")
+  div
+    h1.product-error(v-if="error") {{error}}
+    .product(v-if="typeof product != 'undefined'")
+      .product-top
+        .product-offer
+          h1.product-title {{product.name}}
+          product-rating(v-if="product.reviews", :reviews="product.reviews")
 
-        .product-price
-          span ${{price}}
-          span USD + shipping
+          .product-price
+            span ${{price}}
+            span USD + shipping
 
-        .product-modifiers(v-if="product.modifiers")
-          product-modifier(v-for="modifier in product.modifiers",
-            :modifier="modifier")
+          .product-modifiers(v-if="product.modifiers")
+            product-modifier(v-for="modifier in product.modifiers",
+              :modifier="modifier")
 
-        .product-add
-          button.add-to-cart(@click="add_to_cart()",
-            :disabled="!product.inventory").
-            #[.fa.fa-shopping-cart] Add to Cart
+          .product-add
+            button.add-to-cart(@click="add_to_cart()",
+              :disabled="!product.inventory").
+              #[.fa.fa-shopping-cart] Add to Cart
 
-          .product-stock(v-if="product.inventory")
-            | {{product.inventory}} in Stock
-          .product-stock.error(v-else) Out of Stock
+            .product-stock(v-if="product.inventory")
+              | {{product.inventory}} in Stock
+            .product-stock.error(v-else) Out of Stock
 
-      product-images(v-if="product.images", :images="product.images")
+        product-images(v-if="product.images", :images="product.images")
 
-    .product-description
-      h2.product-title {{product.name}}
-      div(v-html="product.description")
+      .product-description
+        h2.product-title {{product.name}}
+        div(v-html="product.description")
 
-    #reviews(v-if="product.reviews")
-      h2 Customer Reviews
-      .product-reviews
-        product-review(v-for="(review, index) in product.reviews",
-          :review="review")
+      #reviews(v-if="product.reviews")
+        h2 Customer Reviews
+        .product-reviews
+          product-review(v-for="(review, index) in product.reviews",
+            :review="review")
 
-    a(name="write-review")
-    product-review-form(:id="product.id")
+      a(name="write-review")
+      product-review-form(:id="product.id")
 
 
 script#product-images-template(type="text/x-template")

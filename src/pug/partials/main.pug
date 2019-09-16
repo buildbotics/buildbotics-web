@@ -57,72 +57,111 @@
 
 .front-content
   section
-    .img-right
-      img(src="images/buildbotics_controller_front_right_lit-small.png",
-        width="300", alt="Buildbotics CNC Controller")
-    h1 What is the Buildbotics Controller?
+    h1 The Buildbotics CNC Machine Controller
+    center
+      img(src="images/buildbotics_with_gamepad_and_steppers.png",
+        alt="Buildbotics CNC machine controller with gamepad and stepper " +
+        "motors")
     p.
-      The Buildbotics controller is a fully enclosed smart CNC machine
+      The Buildbotics controller is a fully enclosed, smart CNC machine
       controller with built-in Web interface and advanced GCode processor.
-      It can control up to 4 stepper motors and a PWM or VFD controlled tool
-      such as a router spindle, LASER or plasma torch.
+      It can drive up to 4 stepper motors and many different tools such as
+      a CNC spindle, LASER cutter or plasma torch.
+
+    p You can #[a(href="/store") buy it now in our store].
+
+  section
+    center
+      h2 Frontpanel
+      img(src="images/buildbotics_controller_frontpanel.png",
+        alt="A diagram of the Buildbotics CNC controller frontpanel")
     .clear
 
   section
-    .img-right
-      img(src="images/gcode.png", alt="A few line of GCode", width="200")
-    h2 What is GCode?
+    center
+      h2 Backpanel
+      img(src="images/buildbotics_controller_backpanel_connections.png",
+        alt="A diagram of the Buildbotics CNC controller backpanel connections")
+    .clear
+
+  section
+    center
+      h2 Included I/O Breakout
+      img(src="images/buildbotics_io_breakout_diagram.png",
+        alt="A diagram of the Buildbotics CNC controller io breakout box")
     p.
-      GCode is the language understood by most CNCs.  It tells your CNC how to
-      move, at what speed and when to turn the tool on and off.
+      Connect limit switches, Z-axis probing, PWM spindle control, RS-485
+      spindle control, and e-stop switches easily via the included 25-pin
+      I/O breakout board using simple screw terminals.
+
+    p Check out the #[a(href="/io-breakout") pin-out diagram].
     .clear
 
   section
-    .img-right
-      img(src="images/stepper-motor.png", alt="Two stepper motors",
-        height="150")
-    h2 What is a Stepper Motor?
+    center
+      h2 Included USB Gamepad
+      img(src="images/buildbotics_gamepad_controls.png",
+        alt="Buildbotics CNC Gamepad controller function diagram")
+      p.
+        Setup up cuts with ease and agility using the included gamepad.
+    .clear
+
+  section
+    center
+      h2 Included Cables
+      img(src="images/cables.png", alt="Included Buildbotics cables")
     p.
-      A stepper motor is a special type of motor that moves in steps.  This
-      makes it possible to precisely position your CNC machine.
+      The Buildbotics controller comes with the following time saving
+      pre-made cables:
+    ul
+      li 4 x 10' Motor cables
+      li 2 x Load cable stubs
+      li 1 x Power cable
     .clear
 
   section
-    .img-right
-      img(src="images/spindle.png", alt="A high-speed CNC spindle",
-        height="150")
-    h2 What is a CNC Spindle?
+    center
+      h2 Optional USB Web Camera
+      img(src="images/buildbotics_web_with_camera.png", alt="Screenshot of " +
+        "buildbotics Web interface with video with USB camera")
     p.
-      A CNC spindle is a high speed motor with a tool holder or chuck.
-      CNC spindles are normally controlled with either a PWM enabled driver or
-      VFD.
+      With the optional USB camera you can keep an eye on your CNC from
+      anywhere using a Web browser or smartphone.  Add it to your controller
+      package by selecting the option on #[a(href="/store") our store].
     .clear
 
   section
-    .img-right
-      img(src="images/pwm_spindle.png",
-        alt="A DC CNC spindle with a spindle driver", height="150")
-    h2 What is PWM?
+    center
+      h2 Power Supply Options
+      img(src="images/power_supplies.png",
+        alt="Two types of MeanWell power supply")
     p.
-      PWM stats for Pulse Width Modulation.  Pulses of different widths are
-      sent over a wire to control the speed or intensity of CNC spindles or
-      LASERs driver.  The Buildbotics controller can output tightly controlled
-      PWM signals.
+      Connect any power supply which outputs 12v to 36v DC with at least 6A
+      using the included power cable select one of our bundled power supply
+      options #[a(href="/store") on our store].
     .clear
 
   section
-    .img-right
-      img(src="images/vfd_and_spindle.png",
-        alt="A VFD with high speed CNC spindle", height="150")
-    h2 What is a VFD?
+    h2 Built-in Stepper Drivers
+    .img-left
+      img(src="images/steppers2.png", alt="Three different stepper motors")
+    ul
+      li 4 motor driver channels
+      li Up to 6A per channel
+      li 12v to 36v DC
+      li Up to 256 microstepping
+      li Smooth S-curve acceleration
+      li Step rates up to 250k/sec per channel.
+
     p.
-      VFD stands for Variable Frequency Drive.  It is used to control high
-      speed "three phase" CNC spindles.  The Buildbotics controller can
-      control most VFDs either using an RS485 control line or with PWM.
+      Drive most NEMA 17, NEMA 23 and NEMA 34 motors. Preliminary support for
+      4th axis as a rotary axis. The fourth driver can be synchronized to drive
+      a single axis with two motors.  Here's a list of some
+      #[a(href="/recommended-motors") motors we recommend].
     .clear
 
   section
-    h2 What is S-Curve Acceleration?
+    h2 S-Curve Acceleration
     p.
       S-Curve acceleration is an advanced motion planning algorithm which
       smooths out CNC movement.  Most CNC controllers use trapezoidal
@@ -134,7 +173,19 @@
     .clear
 
   section
-    h2 Have other questions?
+    h2 Awesome Technical Support
+    p.
+      Get a hold of #[b a real person] when you need to. We provide technical
+      support by #[a(href="mailto:info@buildbotics.com") email], phone or via
+      #[a(href="//forum.buildbotics.com/") the Buildbotics forum].
+
+    p.
+      Check out #[a(href="store/#product-reviews", target="_blank") our reviews]
+      to see just how much our customers love our technical support.
+    .clear
+
+  section
+    h2 Have questions?
     p.
       Email
       (#[a(href="mailto:info@buildbotics.com") info@buildbotics.com]) or call
@@ -156,14 +207,14 @@
       what some of them have to say.
 
   section
-    h2 Test your GCode Online
+    h2 Try the Controller Software Online
     .img-right
       a(href="https://demo.buildbotics.com/", target="_blank")
         img(src="images/buildbotics_web_interface.jpg",
           alt="A view of the Buildbotics Web interface")
     p.
       Make your CNC incredibly easy to use with the Buildbotics controller's
-      intuitive software.
+      intuitive built-in software.
 
     p
       a(href="https://demo.buildbotics.com/", target="_blank")
@@ -194,25 +245,6 @@
     .clear
 
   section
-    h2 Built-in Stepper Drivers
-    .img-left
-      img(src="images/steppers2.png", alt="Three different stepper motors")
-    ul
-      li 4 motor driver channels
-      li Up to 6A per channel
-      li 12v to 36v DC
-      li Up to 256 microstepping
-      li Smooth S-curve acceleration
-      li Step rates up to 250k/sec per channel.
-
-    p.
-      Drive most NEMA 17, NEMA 23 and NEMA 34 motors. Preliminary support for
-      4th axis as a rotary axis. The fourth driver can be synchronized to drive
-      a single axis with two motors.  Here's a list of some
-      #[a(href="/recommended-motors") motors we recommend].
-    .clear
-
-  section
     h2 Reliable Electronics
     .img-right: img(src="images/electrical_warning.png",
       alt="Electrical warning sign")
@@ -228,18 +260,6 @@
       li Reverse voltage
       li Short-circuit
       li Voltage spikes caused by motor stalls
-    .clear
-
-  section
-    h2 Awesome Technical Support
-    p.
-      Get a hold of #[b a real person] when you need to. We provide technical
-      support by #[a(href="mailto:info@buildbotics.com") email], phone or via
-      #[a(href="//forum.buildbotics.com/") the Buildbotics forum].
-
-    p.
-      Check out #[a(href="store/#product-reviews", target="_blank") our reviews]
-      to see just how much our customers love our technical support.
     .clear
 
   section
@@ -281,23 +301,6 @@
     .clear
 
   section
-    h2 USB Gamepad Control
-    img(src="images/buildbotics_gamepad_controls.png",
-      alt="Buildbotics CNC Gamepad controller function diagram")
-    p.
-      Setup up cuts with ease and agility using the included gamepad.
-    .clear
-
-  section
-    h2 Remote Monitoring with USB Camera
-    .img-right
-      img(src="images/logitech_C615-2.png", alt="USB camera")
-    p.
-      With the optional USB camera you can keep an eye on your CNC from
-      anywhere using a Web browser or smartphone.
-    .clear
-
-  section
     h2 Wired or WiFi Networking
     p.
       The Buildbotics controller offers a modern Web interface accessible from
@@ -325,16 +328,6 @@
         source(src="video/camotics.mp4", type="video/mp4")
     .clear
 
-  section
-    h2 RaspberryPi 3 Inside
-    .img-right: img(src="images/raspberrypi3.png",
-      alt="RaspberryPi CNC controller")
-    p.
-      The built-in Raspberry Pi 3 running Linux on a 16GiB microSD card
-      provides massive potential for building your next big idea.  Install
-      additional software or use Python to implement your own features.
-    .clear
-
   include ./buy.pug
 
   section
@@ -345,35 +338,6 @@
       The PWM, enable and direction outputs can be used to control a wide
       array of tool heads. The RS485 connection drives high-speed VFD
       controlled air or water cooled spindles over two wires.
-    .clear
-
-  section
-    a(name="breakout")
-    .img-right: img(src="images/DB25_breakout_box.png", width="200",
-      alt="Buildbotics DB25 I/O breakout box connection diagram")
-    h2 I/O Breakout Box Included
-    p.
-      Limit switches, Z-axis probing, PWM spindle control, RS-485 spindle
-      control, and e-stop switches can be easily connected via the included
-      25-pin I/O breakout board using simple screw terminals.
-    .clear
-
-  section
-    h2 Power Supply Options
-    img(src="images/power_supplies.png",
-      alt="Two types of MeanWell power supply")
-    p.
-      Connect any power supply which outputs 12-36v DC with at least 6A using
-      the included power cable or buy the Mean Well GST280A-C6P power adapter
-      on our store for a totally enclosed fan-less option.
-    .clear
-
-  section
-    h2 Cables Included
-    img(src="images/cables.png", alt="Included Buildbotics cables")
-    p.
-      The Buildbotics controller comes with time saving pre-made cables for
-      connecting stepper motors, power supplies and load switches.
     .clear
 
   section
@@ -409,20 +373,13 @@
     .clear
 
   section
-    a(name="docs")
-    h2 Documentation
+    h2 RaspberryPi 3 Inside
+    .img-right: img(src="images/raspberrypi3.png",
+      alt="RaspberryPi CNC controller")
     p.
-      Good documentation is essential.  We are still working on perfecting our
-      documentation and will continue to do so.  Stay tuned for tutorials
-      on CNC building with the Buildbotics controller.
-
-    - var doc_url = "//buildbotics.com/upload/buildbotics_cnc_controller-"
-    - var quick_start = doc_url + "quick_start_guide-20190410.pdf"
-    - var datasheet = doc_url + "datasheet-draft-20171226.pdf"
-    ul
-      li: a(target="_blank", href=quick_start) Quick Start Guide
-      li: a(target="_blank", href=datasheet) Datasheet
-      li: a(target="_blank", href="https://docs.buildbotics.com/") User Manual
+      The built-in Raspberry Pi 3 running Linux on a 16GiB microSD card
+      provides massive potential for building your next big idea.  Install
+      additional software or use Python to implement your own features.
     .clear
 
   section

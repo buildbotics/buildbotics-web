@@ -2,5 +2,6 @@
   {"from": "/k40", "to": "/k40-laser-cutter", "permanent": true},
   {"from": "/k40-laser", "to": "/k40-laser-cutter", "permanent": true},
   {"from": "/proximity_sensor", "to": "/proximity-sensor", "permanent": true},
-  {"from": "/is-camotics-alive", "to": "/how-i-created-a-cnc-simulator", "permanent": true}
+  {"from": "/is-camotics-alive", "to": "/how-i-created-a-cnc-simulator", "permanent": true},
+  {"from": "/buildbotics-controller-manual", "to": "/manual", "permanent": true}
 ]

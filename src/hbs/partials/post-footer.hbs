@@ -5,6 +5,21 @@
     {{> "byline-single"}}
   {{/has}}
 
+  <section class="post-full-share">
+    <span>Share</span>
+    <div class="fa fa-hand-pointer-o"></div>
+    <a class="facebook-share"
+      href="//facebook.com/sharer/sharer.php?u={{url absolute='true'}}"
+      title="Share this page on Facebook" target="_blank">
+      <div class="fa fa-facebook-square"></div>
+    </a>
+
+    <a class="twitter-share" href="//twitter.com/share?text={{title}}&amp;url={{url absolute='true'}}"
+      title="Share this page on Twitter" target="_blank">
+      <div class="fa fa-twitter"></div>
+    </a>
+  </section>
+
   <section class="post-full-meta">
     <time class="post-full-meta-date"
       datetime="{{date format="YYYY-MM-DD"}}"

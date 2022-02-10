@@ -1,4 +1,6 @@
 routes:
+  /posts/:
+    controller: channel
 
 collections:
   /blog/:

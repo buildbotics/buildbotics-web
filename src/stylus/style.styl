@@ -18,23 +18,24 @@ body
   position absolute
   text-indent -9999px
 
-.site-wrapper
-  display flex
-  flex-direction column
-  min-height 100vh
+@media not print
+  .site-wrapper
+    display flex
+    flex-direction column
+    min-height 100vh
 
-.site-main
-  z-index 100
-  flex-grow 1
+  .site-main
+    z-index 100
+    flex-grow 1
 
-.outer
-  position relative
-  padding 0 4vw
+  .outer
+    position relative
+    padding 0 4vw
 
-.inner
-  margin 0 auto
-  max-width 900px
-  width 100%
+  .inner
+    margin 0 auto
+    max-width 1200px
+    width 100%
 
 @import "author"
 @import "post-card"
@@ -45,6 +46,7 @@ body
 @import "read-next"
 @import "error"
 @import "fixed"
+@import "docs"
 
 h1, h2, h3, h4, h5, h6
   color #666
@@ -80,3 +82,4 @@ button
     background-image linear-gradient(#ececec, #ddd)
 
 @import "toc"
+@import "print"

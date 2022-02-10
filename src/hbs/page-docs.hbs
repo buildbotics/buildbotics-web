@@ -1,0 +1,63 @@
+{{!< default}}
+
+{{#post}}
+  <main id="site-main" class="site-main outer">
+    <div class="inner">
+      <article class="post-full {{post_class}}">
+        <header class="post-full-header">
+          <h1 class="post-full-title">{{title}}</h1>
+        </header>
+
+        <div class="post-feed">
+          <article class="post-card">
+            <a class="post-card-image-link" href="/manual">
+              <img class="post-card-image"
+                src="/images/buildbotics_controller_front_right_lit-600.png"
+                alt="Buildbotics Controller"/>
+            </a>
+
+            <div class="post-card-content">
+              <a class="post-card-content-link" href="/manual">
+                <h2 class="post-card-title">
+                  Buildbotics Controller User Manual
+                </h2>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <div class="post-feed">
+          {{#get "posts" filter="tag:-[blog, cnc-machines, builds]"
+            limit="all"}}
+            {{#foreach posts}}{{> "post-card"}}{{/foreach}}
+          {{/get}}
+        </div>
+
+        <h2>Machines</h2>
+        <div class="post-feed">
+          {{#get "posts" filter="tag:cnc-machines" limit="all"}}
+            {{#foreach posts}}{{> "post-card"}}{{/foreach}}
+          {{/get}}
+        </div>
+
+        <h2>Builds</h2>
+        <div class="post-feed">
+          {{#get "posts" filter="tag:builds" limit="all"}}
+            {{#foreach posts}}{{> "post-card"}}{{/foreach}}
+          {{/get}}
+        </div>
+
+        <h2>Blog</h2>
+        <div class="post-feed">
+          {{#get "posts" filter="tag:blog" limit="all"}}
+            {{#foreach posts}}{{> "post-card"}}{{/foreach}}
+          {{/get}}
+        </div>
+      </article>
+    </div>
+  </main>
+{{/post}}
+
+{{#contentFor "scripts"}}
+  <script>$(function() {$(".post-full-content").fitVids()})</script>
+{{/contentFor}}

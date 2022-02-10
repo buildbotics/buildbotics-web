@@ -1,0 +1,7 @@
+<div class="post-feed">
+  {{#get "posts" filter="id:-{{id}}" limit="all"}}
+    {{#foreach posts random=1 limit=16}}
+      {{> "post-card"}}
+    {{/foreach}}
+  {{/get}}
+</div>

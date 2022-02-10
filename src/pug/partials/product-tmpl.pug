@@ -18,10 +18,10 @@ script#product-template(type="text/x-template")
           .product-add
             button.add-to-cart(@click="add_to_cart()",
               :disabled="!product.inventory").
-              #[.fa.fa-shopping-cart] Add to Cart
-
+              #[.fa.fa-shopping-cart] {{order_button_text}}
+            .product-message {{product_message}}
             .product-stock(v-if="product.inventory")
-              | {{product.inventory}} in Stock
+              | {{product.inventory}} available
             .product-stock.error(v-else) Out of Stock
 
         product-images(v-if="product.images", :images="product.images")
@@ -30,10 +30,10 @@ script#product-template(type="text/x-template")
         h2.product-title {{product.name}}
         div(v-html="product.description")
 
-      #reviews(v-if="product.reviews")
+      #reviews(v-if="reviews.length")
         h2 Customer Reviews
         .product-reviews
-          product-review(v-for="(review, index) in product.reviews",
+          product-review(v-for="(review, index) in reviews",
             :review="review")
 
       a(name="write-review")
@@ -87,7 +87,7 @@ script#product-modifier-template(type="text/x-template")
         .option-description
           label.option-name {{option.label}}
           label.option-stock(v-if="index")
-            span(v-if="option.inventory") {{option.inventory}} in Stock
+            span(v-if="option.inventory") {{option.inventory}} available
             span.error(v-else) Out of Stock
         label.option-price + ${{option.price}}
 

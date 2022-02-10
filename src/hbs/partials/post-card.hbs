@@ -15,36 +15,7 @@
 
   <div class="post-card-content">
     <a class="post-card-content-link" href="{{url}}">
-      <header class="post-card-header">
-        {{#if primary_tag}}
-          <span class="post-card-tags">{{primary_tag.name}}</span>
-        {{/if}}
-        <h2 class="post-card-title">{{title}}</h2>
-      </header>
-
-      <section class="post-card-excerpt">
-        <p>{{excerpt words="33"}}</p>
-      </section>
+      <h2 class="post-card-title">{{title}}</h2>
     </a>
-
-    <footer class="post-card-meta">
-      <ul class="author-list">
-      {{#foreach authors}}
-        <li class="author-list-item">
-          <div class="author-name-tooltip">
-            {{name}}
-          </div>
-
-          {{#if profile_image}}
-            <span class="static-avatar">
-              <img class="author-profile-image"
-                src="{{img_url profile_image size="xs"}}" alt="{{name}}"/>
-            </span>
-          {{/if}}
-        </li>
-      {{/foreach}}
-      </ul>
-      <span class="reading-time">{{reading_time}}</span>
-    </footer>
   </div>
 </article>

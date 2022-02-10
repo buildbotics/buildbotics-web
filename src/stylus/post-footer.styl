@@ -1,0 +1,83 @@
+.post-full-footer
+  display flex
+  flex-wrap wrap
+  justify-content space-between
+  align-items center
+  margin 0 auto
+  padding 3vw 0 6vw 0
+  max-width 840px
+  white-space nowrap
+
+  > *
+    line-height 3em
+
+  .author-list
+    justify-content center
+    padding 10px 20px
+
+  .author-card, .author-list
+    margin-right 1em
+
+
+.post-full-authors
+  flex-grow 1
+  display flex
+  flex-direction column
+  align-items center
+  margin-top 20px
+  padding-top 40px
+  border-top #888 1px solid
+
+.post-full-authors-content
+  margin-bottom 20px
+
+  p
+    margin-bottom 0
+    color #666
+    font-size 1.4rem
+    letter-spacing 0.2px
+    text-align center
+    text-transform uppercase
+
+  a
+    display inline-block
+    color #444
+    font-size 1.4rem
+    font-weight 600
+    text-transform uppercase
+
+.post-full-share
+  display flex
+  flex-wrap auto
+  font-size 16pt
+  color #666
+  align-items center
+
+  > *
+    margin-right 0.5em
+
+  .fa
+    font-size 22pt
+
+  .fa-hand-pointer-o
+    transform rotate(90deg)
+
+  a:hover
+    text-decoration none
+
+.post-full-meta
+  display flex
+  justify-content center
+  align-items center
+  color #666
+  font-size 1.4rem
+  font-weight 600
+  text-transform uppercase
+
+.post-full-meta-date
+  color #666
+
+@media (max-width: 500px)
+  .post-full-meta
+    font-size 1.2rem
+    line-height 1.3em

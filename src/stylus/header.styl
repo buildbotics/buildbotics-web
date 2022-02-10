@@ -57,6 +57,10 @@
     .fa
       font-size 20pt
 
+@media print
+  .site-header .site-nav
+    max-width inherit
+
 .amp-template .site-header .site-logo
   img
     margin-right 0
@@ -81,3 +85,7 @@
 @media (max-width: 750px)
   .site-header li
     line-height 1.6em
+
+@media print
+  .site-header .site-nav > ul
+    display none

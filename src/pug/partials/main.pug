@@ -5,7 +5,10 @@
     .left Build
     .right botics
 
-  .byline Take Control of your CNC
+  .byline.
+    Drive your CNC faster, more accurately and with less hassle with the
+    leading Open-Source CNC control solution.
+
   img(src="images/buildbotics_anatomy-20190306.png", width="550",
     alt="Buildbotics CNC Machine Controller connected to many devices")
 
@@ -56,6 +59,10 @@
     div Dyna Myte 2400 Retrofit
 
 .front-content
+  h1(style="margin-top:2em"): center
+    a(href="https://mellowpine.com/cnc/buildbotics-cnc-controller-review/",
+      target="_blank") Read an independent product review.
+
   section
     h1 The Buildbotics CNC Machine Controller
     center
@@ -86,7 +93,7 @@
 
   section
     center
-      h2 Included I/O Breakout
+      h2 Main I/O Breakout
       img(src="images/buildbotics_io_breakout_diagram.png",
         alt="A diagram of the Buildbotics CNC controller io breakout box")
     p.
@@ -95,6 +102,20 @@
       I/O breakout board using simple screw terminals.
 
     p Check out the #[a(href="/io-breakout") pin-out diagram].
+    .clear
+
+  section
+    center
+      h2 Auxiliary I/O Breakout
+      img(src="images/buildbotics_aux_breakout_diagram.png",
+        alt="A diagram of the Buildbotics CNC controller auxiliary breakout")
+    p.
+      Connect step and direction signals to external motor drivers to use
+      closed-loop steppers or even servo motors with the Buildbotics controller.
+
+    p.
+      Use the 0-10v output to control analog spindles.
+
     .clear
 
   section
@@ -114,9 +135,8 @@
       The Buildbotics controller comes with the following time saving
       pre-made cables:
     ul
-      li 4 x 10' Motor cables
-      li 2 x Load cable stubs
-      li 1 x Power cable
+      li 4 x 10 foot (3 meter) Motor cables
+      li 1 x 4 foot (1.2 meter) Power cable
     .clear
 
   section
@@ -136,7 +156,7 @@
       img(src="images/power_supplies.png",
         alt="Two types of MeanWell power supply")
     p.
-      Connect any power supply which outputs 12v to 36v DC with at least 6A
+      Connect any power supply which outputs 24v to 48v DC with at least 6A
       using the included power cable select one of our bundled power supply
       options #[a(href="/store") on our store].
     .clear
@@ -148,7 +168,7 @@
     ul
       li 4 motor driver channels
       li Up to 6A per channel
-      li 12v to 36v DC
+      li 24v to 48v DC
       li Up to 256 microstepping
       li Smooth S-curve acceleration
       li Step rates up to 250k/sec per channel.
@@ -335,25 +355,32 @@
     img(src="images/spindles.png",
       alt="A DC CNC spindle next to a VFD CNC spindle")
     p.
-      The PWM, enable and direction outputs can be used to control a wide
-      array of tool heads. The RS485 connection drives high-speed VFD
-      controlled air or water cooled spindles over two wires.
+      Three different options for controlling external tools, such as spindles:
+
+    ul
+      li
+        a(href="/connecting-a-pwm-spindle-to-the-buildbotics-controller/")
+          | Digital PWM control
+      li
+        a(href="/how-to-use-a-vfd-spindle-driver/") Two wire RS485 VFD control
+      li
+        a(href="/io-breakout/") 0-10v analog control
+
     .clear
 
   section
-    h2 Built-in Load Switches
+    h2 Drive External Loads
     .img-right: img(src="images/load_switch.png", width="400",
       alt="Buildbotics CNC controller controlling a compressor with an SSR")
     p.
-      Two load switches, each capable of supplying up to 15A can power
+      Digital outputs can switch external drivers to control
       heated beds for 3D printers, extruders, vacuum tables or whatever else
-      you can think of.
+      you can think of.  Switch them on and off from your GCode programs.
 
     p.
       For AC loads, an inexpensive
       #[a(href="//amazon.com/s/?field-keywords=solid+state+relay") SSR]
-      switch can be used.  External relays can be used for higher amp
-      DC loads.
+      switch can be used.  External relays can be used for DC loads.
     .clear
 
   section
@@ -373,13 +400,13 @@
     .clear
 
   section
-    h2 RaspberryPi 3 Inside
+    h2 RaspberryPi Inside
     .img-right: img(src="images/raspberrypi3.png",
       alt="RaspberryPi CNC controller")
     p.
-      The built-in Raspberry Pi 3 running Linux on a 16GiB microSD card
-      provides massive potential for building your next big idea.  Install
-      additional software or use Python to implement your own features.
+      The built-in Raspberry Pi running Linux provides massive potential for
+      building your next big idea.  Install additional software on the Pi or
+      use Python code to build new features.
     .clear
 
   section

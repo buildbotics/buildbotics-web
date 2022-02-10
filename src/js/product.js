@@ -258,6 +258,24 @@ var __product = {
         }
 
       return price;
+    },
+
+
+    reviews: function () {
+      if (typeof this.product == 'undefined' ||
+          typeof this.product.reviews == 'undefined') return [];
+
+      return this.product.reviews.slice(0).reverse();
+    },
+
+
+    order_button_text: function () {
+      return this.product.preorder ? 'Preorder' : 'Add to Cart';
+    },
+
+
+    product_message: function () {
+      return this.product.preorder ? this.product.preorder_message : '';
     }
   },
 

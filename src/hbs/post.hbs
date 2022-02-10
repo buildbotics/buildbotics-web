@@ -12,7 +12,10 @@
           <div class="post-content">{{content}}</div>
         </section>
 
-        {{#is "post"}}{{> "post-footer"}}{{/is}}
+        {{#is "post"}}
+          {{> "post-footer"}}
+          {{> "related"}}
+        {{/is}}
       </article>
     </div>
   </main>

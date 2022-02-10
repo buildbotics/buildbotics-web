@@ -5,7 +5,9 @@ document.addEventListener('DOMContentLoaded', function() {
   var lastDepth = 0;
   var toc = $('<ul>');
 
-  $('h2, h3, h4').each(function (index, hdr) {
+  var title = $('.post-full-header h1').text();
+
+  $('.post-full-content').find('h2, h3, h4').each(function (index, hdr) {
     var depth = parseInt(hdr.nodeName.substr(1)) - 2;
 
     if (lastDepth < depth) counts[depth] = 0;
@@ -27,9 +29,14 @@ document.addEventListener('DOMContentLoaded', function() {
       '<div class="section-number">' + section + '</div>' + hdr.innerHTML;
   })
 
+  function scroll_to_top() {$('.site-main').scrollTop(0)}
+
   $('<div>')
     .addClass('table-of-contents')
-    .append($('<h2>').text('Table of Contents'))
+    .append(
+      $('<h2>')
+        .on('click', scroll_to_top)
+        .append($('<a href="#">').text(title)))
     .append(toc)
     .prependTo('.site-wrapper');
 

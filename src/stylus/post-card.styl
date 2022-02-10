@@ -1,17 +1,16 @@
 .post-feed
   position relative
-  display flex
+  display grid
+  grid-template-columns auto auto auto auto
   flex-wrap wrap
   margin 0 -20px
   padding 40px 0 0 0
 
 .post-card
-  flex 1 1 300px
   display flex
   flex-direction column
-  overflow hidden
-  margin 0 20px 40px
-  min-height 300px
+  margin 0 10px 20px
+  max-width 500px
   background #fff center center
   background-size cover
   border-radius 5px
@@ -19,9 +18,8 @@
   transition all 0.5s ease
 
   &:hover
-    box-shadow rgba(39,44,49,0.07) 8px 28px 50px, rgba(39, 44, 49, 0.04) 1px 6px 12px
-    transition all 0.4s ease
-    transform translate3D(0, -1px, 0) scale(1.02)
+    transition all 0.2s ease
+    transform translate3D(0, -4px, 0)
 
 .post-card-image-link
   position relative
@@ -39,25 +37,17 @@
   position relative
   flex-grow 1
   display block
-  padding 25px 25px 0
+  padding 15px
   color #444
 
   &:hover
     text-decoration none
     color #444
 
-.post-card-tags
-  display block
-  margin-bottom 4px
-  color #666
-  font-size 1.2rem
-  line-height 1.15em
-  font-weight 500
-  letter-spacing 0.5px
-  text-transform uppercase
-
 .post-card-title
-  margin-top 0
+  margin 0
+  text-align center
+  font-size 14pt
 
 .post-card-content
   flex-grow 1
@@ -65,51 +55,61 @@
   flex-direction column
   justify-content space-between
 
-.post-card-excerpt
-  font-family Georgia, serif
-
-.post-card-meta
-  display flex
-  justify-content space-between
-  align-items flex-end
-  padding 0 25px 25px
-
-.post-card-meta .profile-image-wrapper,
-.post-card-meta .avatar-wrapper
-  position relative
 
 @media (min-width: 795px)
   .post-card-large
     flex 1 1 100%
     flex-direction row
+
     .post-card-image-link
       position relative
       flex 1 1 auto
       border-radius 5px 0 0 5px
+
     .post-card-image
       position absolute
       width 100%
       height 100%
+
     .post-card-content
       flex 0 1 357px
+
     h2
       font-size 2.6rem
+
     p
       font-size 1.8rem
       line-height 1.55em
+
     .post-card-content-link
       padding 30px 40px 0
+
     .post-card-meta
       padding 0 40px 30px
+
+
+@media (max-width: 1200px)
+  .post-feed
+    grid-template-columns auto auto auto
+
 
 @media (max-width: 650px)
   .post-feed
     padding-top 5vw
+    grid-template-columns auto auto
+
   .post-card
     margin 0 20px 5vw
 
-@media (min-width: 900px)
- .home-template .post-feed, .tag-template .post-feed,
- .author-template .post-feed
-  margin-top -70px
-  padding-top 0
+
+@media (max-width: 500px)
+  .post-card-title
+    font-size 12pt
+
+  .post-content-link
+    padding 10px
+
+
+@media (max-width: 450px)
+  .post-feed
+    grid-template-columns auto

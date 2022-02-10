@@ -45,7 +45,7 @@ description: |-
       <li>PWM & RS485 (VFD) spindle control</li>
       <li>Z-axis probe interface</li>
       <li>250k steps/second on each motor output</li>
-      <li>12 to 36 volt input</li>
+      <li>24 to 48 volt input</li>
       <li>Up to 1/256th microstepping</li>
       <li>S-Curve path planning</li>
       <li>Understands all common GCodes</li>
@@ -74,7 +74,7 @@ description: |-
 
     <h2>Options</h2>
     <ul>
-      <li>Mean Well GST280A24-C6P power supply (Fully enclosed 24 volt 280
+      <li>Mean Well GST280A48-C6P power supply (Fully enclosed 48 volt 280
         Watt power supply)</li>
       <li>Mean Well LRS-350-36 36V, 350 Watt power supply)</li>
       <li>Logitech C270 USB web camera</li>

@@ -6,3 +6,4 @@
 /node_modules
 /secret.key
 /bigcommerce-credentials.txt
+/local.yaml

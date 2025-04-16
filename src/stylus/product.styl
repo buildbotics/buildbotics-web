@@ -1,4 +1,5 @@
 @import "config";
+@import "review-stars";
 
 column_space = 20px
 column_width = (content_width - column_space) / 2
@@ -27,25 +28,6 @@ thumb_size = 48px
     border-top 1px solid border_color
     border-bottom 1px solid border_color
 
-.review-stars
-  white-space nowrap
-
-  div
-    display inline-block
-
-  .review-star
-    width 16px
-    height 16px
-    position relative
-
-    .fa
-      position absolute
-
-  .fa
-    color #ccc
-
-  .gold-star
-    color highlight_color
 
 .product-images
   width 100%

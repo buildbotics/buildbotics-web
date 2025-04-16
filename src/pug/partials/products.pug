@@ -1,0 +1,10 @@
+script#product-rating-template(type="text/x-template")
+  .product-rating
+    .review-stars
+      .review-star(v-for="n in 5")
+        .fa.fa-star
+        .fa.fa-star.gold-star(v-if="n <= rating")
+        .fa.fa-star-half.gold-star(
+          v-if="rating < n && n - 0.5 <= rating")
+
+    | {{count}}

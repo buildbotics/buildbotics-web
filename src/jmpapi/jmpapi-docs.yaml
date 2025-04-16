@@ -1,0 +1,14 @@
+---
+hide: true
+title: Documentation
+
+help: >
+  The documentation endpoint returns JSON data describing this
+  API.  It is used to automatically create this page.
+
+endpoints:
+  /api:
+    GET:
+      handler: api
+      return: dict
+      help: Returns a description of this API.

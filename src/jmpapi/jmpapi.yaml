@@ -1,0 +1,11 @@
+---
+help: >
+  This page describes the JSON over HTTP API endpoints supported by this server.
+
+global:
+  name: Buildbotics Web API
+
+api:
+  cors: !include cors.yaml
+  docs: !include jmpapi-docs.yaml
+  store: !include bigcommerce.yaml

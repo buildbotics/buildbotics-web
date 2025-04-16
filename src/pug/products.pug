@@ -1,0 +1,35 @@
+doctype html
+html(lang="en")
+  head
+    title Buildbotics Products
+    include ./partials/head.pug
+
+  body
+    .page
+      include ./partials/header.pug
+      .site-wrapper: main.site-main: .inner(v-cloak)
+        h1 Products
+        h2 {{message}}
+
+        .products
+          .product(v-for="p in products")
+            a(:href="'/product/' + p.id + p.url")
+              .product-image(v-if="p.images && p.images.length")
+                img(v-for="i in p.images", v-if="i.order == 0",
+                  :src="i.medium", :title="i.description")
+              .product-body
+                .product-name {{p.name}}
+                product-rating(v-if="p.reviews_count", :count="p.reviews_count",
+                  :sum="p.reviews_sum")
+                .product-rating(v-else)
+                .product-price ${{p.price}}
+                .product-stock {{p.inventory}} in stock
+
+      include ./partials/footer.pug
+
+    include ./partials/foot.pug
+    style: include:stylus ../stylus/products.styl
+    script: include ../js/products.js
+    include ./partials/products.pug
+    include ./partials/owl.pug
+    style [v-cloak] {display: none}

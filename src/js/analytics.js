@@ -2,60 +2,37 @@
 
 
 function do_analytics() {
-  function set_cookie(name, value, days) {
-    var date = new Date();
-    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-    document.cookie =
-      name + '=' + value + '; expires=' + date.toUTCString() + '; path=/';
+  // Session ID
+  let session_id = window.bb_sid
+  if (!session_id) {
+    session_id = '' + Math.random()
+    window.bb_sid = session_id
   }
 
-
-  function get_cookie(name) {
-    var nameEQ = name + '=';
-    var ca = document.cookie.split(';');
-
-    for (var i = 0; i < ca.length; i++) {
-      var c = ca[i];
-      while (c.charAt(0) == ' ') c = c.substring(1, c.length);
-      if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
-    }
-
-    return null;
+  // Client ID
+  let client_id = localStorage.getItem('bb_cid')
+  if (!client_id) {
+    client_id = Date.now() + '' + Math.random()
+    localStorage.setItem('bb_cid', client_id)
   }
-
-  // Lookup ID
-  var id = get_cookie('cid');
-  if (!id) id = Date.now() + '' + Math.random();
-  set_cookie('cid', id, 365);
 
   // Ping analytics
-  var config = {
-    v:   1,
-    tid: 'UA-57023811-3',
-    cid: id,
-    aip: 1, // Tell Google to anonymize the user's IP for better privacy
-    t:   'pageview',
-    dh:  location.hostname,
-    dp:  location.pathname,
+  let params = {
+    v:   2,
+    tid: 'G-8C1G04EMLZ',
+    cid: client_id,
+    sid: session_id,
+    sr:  screen.width + 'x' + screen.height,
+    en:  'page_view',
+    dl:  location.href,
     dt:  document.title,
-    dr:  document.referrer
-  };
+    dr:  document.referrer,
+    _et: 1000,
+  }
 
-  // Page load time
-  try {
-    config.plt = new Date().getTime() - performance.timing.navigationStart;
-  } catch (e) {}
-
-  var data = [];
-  for (var name in config)
-    data.push(name + '=' + encodeURIComponent(config[name]));
-
-  var xhr = new XMLHttpRequest();
-  xhr.open('POST', '//www.google-analytics.com/collect?_=' + Math.random(),
-           true);
-  xhr.setRequestHeader('Content-Type',
-                       'application/x-www-form-urlencoded; charset=UTF-8');
-  xhr.send(data.join('&'));
+  let url = new URL('https://region1.google-analytics.com/g/collect')
+  url.search = new URLSearchParams(params).toString()
+  fetch(url, {method:  'POST', mode: 'no-cors'})
 }
 
-addEventListener('load', do_analytics);
+addEventListener('load', do_analytics)

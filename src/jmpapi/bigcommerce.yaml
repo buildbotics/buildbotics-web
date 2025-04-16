@@ -1,0 +1,320 @@
+---
+title: BigCommerce Proxy
+help: Proxy to BigCommerce API
+
+vars:
+  - &store hcslcwuadr
+  - &url-base https://api.bigcommerce.com/stores/%(store)s
+  - &catalog "%(url-base)s/v3/catalog"
+  - &carts "%(url-base)s/v3/carts"
+
+anchors:
+  req-hdrs: &req-hdrs
+    request-headers:
+      <<: !include creds.yaml
+      Accept: application/json
+
+  product: &product
+    id: id
+    name: name
+    description: description
+    price: price
+    weight: weight
+    width: width
+    depth: depth
+    height: height
+    inventory: inventory_level
+    reviews_count: reviews_count
+    reviews_sum: reviews_rating_sum
+    url: custom_url.url
+    brand:
+      request:
+        url: "%(catalog)s/brands/%(brand_id)u"
+        <<: *req-hdrs
+        with: ~data.name
+    preorder:
+      equal: [availability, {literal: "preorder"}]
+    preorder_message: preorder_message
+
+  images: &images
+    url: "%(catalog)s/products/%(id)u/images"
+    <<: *req-hdrs
+    with: data
+    each:
+      dict:
+        description: description
+        thumbnail: is_thumbnail
+        order: sort_order
+        large: url_zoom
+        medium: url_standard
+        thumb: url_thumbnail
+        tiny: url_tiny
+        modified: date_modified
+
+  review: &review
+    name: name
+    id: id
+    rating: rating
+    title: title
+    text: text
+    created: date_created
+    modified: date_modified
+
+  reviews: &reviews
+    url: "%(catalog)s/products/%(id)u/reviews"
+    <<: *req-hdrs
+    with: data
+    each:
+      if:
+        equal: [status, {literal: "approved"}]
+      then:
+        dict: *review
+
+  review-post: &review-post
+    title: title
+    text: text
+    rating: rating
+    email: email
+    name: name
+    date_reviewed: time
+
+  thumbnails: &thumbnails
+    request:
+      url: "%(catalog)s/products/%(../../value_data.product_id)u/images"
+      <<: *req-hdrs
+
+      with: data
+      each:
+        if: is_thumbnail
+        then: url_thumbnail
+
+  options: &options
+    with: option_values
+    each:
+      request:
+        url: "%(catalog)s/products/%(value_data.product_id)u"
+        <<: *req-hdrs
+        with: data
+        dict:
+          id: ../../id
+          product: id
+          label: ../../label
+          default: ../../is_default
+          price: price
+          weight: weight
+          width: width
+          depth: depth
+          height: height
+          inventory: inventory_level
+          url: custom_url.url
+          brand: brand_id
+          thumbnails: *thumbnails
+
+  modifiers: &modifiers
+    url: "%(catalog)s/products/%(id)u/modifiers"
+    <<: *req-hdrs
+    with: data
+    each:
+      dict:
+        name: name
+        id: id
+        options: *options
+
+  cart: &cart
+    with: data
+    dict:
+      id: id
+      currency: currency.code
+      total: cart_amount
+      checkout: redirect_urls.checkout_url
+      cart: redirect_urls.cart_url
+      items:
+        with: line_items.physical_items
+        each:
+          dict:
+            name: name
+            id: id
+            product: product_id
+            parent: parent_id
+            price: list_price
+            quantity: quantity
+            image: image_url
+
+  cart-item-post: &cart-item-post
+    dict:
+      line_item:
+        dict:
+          quantity: args.quantity
+          product_id: args.product
+
+  cart-post: &cart-post
+    dict:
+      line_items:
+        with: args.items
+        each:
+          dict:
+            quantity: quantity
+            product_id: product
+            option_selections:
+              with: options
+              each:
+                dict:
+                  option_id: id
+                  option_value: value
+
+endpoints:
+  /products:
+    GET:
+      url: "%(catalog)s/products"
+      <<: *req-hdrs
+      with: data
+      each:
+        if:
+          equal: [is_visible, {literal: true}]
+        then:
+          dict:
+            <<: *product
+            images: {request: *images}
+
+  /products/:id:
+    args:
+      id: {type: u16}
+
+    GET:
+      url: "%(catalog)s/products/%(args.id)u"
+      <<: *req-hdrs
+      with: data
+      if:
+        equal: [is_visible, {literal: true}]
+      then:
+        dict:
+          <<: *product
+          images: {request: *images}
+          reviews: {request: *reviews}
+          modifiers: {request: *modifiers}
+
+      else:
+        status: HTTP_NOT_FOUND
+        dict:
+          error: {literal: Product %(args.id)u not found.}
+
+  /products/:id/reviews:
+    args:
+      id: {type: u16}
+
+    POST:
+      args:
+        title: {max: 255}
+        text: {max: 10000}
+        rating: {min: 1, max: 5}
+        email: {type: email}
+        name: {max: 255}
+        time: {type: time}
+
+      # Check that orders exists for the specified email
+      method: GET
+      url: "%(url-base)s/v2/orders?email=%(args.email)s&status_id=2&limit=1"
+      <<: *req-hdrs
+
+      # Get orders containing the product to be reviewed
+      with:
+        each:
+          request:
+            method: GET
+            url: "%(url-base)s/v2/orders/%(id)u/products"
+            <<: *req-hdrs
+            each:
+              if: {equal: [product_id, args.id]}
+
+      if: .
+
+      # Check that a review by this customer does not already exist
+      then:
+        request:
+          method: GET
+          url: "%(catalog)s/products/%(args.id)u/reviews"
+          <<: *req-hdrs
+
+          with: # Select pending reviews for this email
+            debug: true
+            with: data
+            each:
+              if:
+                and:
+                  - {equal: [email, args.email]}
+                  - {equal: [status, {literal: "pending"}]}
+              then: id
+
+          if: .
+          then: # Update the existing review
+            request:
+              method: PUT
+              url: "%(catalog)s/products/%(args.id)u/reviews/%(0)u"
+              <<: *req-hdrs
+              data:
+                with: args
+                dict: *review-post
+
+              dict:
+                message:
+                  literal: Your updated review was submitted for approval.
+
+          else: # Post a new review
+            request:
+              url: "%(catalog)s/products/%(args.id)u/reviews"
+              <<: *req-hdrs
+              data:
+                with: args
+                dict:
+                  <<: *review-post
+                  status: {literal: pending}
+
+              dict:
+                message:
+                  literal: Your review was submitted for approval.
+
+      else:
+        status: HTTP_FORBIDDEN
+        dict:
+          error: {literal: Only customers can submit reviews.}
+
+  /carts:
+    POST:
+      url: "%(carts)s?include=redirect_urls"
+      <<: *req-hdrs
+      data: *cart-post
+      <<: *cart
+
+  /carts/:id:
+    GET:
+      url: "%(carts)s/%(args.id)s?include=redirect_urls"
+      <<: *req-hdrs
+      <<: *cart
+
+    POST:
+      url: "%(carts)s/%(args.id)s/items?include=redirect_urls"
+      <<: *req-hdrs
+      data: *cart-post
+      <<: *cart
+
+    DELETE:
+      url: "%(carts)s/%(args.id)s"
+      <<: *req-hdrs
+
+  /carts/:id/items/:item:
+    PUT:
+      url: "%(carts)s/%(args.id)s/items/%(args.item)s?include=redirect_urls"
+      <<: *req-hdrs
+      data: *cart-item-post
+      <<: *cart
+
+    DELETE:
+      url: "%(carts)s/%(args.id)s/items/%(args.item)s?include=redirect_urls"
+      <<: *req-hdrs
+      <<: *cart
+
+  ^/rawdog/(?P<path>.*)$:
+    GET:
+      hide: true
+      url: "%(url-base)s/%(args.path)s"
+      <<: *req-hdrs
